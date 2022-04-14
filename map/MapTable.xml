@@ -568,6 +568,9 @@
 		<Map name="tst_13" nickname="Partners and Shockwave"/>
 		<Map name="tst_20" nickname="Pipes Gallery"/>
 	</Area>
+	<Area name="jam" nickname="Food Hack">
+		<Map name="jam_00" nickname="Cake :D"/>
+	</Area>
 	<Resource name="mac_tex" compressed="false"/>
 	<Resource name="tik_tex" compressed="false"/>
 	<Resource name="kgr_tex" compressed="false"/>
@@ -583,6 +586,7 @@
 	<Resource name="osr_tex" compressed="false"/>
 	<Resource name="kkj_tex" compressed="false"/>
 	<Resource name="tst_tex" compressed="false"/>
+	<Resource name="jam_tex" compressed="false"/>
 	<Resource name="jan_tex" compressed="false"/>
 	<Resource name="mim_tex" compressed="false"/>
 	<Resource name="obk_tex" compressed="false"/>
