@@ -570,6 +570,7 @@
 	</Area>
 	<Area name="jam" nickname="Food Hack">
 		<Map name="jam_00" nickname="Cake :D"/>
+		<Stage name="jam_bt1"/>
 	</Area>
 	<Resource name="mac_tex" compressed="false"/>
 	<Resource name="tik_tex" compressed="false"/>

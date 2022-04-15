@@ -11,7 +11,7 @@
 #new:EntryList $EntryList
 {
 	~Vec4f:entry_e
-	~Vec4f:Marker
+	~Vec4f:Entry1
 }
 
 #new:Script $Script_ScriptedSpring_FollowCam
@@ -82,4 +82,3 @@
 	Return
 	End
 }
-

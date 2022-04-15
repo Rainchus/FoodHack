@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Map name="jam_bt1" author="unnamed" textures="jam_tex">
+	<Editor>
+		<Camera pos="-83.231178,116.468567,472.712891" pitch="9.000000" yaw="0.000000"/>
+		<Camera pos="-12.415194,65536.000000,-101.305252"/>
+		<Camera pos="65536.000000,72.000000,-17.000000"/>
+		<Camera pos="7.099770,-1.056254,65536.000000"/>
+	</Editor>
+	<ModelTree>
+		<Node name="Root" id="16">
+			<Node name="kumo1" id="1">
+				<Node name="g59" id="0"/>
+			</Node>
+			<Node name="kumo2" id="3">
+				<Node name="g60" id="2"/>
+			</Node>
+			<Node name="g49" id="4"/>
+			<Node name="g70" id="8">
+				<Node name="yuka2" id="5"/>
+				<Node name="waku" id="6"/>
+				<Node name="waku2" id="7"/>
+			</Node>
+			<Node name="dai" id="C">
+				<Node name="waku1" id="9"/>
+				<Node name="o313" id="A"/>
+				<Node name="waku1" id="B"/>
+			</Node>
+			<Node name="m_n" id="D"/>
+			<Node name="ki" id="11">
+				<Node name="g64" id="E"/>
+				<Node name="g65" id="F"/>
+				<Node name="g66" id="10"/>
+			</Node>
+			<Node name="batu" id="12"/>
+			<Node name="Planar GridModel" id="13"/>
+			<Node name="Planar GridModel" id="14"/>
+			<Node name="Planar GridModel" id="15"/>
+		</Node>
+	</ModelTree>
+	<ColliderTree>
+		<Node name="Root" id="2">
+			<Node name="dai" id="1">
+				<Node name="yuka" id="0"/>
+			</Node>
+		</Node>
+	</ColliderTree>
+	<ZoneTree>
+		<Node name="Root" id="0"/>
+	</ZoneTree>
+	<MarkerTree>
+		<Node name="Root" id="10">
+			<Node name="Home Position 0" id="FFFFFFFF"/>
+			<Node name="Home Position 1" id="0"/>
+			<Node name="Home Position 2" id="1"/>
+			<Node name="Home Position 3" id="2"/>
+			<Node name="Home Position 4" id="3"/>
+			<Node name="Home Position 5" id="4"/>
+			<Node name="Home Position 6" id="5"/>
+			<Node name="Home Position 7" id="6"/>
+			<Node name="Home Position 8" id="7"/>
+			<Node name="Home Position 9" id="8"/>
+			<Node name="Home Position A" id="9"/>
+			<Node name="Home Position B" id="A"/>
+			<Node name="Home Position C" id="B"/>
+			<Node name="Home Position D" id="C"/>
+			<Node name="Home Position E" id="D"/>
+			<Node name="Home Position F" id="E"/>
+			<Node name="Home Position 10" id="F"/>
+		</Node>
+	</MarkerTree>
+	<LightSets>
+		<LightSet name="Lights_None" a="0">
+		</LightSet>
+		<LightSet name="Lights_80211370" a="0">
+		</LightSet>
+	</LightSets>
+	<Models>
+		<Model ver="2" type="ROOT" lightset="1">
+			<MapObject name="Root" id="16" dumped="true" fileOffset="5D64"/>
+			<BoundingBox empty="false" min="-206,-40,-151" max="205,175,93"/>
+			<PropertyList>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="15"/>
+			<ShapeMesh ver="3" texture="kpa_kup_kumo1tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="168,3,-135" uv="-8704,0" rgba="-56,-56,-56,-1"/>
+							<Vertex xyz="-168,52,-135" uv="-1396,1024" rgba="-56,-56,-56,-1"/>
+							<Vertex xyz="-168,3,-135" uv="-1396,0" rgba="-56,-56,-56,-1"/>
+							<Vertex xyz="-168,52,-135" uv="-1396,1024" rgba="-56,-56,-56,-1"/>
+							<Vertex xyz="168,3,-135" uv="-8704,0" rgba="-56,-56,-56,-1"/>
+							<Vertex xyz="168,52,-135" uv="-8704,1024" rgba="-56,-56,-56,-1"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,11"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="14"/>
+			<ShapeMesh ver="3" texture="kpa_kup_kumo1tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="168,-14,-101" uv="-4873,0" rgba="-56,-56,-56,-1"/>
+							<Vertex xyz="-168,35,-101" uv="4873,1024" rgba="-56,-56,-56,-1"/>
+							<Vertex xyz="-168,-14,-101" uv="4873,0" rgba="-56,-56,-56,-1"/>
+							<Vertex xyz="-168,35,-101" uv="4873,1024" rgba="-56,-56,-56,-1"/>
+							<Vertex xyz="168,-14,-101" uv="-4873,0" rgba="-56,-56,-56,-1"/>
+							<Vertex xyz="168,35,-101" uv="-4873,1024" rgba="-56,-56,-56,-1"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,16"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="13"/>
+			<ShapeMesh ver="3" texture="mgm_star_floortif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="170,6,-151" uv="-5440,-2304"/>
+							<Vertex xyz="-170,150,-151" uv="5440,2304"/>
+							<Vertex xyz="-170,6,-151" uv="5440,-2304"/>
+							<Vertex xyz="170,150,-151" uv="-5440,2304"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="1,0,3"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,1"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="batu" id="12" dumped="true" fileOffset="5CCC"/>
+			<BoundingBox empty="true" min="-42,3,-50" max="-22,23,-50"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="ki" id="11" dumped="true" fileOffset="5BB0"/>
+			<BoundingBox empty="true" min="24,92,30" max="140,170,30"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="g66" id="10" dumped="true" fileOffset="5B14"/>
+			<BoundingBox empty="true" min="23,0,-50" max="87,20,-16"/>
+			<TransformMatrix m="1.000000,0.000000,0.000000,21.756104,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,-75.608704,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="g65" id="F" dumped="true" fileOffset="58E0"/>
+			<BoundingBox empty="true" min="24,92,30" max="140,170,30"/>
+			<TransformMatrix m="1.000000,0.000000,0.000000,102.287918,0.000000,1.000000,0.000000,121.071518,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="g64" id="E" dumped="true" fileOffset="57C4"/>
+			<BoundingBox empty="true" min="-86,128,69" max="112,245,97"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="m_n" id="D" dumped="true" fileOffset="561C"/>
+			<BoundingBox empty="true" min="-126,0,71" max="-102,24,71"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="dai" id="C" dumped="true" fileOffset="52D0"/>
+			<BoundingBox empty="false" min="-206,-40,-78" max="205,16,93"/>
+			<PropertyList>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="waku1" id="B"/>
+			<ShapeMesh ver="3" texture="sam_yane_yukitif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-202,16,-71" uv="1702,1024"/>
+							<Vertex xyz="-202,-30,-71" uv="1702,0"/>
+							<Vertex xyz="-202,-30,93" uv="-1625,0"/>
+							<Vertex xyz="-202,16,-71" uv="1702,1024"/>
+							<Vertex xyz="-202,-30,93" uv="-1625,0"/>
+							<Vertex xyz="-202,16,93" uv="-1625,1024"/>
+							<Vertex xyz="-202,16,93" uv="3699,1024"/>
+							<Vertex xyz="-202,-30,93" uv="3699,0"/>
+							<Vertex xyz="201,-30,93" uv="-3955,0"/>
+							<Vertex xyz="-202,16,93" uv="3699,1024"/>
+							<Vertex xyz="201,-30,93" uv="-3955,0"/>
+							<Vertex xyz="201,16,93" uv="-3955,1024"/>
+							<Vertex xyz="201,16,93" uv="1702,1024"/>
+							<Vertex xyz="201,-30,93" uv="1702,0"/>
+							<Vertex xyz="201,-30,-71" uv="-1625,0"/>
+							<Vertex xyz="201,16,93" uv="1702,1024"/>
+							<Vertex xyz="201,-30,-71" uv="-1625,0"/>
+							<Vertex xyz="201,16,-71" uv="-1625,1024"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+							<Triangle ijk="6,7,8"/>
+							<Triangle ijk="9,10,11"/>
+							<Triangle ijk="12,13,14"/>
+							<Triangle ijk="15,16,17"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,D"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="o313" id="A" dumped="true" fileOffset="524C"/>
+			<ShapeMesh ver="3" texture="pra_pen_snowtif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="201,16,-71" uv="806,3860"/>
+							<Vertex xyz="-202,16,-71" uv="806,-3876"/>
+							<Vertex xyz="-202,16,93" uv="-2340,-3876"/>
+							<Vertex xyz="201,16,93" uv="-2340,3860"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="0,2,3"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="waku1" id="9" dumped="true" fileOffset="51D0"/>
+			<ShapeMesh ver="3" texture="kmr_frametif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-188,0,-71" uv="-8293,2048"/>
+							<Vertex xyz="-206,-40,-78" uv="-8293,0"/>
+							<Vertex xyz="-206,-40,88" uv="-8293,0"/>
+							<Vertex xyz="-188,0,71" uv="-8293,2048"/>
+							<Vertex xyz="205,-40,88" uv="10240,0"/>
+							<Vertex xyz="187,0,71" uv="10240,2048"/>
+							<Vertex xyz="205,-40,-78" uv="10240,0"/>
+							<Vertex xyz="187,0,-71" uv="10240,2048"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="0,2,3"/>
+							<Triangle ijk="3,2,4"/>
+							<Triangle ijk="3,4,5"/>
+							<Triangle ijk="5,4,6"/>
+							<Triangle ijk="5,6,7"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,1"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="g70" id="8" dumped="true" fileOffset="50C0"/>
+			<BoundingBox empty="false" min="-188,0,-151" max="187,175,-71"/>
+			<PropertyList>
+				<Property v="60,0,1"/>
+				<Property v="60,0,4"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="waku2" id="7" dumped="true" fileOffset="5004"/>
+			<ShapeMesh ver="3" texture="mgm_floortif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-163,0,-71" uv="4848,-2064"/>
+							<Vertex xyz="-163,150,-71" uv="4848,2287"/>
+							<Vertex xyz="-188,150,-71" uv="5616,2288"/>
+							<Vertex xyz="-188,0,-71" uv="5616,-2064"/>
+							<Vertex xyz="-188,150,-71" uv="5616,2288"/>
+							<Vertex xyz="187,150,-71" uv="-5904,2288"/>
+							<Vertex xyz="187,175,-71" uv="-5904,3056"/>
+							<Vertex xyz="-188,175,-71" uv="5616,3056"/>
+							<Vertex xyz="162,150,-71" uv="-5136,2288"/>
+							<Vertex xyz="162,0,-71" uv="-5136,-2064"/>
+							<Vertex xyz="187,0,-71" uv="-5904,-2064"/>
+							<Vertex xyz="187,150,-71" uv="-5904,2288"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="0,2,3"/>
+							<Triangle ijk="4,5,6"/>
+							<Triangle ijk="4,6,7"/>
+							<Triangle ijk="8,9,10"/>
+							<Triangle ijk="8,10,11"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,1"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="waku" id="6" dumped="true" fileOffset="4B3C"/>
+			<ShapeMesh ver="3" texture="mgm_floortif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-163,150,-71" uv="4848,2287" rgba="176,176,176,255"/>
+							<Vertex xyz="-153,150,-151" uv="4592,1520" rgba="176,176,176,255"/>
+							<Vertex xyz="152,150,-151" uv="-4880,1776" rgba="176,176,176,255"/>
+							<Vertex xyz="162,150,-71" uv="-5136,2288" rgba="176,176,176,255"/>
+							<Vertex xyz="-163,0,-71" uv="4848,-2064" rgba="176,176,176,255"/>
+							<Vertex xyz="-153,5,-151" uv="4592,-2576" rgba="176,176,176,255"/>
+							<Vertex xyz="-153,150,-151" uv="4592,1520" rgba="176,176,176,255"/>
+							<Vertex xyz="-163,150,-71" uv="4848,2287" rgba="176,176,176,255"/>
+							<Vertex xyz="162,150,-71" uv="-5136,2288" rgba="176,176,176,255"/>
+							<Vertex xyz="152,150,-151" uv="-4880,1776" rgba="176,176,176,255"/>
+							<Vertex xyz="152,5,-151" uv="-4880,-2576" rgba="176,176,176,255"/>
+							<Vertex xyz="162,0,-71" uv="-5136,-2064" rgba="176,176,176,255"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="0,2,3"/>
+							<Triangle ijk="4,5,6"/>
+							<Triangle ijk="4,6,7"/>
+							<Triangle ijk="8,9,10"/>
+							<Triangle ijk="8,10,11"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,1"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="yuka2" id="5" dumped="true" fileOffset="4AB4"/>
+			<ShapeMesh ver="3" texture="pra_pen_snowtif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-178,18,-151" uv="2342,-3416" rgba="-86,-86,-86,-1"/>
+							<Vertex xyz="-188,13,-71" uv="803,-3608" rgba="-1,-1,-1,-1"/>
+							<Vertex xyz="187,13,-71" uv="803,3592" rgba="-1,-1,-1,-1"/>
+							<Vertex xyz="177,18,-151" uv="2342,3400" rgba="-86,-86,-86,-1"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="0,2,3"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,1"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="g49" id="4" dumped="true" fileOffset="4A2C"/>
+			<BoundingBox empty="true" min="-159,83,-109" max="-13,152,-106"/>
+			<PropertyList>
+				<Property v="60,0,1"/>
+				<Property v="60,0,4"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="kumo2" id="3" dumped="true" fileOffset="476C"/>
+			<BoundingBox empty="true" min="-27,63,-173" max="26,163,-170"/>
+			<TransformMatrix m="1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,163.500031,0.000000,0.000000,1.000000,-170.000000,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="g60" id="2" dumped="true" fileOffset="46D8"/>
+			<BoundingBox empty="true" min="-27,63,-173" max="26,163,-170"/>
+			<PropertyList>
+				<Property v="60,0,1"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="kumo1" id="1" dumped="true" fileOffset="45BC"/>
+			<BoundingBox empty="true" min="-33,76,-173" max="35,163,-170"/>
+			<TransformMatrix m="1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,163.500031,0.000000,0.000000,1.000000,-170.000000,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="g59" id="0" dumped="true" fileOffset="4528"/>
+			<BoundingBox empty="true" min="-33,76,-173" max="35,163,-170"/>
+			<PropertyList>
+				<Property v="60,0,1"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+	</Models>
+	<Colliders>
+		<Collider ver="0" flags="0">
+			<MapObject name="Root" id="2"/>
+			<HitObject type="ROOT"/>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="dai" id="1" dumped="true" fileOffset="64"/>
+			<HitObject type="GROUP"/>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="yuka" id="0" hidden="true" dumped="true" fileOffset="58"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="63,0,71"/>
+						<Vertex xyz="187,0,71"/>
+						<Vertex xyz="187,0,-71"/>
+						<Vertex xyz="63,0,-71"/>
+						<Vertex xyz="-57,0,71"/>
+						<Vertex xyz="-57,0,-71"/>
+						<Vertex xyz="-188,0,-71"/>
+						<Vertex xyz="-188,0,71"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="0,2,3"/>
+						<Triangle ijk="4,0,3"/>
+						<Triangle ijk="4,3,5"/>
+						<Triangle ijk="6,7,4"/>
+						<Triangle ijk="6,4,5"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+		</Collider>
+	</Colliders>
+	<Zones>
+		<Zone ver="0">
+			<MapObject name="Root" id="0"/>
+			<HitObject type="ROOT"/>
+		</Zone>
+	</Zones>
+	<Markers>
+		<Marker ver="4" type="Root">
+			<MapObject name="Root" id="10"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="105,0,0" yaw="0.000000">
+			<MapObject name="Home Position 10" id="F"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="135,130,25" yaw="0.000000">
+			<MapObject name="Home Position F" id="E"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="95,125,10" yaw="0.000000">
+			<MapObject name="Home Position E" id="D"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="55,120,-5" yaw="0.000000">
+			<MapObject name="Home Position D" id="C"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="15,125,-20" yaw="0.000000">
+			<MapObject name="Home Position C" id="B"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="135,90,25" yaw="0.000000">
+			<MapObject name="Home Position B" id="A"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="95,85,10" yaw="0.000000">
+			<MapObject name="Home Position A" id="9"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="55,80,-5" yaw="0.000000">
+			<MapObject name="Home Position 9" id="8"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="15,85,-20" yaw="0.000000">
+			<MapObject name="Home Position 8" id="7"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="130,55,25" yaw="0.000000">
+			<MapObject name="Home Position 7" id="6"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="90,50,10" yaw="0.000000">
+			<MapObject name="Home Position 6" id="5"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="50,45,-5" yaw="0.000000">
+			<MapObject name="Home Position 5" id="4"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="10,50,-20" yaw="0.000000">
+			<MapObject name="Home Position 4" id="3"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="125,0,25" yaw="0.000000">
+			<MapObject name="Home Position 3" id="2"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="85,0,10" yaw="0.000000">
+			<MapObject name="Home Position 2" id="1"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="45,0,-5" yaw="0.000000">
+			<MapObject name="Home Position 1" id="0"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="5,0,-20" yaw="0.000000">
+			<MapObject name="Home Position 0" id="FFFFFFFF"/>
+		</Marker>
+	</Markers>
+	<ScriptData>
+		<TexPanners>
+			<TexPanner id="0" generate="false"/>
+			<TexPanner id="1" generate="false"/>
+			<TexPanner id="2" generate="false"/>
+			<TexPanner id="3" generate="false"/>
+			<TexPanner id="4" generate="false"/>
+			<TexPanner id="5" generate="false"/>
+			<TexPanner id="6" generate="false"/>
+			<TexPanner id="7" generate="false"/>
+			<TexPanner id="8" generate="false"/>
+			<TexPanner id="9" generate="false"/>
+			<TexPanner id="A" generate="false"/>
+			<TexPanner id="B" generate="false"/>
+			<TexPanner id="C" generate="false"/>
+			<TexPanner id="D" generate="false"/>
+			<TexPanner id="E" generate="false"/>
+			<TexPanner id="F" generate="false"/>
+		</TexPanners>
+		<Generators>
+		</Generators>
+		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>
+		<Fog world="0,10,10,10,255,950,1000" entity="0,10,10,10,255,950,1000"/>
+		<Options location="1F" hasMusic="false" hasSounds="false" sounds="1" hasShading="false" shadingName="None"/>
+		<Override tex="true"/>
+	</ScriptData>
+</Map>
