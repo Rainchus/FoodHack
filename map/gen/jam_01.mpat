@@ -1,0 +1,112 @@
+% Auto-generated script for jam_01
+
+#new:Header $Header
+{
+	[MainScript] $Script_Main
+	[Background] 00000000
+	[EntryList] $EntryList
+	[EntryCount] 3
+}
+
+#new:EntryList $EntryList
+{
+	~Vec4f:entry_n
+	~Vec4f:entry_e
+	~Vec4f:EntryFromCave
+}
+
+#new:Script_Main $Script_Main
+{
+	Set   *GB_WorldLocation  .Location:GoombaRoad
+	Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+	Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+	Call  SetCamEnabled      ( .Cam:Default .True
+	Call  SetCamLeadPlayer   ( .Cam:Default .False )
+	Exec  $Script_SetupMusic
+	Call  $Function_SetupFog
+	Exec  $Script_EnterMap
+	Return
+	End
+}
+
+#new:Script $Script_SetupMusic
+{
+	Call  SetMusicTrack ( 00000000 .Song:PeachSneaking 00000000 00000008 )
+	Call  ClearAmbientSounds ( 250` )
+	Return
+	End
+}
+
+#new:Function $Function_SetupFog
+{
+	PUSH RA
+	JAL       8011BB50
+	NOP
+	ADDIU     A0, R0, 384
+	JAL       8011BB74
+	ADDIU     A1, R0, 3E8
+	ADDIU     A0, R0, 0
+	ADDIU     A1, R0, 0
+	ADDIU     A2, R0, 0
+	JAL       8011BB88
+	ADDIU     A3, R0, FF
+	JAL       80122FEC
+	NOP
+	ADDIU     A0, R0, 384
+	JAL       80123010
+	ADDIU     A1, R0, 3E8
+	ADDIU     A0, R0, 0
+	ADDIU     A1, R0, 0
+	ADDIU     A2, R0, 0
+	JAL       80123028
+	ADDIU     A3, R0, FF
+	ADDIU     V0, R0, 2
+	JPOP RA
+}
+
+#new:Script $Script_EnterMap
+{
+	Call  GetEntryID    ( *Var[0] )
+	Switch  *Var[0]
+		CaseOR  ==  ~Entry:entry_e
+		CaseOR  ==  ~Entry:entry_n
+			Set   *Var[0] $Script_CreateExitTriggers
+			Exec  EnterWalk
+		EndCaseGroup
+		Default
+			Exec  $Script_CreateExitTriggers
+	EndSwitch
+	Return
+	End
+}
+
+#new:Script $Script_Exit_entry_n
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_n )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_02" ~Entry:jam_02:entry_e )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_Exit_entry_e
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_e )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_00" ~Entry:jam_00:Entry1 )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_CreateExitTriggers
+{
+	Bind  $Script_Exit_entry_n .Trigger:FloorAbove ~Collider:ExitToCakeUpper 00000001 00000000
+	Bind  $Script_Exit_entry_e .Trigger:FloorAbove ~Collider:CaveExit 00000001 00000000
+	Return
+	End
+}
+
