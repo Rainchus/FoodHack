@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_01" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="103.082474,44.423054,-108.609329" pitch="22.319998" yaw="39.999989"/>
+		<Camera pos="-99.758080,76.846207,75.943573" pitch="3.934289" yaw="53.200924"/>
 		<Camera pos="537.927124,65536.000000,-397.479309"/>
 		<Camera pos="65536.000000,11.425783,-135.848480"/>
 		<Camera pos="175.310715,15.220403,65536.000000"/>
@@ -1128,7 +1128,7 @@
 				</DisplayList>
 			</ShapeMesh>
 			<PropertyList>
-				<Property v="5C,0,16"/>
+				<Property v="5C,0,1A"/>
 				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
@@ -1250,7 +1250,7 @@
 				</DisplayList>
 			</ShapeMesh>
 			<PropertyList>
-				<Property v="5C,0,11"/>
+				<Property v="5C,0,1"/>
 				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
@@ -1286,7 +1286,7 @@
 				</DisplayList>
 			</ShapeMesh>
 			<PropertyList>
-				<Property v="5C,0,11"/>
+				<Property v="5C,0,1"/>
 				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
@@ -1360,7 +1360,7 @@
 				</DisplayList>
 			</ShapeMesh>
 			<PropertyList>
-				<Property v="5C,0,16"/>
+				<Property v="5C,0,1A"/>
 				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
@@ -2286,7 +2286,7 @@
 			<HitObject type="ROOT"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="E"/>
+			<MapObject name="MeshCollider" id="E" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2310,7 +2310,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="EntryToFlourCave" id="D"/>
+			<MapObject name="EntryToFlourCave" id="D" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2326,7 +2326,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="C"/>
+			<MapObject name="MeshCollider" id="C" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2366,7 +2366,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="B"/>
+			<MapObject name="MeshCollider" id="B" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2402,7 +2402,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="ExitToCakeUpper" id="A"/>
+			<MapObject name="ExitToCakeUpper" id="A" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2430,7 +2430,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="9"/>
+			<MapObject name="MeshCollider" id="9" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2538,7 +2538,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="8"/>
+			<MapObject name="MeshCollider" id="8" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3474,7 +3474,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="7"/>
+			<MapObject name="MeshCollider" id="7" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3530,7 +3530,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="6"/>
+			<MapObject name="MeshCollider" id="6" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3638,7 +3638,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="5"/>
+			<MapObject name="MeshCollider" id="5" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -4162,7 +4162,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="CaveExit" id="4"/>
+			<MapObject name="CaveExit" id="4" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -4178,7 +4178,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="CylinderCollider" id="3"/>
+			<MapObject name="CylinderCollider" id="3" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">

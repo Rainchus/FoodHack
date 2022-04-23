@@ -30,7 +30,7 @@
 
 #new:Script $Script_SetupMusic
 {
-	Call  FadeOutMusic  ( 00000000 500` ) % usually between 500-1000
+	Call  SetMusicTrack ( 00000000 .Song:PeachSneaking 00000000 00000008 )
 	Call  ClearAmbientSounds ( 250` )
 	Return
 	End
@@ -41,7 +41,7 @@
 	PUSH RA
 	JAL       8011BB50
 	NOP
-	ADDIU     A0, R0, 2EE
+	ADDIU     A0, R0, 320
 	JAL       8011BB74
 	ADDIU     A1, R0, 3E8
 	ADDIU     A0, R0, 0
@@ -51,7 +51,7 @@
 	ADDIU     A3, R0, FF
 	JAL       80122FEC
 	NOP
-	ADDIU     A0, R0, 2EE
+	ADDIU     A0, R0, 320
 	JAL       80123010
 	ADDIU     A1, R0, 3E8
 	ADDIU     A0, R0, 0
