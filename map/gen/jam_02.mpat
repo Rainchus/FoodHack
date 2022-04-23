@@ -5,12 +5,13 @@
 	[MainScript] $Script_Main
 	[Background] 80200000
 	[EntryList] $EntryList
-	[EntryCount] 1
+	[EntryCount] 2
 }
 
 #new:EntryList $EntryList
 {
 	~Vec4f:entry_e
+	~Vec4f:exit_fall
 }
 
 #new:Script $Script_ScriptedSpring_FollowCam
@@ -84,6 +85,17 @@
 	End
 }
 
+#new:Script $Script_Exit_exit_fall
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:exit_fall )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_00" ~Entry:jam_00:entry_fall )
+	Wait  100`
+	Return
+	End
+}
+
 #new:Script $Script_Exit_entry_e
 {
 	SetGroup 0000001B
@@ -97,6 +109,7 @@
 
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_exit_fall .Trigger:FloorAbove ~Collider:Fall 00000001 00000000
 	Bind  $Script_Exit_entry_e .Trigger:FloorAbove ~Collider:EntryToCave 00000001 00000000
 	Return
 	End

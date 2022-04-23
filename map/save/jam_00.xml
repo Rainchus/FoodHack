@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_00" author="unnamed" background="sra_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-178.090347,124.036812,1386.567749" pitch="10.000000" yaw="0.000000"/>
+		<Camera pos="1006.150513,569.909058,726.222412" pitch="13.999999" yaw="-54.178886"/>
 		<Camera pos="-242.276291,65536.000000,876.351135"/>
 		<Camera pos="65536.000000,-28.179863,798.201294"/>
 		<Camera pos="-279.373749,36.053917,65536.000000"/>
@@ -118,7 +118,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="9">
+		<Node name="Root" id="A">
 			<Node name="Entrances" id="0">
 				<Node name="entry_e" id="FFFFFFFF"/>
 			</Node>
@@ -130,6 +130,7 @@
 			<Node name="ShyGuy3" id="6"/>
 			<Node name="ShyGuy4" id="7"/>
 			<Node name="PipeEntry" id="8"/>
+			<Node name="entry_fall" id="9"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -7364,7 +7365,10 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="9"/>
+			<MapObject name="Root" id="A"/>
+		</Marker>
+		<Marker ver="4" type="Entry" pos="500,548,365" yaw="0.000000">
+			<MapObject name="entry_fall" id="9"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-252,30,948" yaw="180.000000">
 			<MapObject name="PipeEntry" id="8"/>
@@ -7426,6 +7430,7 @@
 			<TexPanner id="F" generate="false"/>
 		</TexPanners>
 		<Generators>
+			<Entrance type="Teleport" hasCallback="false" entry="entry_fall"/>
 			<Entrance type="Walk" hasCallback="false" entry="Entry1"/>
 			<Entrance type="Walk" hasCallback="false" entry="entry_e"/>
 			<Exit type="Walk" hasCallback="false" entry="Entry1" destMap="jam_01" destEntry="entry_e" trigger="EntryToCave"/>

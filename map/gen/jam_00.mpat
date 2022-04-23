@@ -5,7 +5,7 @@
 	[MainScript] $Script_Main
 	[Background] 80200000
 	[EntryList] $EntryList
-	[EntryCount] 3
+	[EntryCount] 4
 }
 
 #new:EntryList $EntryList
@@ -13,6 +13,7 @@
 	~Vec4f:entry_e
 	~Vec4f:Entry1
 	~Vec4f:PipeEntry
+	~Vec4f:entry_fall
 }
 
 #new:Script $Script_ScriptedSpring_FollowCam
