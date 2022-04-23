@@ -1,0 +1,69 @@
+@ $Script_802A2ABC
+{
+    0:  ExecWait  $Script_802A21D4
+    C:  Call  PlayerTestEnemy   ( *Var0 ~Flags:DamageType:Jump 00000000 00000000 00000001 00000000 )
+   30:  If  *Var0  ==  .HitResult:Miss % 6
+   40:  	ExecWait  $Script_802A203C
+   4C:  	Return
+   54:  EndIf
+   5C:  Wait  1`
+   68:  Call  DidActionSucceed  ( *Var0 )
+   78:  Switch  *Var0
+   84:  	Case  >  .False
+   90:  		Call  SetActorSounds    ( .Actor:Player .ActorSound:Hurt 0000015B 00000000 )
+   AC:  		Call  PlayerDamageEnemy ( *Var0 ~Flags:DamageType:Jump 00000000 00000000 00000001 00000050 )
+   D0:  	Default
+   D8:  		Call  SetActorSounds    ( .Actor:Player .ActorSound:Hurt 0000015B 00000000 )
+   F4:  		Call  PlayerDamageEnemy ( *Var0 ~Flags:DamageType:Jump 00000000 00000000 00000001 00000030 )
+  118:  EndSwitch
+  120:  Switch  *Var0
+  12C:  	CaseOR  ==  .HitResult:Hit % 0
+  138:  	CaseOR  ==  .HitResult:QuakeImmune % 2
+  144:  		ExecWait  $Script_802A1A00
+  150:  		Return
+  158:  	EndCaseGroup
+  160:  	CaseOR  ==  00000001 % 1
+  16C:  	CaseOR  ==  00000003 % 3
+  178:  	EndCaseGroup
+  180:  EndSwitch
+  188:  Call  80269524  ( *VarF )
+  198:  ChildThread
+  1A0:  	Call  UseBattleCamPreset    ( 0000001B )
+  1B0:  	Wait  5`
+  1BC:  	Call  SetGoalToTarget       ( .Actor:Player )
+  1CC:  	Call  UseBattleCamPreset    ( 00000023 )
+  1DC:  EndChildThread
+  1E4:  Call  CloseActionCommandInfo ( )
+  1F0:  Call  LoadActionCommand ( .ActionCommand:Jump )
+  200:  Call  802A9000 ( )
+  20C:  Call  802694A4  ( 00000000 )
+  21C:  Call  802A9120  ( 00000025 00000003 )
+  230:  Call  SetGoalToTarget   ( .Actor:Player )
+  240:  Call  EnablePlayerBlur  ( 00000001 )
+  250:  Call  SetJumpAnimations ( .Actor:Player 00000000 00010007 0001000A 0001000B )
+  270:  Call  802752AC  ( 00000014 00000004 )
+  284:  Wait  7`
+  290:  Call  802752AC  ( 00000003 00000005 )
+  2A4:  Call  EnablePlayerBlur  ( FFFFFFFF )
+  2B4:  Wait  1`
+  2C0:  Call  SetActorSounds    ( .Actor:Player .ActorSound:Hurt 0000015B 00000000 )
+  2DC:  Call  PlayerDamageEnemy ( *Var0 ~Flags:DamageType:Jump 00000000 00000000 00000002 000000E0 )
+  300:  Call  80269550  ( *VarF )
+  310:  ExecWait  $Script_802A1628
+  31C:  Return
+  324:  End
+}
+
+@ $Script_UseMove0
+{
+    0:  Call  802694A4  ( 00000001 )
+   10:  Call  GetBattleFlags2   ( *Var0 )
+   20:  If  *Var0  &  00000200
+   30:  	ExecWait  $Script_802A4018
+   3C:  	Return
+   44:  EndIf
+   4C:  Call  GetMenuSelection  ( *Var0 *Var1 *Var2 )
+   94:  		ExecWait  $Script_802A2ABC
+   C0:  Return
+   C8:  End
+}
