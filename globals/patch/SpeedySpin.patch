@@ -1,0 +1,8 @@
+@Function E25E70 {
+    %original:
+    %JAL ~Func:is_ability_active
+    %ORI a0, r0, 0x0027
+
+    ORI v0, r0, 1 %speedy always active
+    NOP
+}

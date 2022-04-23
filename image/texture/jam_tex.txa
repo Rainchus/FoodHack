@@ -1,0 +1,167 @@
+tex: kpa_akari02tif
+{
+	img: kpa_akari02tif.png
+	{
+		format: I-4
+		hwrap: repeat
+		vwrap: repeat
+    }
+	filter: yes
+	combine: 8
+}
+
+tex: kpa_kup_kumo1tif
+{
+	img: kpa_kup_kumo1tif.png
+	{
+		format: IA-16
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: kzn_kemuritif
+{
+	img: kzn_kemuritif.png
+	{
+		format: I-4
+		hwrap: repeat
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: kzn_kemuritif_AUX
+{
+	img: kzn_kemuritif_AUX.png
+	{
+		format: I-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: mgm_floortif
+{
+	img: mgm_floortif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: mgm_star_floortif
+{
+	img: mgm_star_floortif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: pra_pen_snow2tif
+{
+	img: pra_pen_snow2tif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: pra_pen_snowtif
+{
+	img: pra_pen_snowtif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: sam_yane_yukitif
+{
+	img: sam_yane_yukitif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: kmr_frametif
+{
+	img: kmr_frametif.png
+	{
+		format: CI-4
+		hwrap: mirror
+		vwrap: mirror
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: kmr_berosaidetif
+{
+	img: kmr_berosaidetif.png
+	{
+		format: CI-4
+		hwrap: mirror
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: arn_kabe10tif
+{
+	img: arn_kabe10tif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: jam_strawberry
+{
+	img: jam_strawberry.png
+	{
+		format: CI-4
+		hwrap: mirror
+		vwrap: mirror
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: jan_t_dokankun3tif
+{
+	img: jan_t_dokankun3tif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}

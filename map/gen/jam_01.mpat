@@ -68,6 +68,7 @@
 {
 	Call  GetEntryID    ( *Var[0] )
 	Switch  *Var[0]
+		CaseOR  ==  ~Entry:EntryFromCave
 		CaseOR  ==  ~Entry:entry_e
 		CaseOR  ==  ~Entry:entry_n
 			Set   *Var[0] $Script_CreateExitTriggers
@@ -76,6 +77,17 @@
 		Default
 			Exec  $Script_CreateExitTriggers
 	EndSwitch
+	Return
+	End
+}
+
+#new:Script $Script_Exit_EntryFromCave
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:EntryFromCave )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_03" ~Entry:jam_03:entry_w )
+	Wait  100`
 	Return
 	End
 }
@@ -104,6 +116,7 @@
 
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_EntryFromCave .Trigger:FloorAbove ~Collider:EntryToFlourCave 00000001 00000000
 	Bind  $Script_Exit_entry_n .Trigger:FloorAbove ~Collider:ExitToCakeUpper 00000001 00000000
 	Bind  $Script_Exit_entry_e .Trigger:FloorAbove ~Collider:CaveExit 00000001 00000000
 	Return

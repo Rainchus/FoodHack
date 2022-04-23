@@ -1,0 +1,12 @@
+@Function:Battle 80253C30 {
+    ORI v0, r0, 1
+}
+
+@Function:Global 802E6348 {
+    ORI v0, r0, 1
+}
+
+@Function E22A80{
+    NOP
+    NOP
+}
