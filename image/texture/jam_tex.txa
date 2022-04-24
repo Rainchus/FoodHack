@@ -225,3 +225,15 @@ tex: kmr_fencetif
 	filter: yes
 	combine: 8
 }
+
+tex: tst_kirakiratif
+{
+	img: tst_kirakiratif_AUX.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: no
+	combine: 8
+}

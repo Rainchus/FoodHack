@@ -1,0 +1,99 @@
+#define .NpcID:GourmetGuy            00
+
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Exec  $Script_MakeEntities
+	Call  MakeNpcs  ( .True $NpcGroupList_8025136C )
+    Exec  $Script_SetupMusic
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+#new:NpcGroupList $NpcGroupList_8025136C
+{
+	00000001 $NpcGroup_8024E864 00000000
+	00000000 00000000 00000000
+}
+
+#new:NpcGroup $NpcGroup_8024E864
+{
+	.NpcID:GourmetGuy   $NpcSettings_80247CE4 ~Vec3f:GourmetGuy % 100 0 -256
+	00002809 $Script_Init_8024D134 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:GourmetGuy
+	~AnimationTable:GourmetGuy % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+}
+
+#new:Script $Script_NpcAI_80247CC4
+{
+    0:  Call  DoBasicAI ( $AISettings_80247C94 )
+   10:  Return
+   18:  End
+}
+
+#new:AISettings $AISettings_80247C94
+{
+    1.5 % move speed
+    60` % move time
+    30` % wait time
+    0.0 % alert radius
+    0.0
+    -1`
+    0.0 % chase speed
+    0`
+    0`
+    0.0 % chase radius
+    0.0
+    1`
+}
+
+#new:Script $Script_Init_8024D134
+{
+    0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_8024CDAC )
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_8024CE80 )
+   28:  Return
+   30:  End
+}
+
+#new:Script $Script_Idle_8024CDAC
+{
+	Call SetNpcAnimation ( .NpcID:GourmetGuy 004E0002 )
+   C4:  Return
+   CC:  End
+}
+
+#new:Script $Script_Interact_8024CE80
+{
+	Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
+	Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $GourmetGuyString )
+	Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+	Return
+	End
+}
+
+#new:String $GourmetGuyString
+{
+	[Style Right]
+	Hello Mario![br]
+	You happy on this cake here?[br]
+	I wished for it after stealing the[br]
+	Star Rod from Star Haven![br]
+	[Wait][Next]
+	It's the PERFECT cake.[br]
+	It is after my image of a perfect[br]
+	cake and thus perfect to me anyways.[br]
+	[Wait][Next]
+	Because we just recently[br]
+	arrived here and are living[br]
+	on edge, we can't sell[br]
+	check or claim anything for you.[br]
+	[Wait][Next]
+	Sorry, Mario!
+	[Wait][End]
+}
