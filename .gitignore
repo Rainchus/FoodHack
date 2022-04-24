@@ -20,8 +20,7 @@ mod.cfg
 !/map/build
 !/image/texture/jam_tex/*
 !/image/texture/jam_tex.txa
-!/FoodHack/sprite/npc/src/4E/*
-!/FoodHack/sprite/npc/src/2B/*
-!/FoodHack/sprite/npc/src/3B/*
-map/build/index.bin
+!/sprite/npc/src/4E/*
+!/sprite/npc/src/2B/*
+!/sprite/npc/src/3B/*
 map/build/index.bin

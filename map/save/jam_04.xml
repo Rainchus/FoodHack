@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_04" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="115.194618,160.320129,575.699585" pitch="34.479988" yaw="2.719916"/>
-		<Camera pos="-405.966980,65536.000000,-268.700256"/>
-		<Camera pos="65536.000000,-1.417809,288.745697"/>
+		<Camera pos="-42.344566,109.676659,806.453064" pitch="13.840000" yaw="12.640003"/>
+		<Camera pos="493.227203,65536.000000,508.236725"/>
+		<Camera pos="65536.000000,-13.266782,267.660004"/>
 		<Camera pos="125.000000,0.000000,65536.000000"/>
 	</Editor>
 	<ModelTree>
-		<Node name="Root" id="4C">
+		<Node name="Root" id="4F">
 			<Node name="Stage" id="0"/>
 			<Node name="Exit_North" id="1"/>
 			<Node name="Exit_East" id="2"/>
@@ -86,6 +86,9 @@
 			<Node name="m_b" id="49"/>
 			<Node name="o195" id="4A"/>
 			<Node name="PipeModel" id="4B"/>
+			<Node name="Planar GridModel" id="4C"/>
+			<Node name="Planar GridModel" id="4D"/>
+			<Node name="Planar GridModel" id="4E"/>
 		</Node>
 	</ModelTree>
 	<ColliderTree>
@@ -132,9 +135,91 @@
 	</LightSets>
 	<Models>
 		<Model ver="2" type="ROOT" lightset="0">
-			<MapObject name="Root" id="4C"/>
+			<MapObject name="Root" id="4F"/>
 			<BoundingBox empty="false" min="-737,-500,-937" max="1379,363,500"/>
 			<PropertyList>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="4E"/>
+			<ShapeMesh ver="3" texture="">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-165,-200,500" uv="-512,512"/>
+							<Vertex xyz="500,0,500" uv="512,-512"/>
+							<Vertex xyz="-165,0,500" uv="-512,-512"/>
+							<Vertex xyz="500,0,500" uv="512,-512"/>
+							<Vertex xyz="-165,-200,500" uv="-512,512"/>
+							<Vertex xyz="500,-200,500" uv="512,512"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,1"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="4D"/>
+			<ShapeMesh ver="3" texture="">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-500,-200,164" uv="-512,512"/>
+							<Vertex xyz="-417,0,415" uv="512,-512"/>
+							<Vertex xyz="-500,0,164" uv="-512,-512"/>
+							<Vertex xyz="-417,0,415" uv="512,-512"/>
+							<Vertex xyz="-500,-200,164" uv="-512,512"/>
+							<Vertex xyz="-417,-200,415" uv="512,512"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,1"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="4C"/>
+			<ShapeMesh ver="3" texture="">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-417,-200,415" uv="-512,512"/>
+							<Vertex xyz="-165,0,500" uv="512,-512"/>
+							<Vertex xyz="-417,0,415" uv="-512,-512"/>
+							<Vertex xyz="-165,-200,500" uv="512,512"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="1,0,3"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,1"/>
+				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
