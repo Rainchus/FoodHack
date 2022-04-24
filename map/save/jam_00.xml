@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_00" author="unnamed" background="sra_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="1016.448303,569.909058,711.737732" pitch="13.999999" yaw="-54.999508"/>
+		<Camera pos="-162.376129,159.979523,1080.527100" pitch="33.519993" yaw="352.040833"/>
 		<Camera pos="556.729492,65536.000000,374.171051"/>
 		<Camera pos="65536.000000,-141.561951,-564.893311"/>
 		<Camera pos="-279.373749,36.053917,65536.000000"/>
@@ -7450,9 +7450,11 @@
 			<TexPanner id="F" generate="false"/>
 		</TexPanners>
 		<Generators>
+			<Entrance type="VerticalPipe" hasCallback="false" entry="PipeEntry"/>
 			<Entrance type="Teleport" hasCallback="false" entry="entry_fall"/>
 			<Entrance type="Walk" hasCallback="false" entry="Entry1"/>
 			<Entrance type="Walk" hasCallback="false" entry="entry_e"/>
+			<Exit type="VerticalPipe" hasCallback="false" entry="PipeEntry" destMap="jam_04" destEntry="PipeEntry" trigger="PipeCollider"/>
 			<Exit type="Walk" hasCallback="false" entry="Entry1" destMap="jam_01" destEntry="entry_e" trigger="EntryToCave"/>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>

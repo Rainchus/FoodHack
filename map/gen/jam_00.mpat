@@ -550,6 +550,25 @@
 	End
 }
 
+#new:Script $Script_Exit_PipeEntry
+{
+	SetGroup 0000001B
+	Set   *Var[A] ~Entry:PipeEntry
+	Set   *Var[B] ~Collider:PipeCollider
+	Set   *Var[C] $Script_GotoMap_Exit_PipeEntry
+	ExecWait  $Script_ExitVerticalPipe
+	Return
+	End
+}
+
+#new:Script $Script_GotoMap_Exit_PipeEntry
+{
+	Call  GotoMap   ( "jam_04" ~Entry:jam_04:PipeEntry )
+	Wait  100`
+	Return
+	End
+}
+
 #new:Script $Script_Exit_Entry1
 {
 	SetGroup 0000001B
@@ -563,6 +582,7 @@
 
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_PipeEntry .Trigger:FloorTouch ~Collider:PipeCollider 00000001 00000000
 	Bind  $Script_Exit_Entry1 .Trigger:FloorAbove ~Collider:EntryToCave 00000001 00000000
 	Return
 	End

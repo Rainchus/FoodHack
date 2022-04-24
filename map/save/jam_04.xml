@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_04" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="212.026260,96.732475,563.971313" pitch="20.719999" yaw="354.399963"/>
-		<Camera pos="203.915833,65536.000000,414.112488"/>
+		<Camera pos="115.194618,160.320129,575.699585" pitch="34.479988" yaw="2.719916"/>
+		<Camera pos="-405.966980,65536.000000,-268.700256"/>
 		<Camera pos="65536.000000,-1.417809,288.745697"/>
 		<Camera pos="125.000000,0.000000,65536.000000"/>
 	</Editor>
@@ -6249,7 +6249,7 @@
 			<HitObject type="ROOT"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="PipeCollider" id="C"/>
+			<MapObject name="PipeCollider" id="C" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6373,7 +6373,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="B"/>
+			<MapObject name="MeshCollider" id="B" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6713,7 +6713,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono6" id="A"/>
+			<MapObject name="mono6" id="A" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6733,7 +6733,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono5" id="9"/>
+			<MapObject name="mono5" id="9" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6753,7 +6753,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono4" id="8"/>
+			<MapObject name="mono4" id="8" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6773,7 +6773,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono3" id="7"/>
+			<MapObject name="mono3" id="7" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6793,7 +6793,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono2" id="6"/>
+			<MapObject name="mono2" id="6" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6813,7 +6813,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono1" id="5"/>
+			<MapObject name="mono1" id="5" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6841,7 +6841,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_w" id="2"/>
+			<MapObject name="exit_trigger_w" id="2" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6859,15 +6859,15 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_s" id="1"/>
+			<MapObject name="exit_trigger_s" id="1" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
 					<VertexTable>
-						<Vertex xyz="-389,0,-274"/>
-						<Vertex xyz="-318,0,-344"/>
-						<Vertex xyz="-388,0,-415"/>
-						<Vertex xyz="-459,0,-345"/>
+						<Vertex xyz="-407,0,-256"/>
+						<Vertex xyz="-336,0,-327"/>
+						<Vertex xyz="-406,0,-398"/>
+						<Vertex xyz="-477,0,-327"/>
 					</VertexTable>
 					<TriangleList>
 						<Triangle ijk="0,1,2"/>
@@ -6998,8 +6998,10 @@
 			<TexPanner id="F" generate="false"/>
 		</TexPanners>
 		<Generators>
-			<Entrance type="VerticalPipe" hasCallback="false" entry="PipeEntry"/>
 			<Entrance type="Walk" hasCallback="false" entry="entry_w"/>
+			<Entrance type="Walk" hasCallback="false" entry="entry_s"/>
+			<Entrance type="VerticalPipe" hasCallback="false" entry="PipeEntry"/>
+			<Exit type="VerticalPipe" hasCallback="false" entry="PipeEntry" destMap="jam_00" destEntry="PipeEntry" trigger="PipeCollider"/>
 			<Exit type="Walk" hasCallback="false" entry="entry_w" destMap="jam_03" destEntry="entry_e" trigger="exit_trigger_w"/>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>
