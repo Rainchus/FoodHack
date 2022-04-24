@@ -30,6 +30,13 @@
 	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
 }
 
+
+#new:NpcSettings $NpcSettings_80247CE4
+{
+	00000000 0044003C 00000000 00000000 00000000 00000000 00000000 00000000
+	00000000 00000000 00630000
+}
+
 #new:Script $Script_NpcAI_80247CC4
 {
     0:  Call  DoBasicAI ( $AISettings_80247C94 )
