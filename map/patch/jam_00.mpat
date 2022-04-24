@@ -170,6 +170,7 @@ End
     Return
     End
 }
+
 @ $Script_CreateExitTriggers {
     Bind  $Script_Exit_Entry1 .Trigger:FloorAbove ~Collider:EntryToCave 00000001 00000000
 	Bind  $Script_VertPipeTest .Trigger:FloorTouch ~Collider:PipeCollider 00000001 00000000
@@ -190,7 +191,7 @@ End
 
 #new:Script $Script_GotoMap_VertPipeTest
 {
-	Call  GotoMap   ( "jam_00" ~Entry:entry_e )
+	Call  GotoMap   ( "jam_04" ~Entry:PipeEntry )
 	Wait  100`
 	Return
 	End

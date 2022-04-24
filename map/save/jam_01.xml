@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_01" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-99.758080,76.846207,75.943573" pitch="3.934289" yaw="53.200924"/>
+		<Camera pos="51.582748,124.036812,361.295288" pitch="10.000000" yaw="0.000000"/>
 		<Camera pos="537.927124,65536.000000,-397.479309"/>
 		<Camera pos="65536.000000,11.425783,-135.848480"/>
 		<Camera pos="175.310715,15.220403,65536.000000"/>
@@ -4936,10 +4936,10 @@
 			<MapObject name="Root" id="4"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="164,0,-126" yaw="-135.000000">
-			<MapObject name="EntryFromCave" id="3"/>
+			<MapObject name="EntryFromCave" id="3" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="164,0,-126" yaw="-135.000000">
-			<MapObject name="Marker" id="2"/>
+			<MapObject name="Marker" id="2" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="1" animations="1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
@@ -4947,10 +4947,10 @@
 			<MapObject name="Entrances" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="516,0,12" yaw="255.000000">
-			<MapObject name="entry_e" id="0"/>
+			<MapObject name="entry_e" id="0" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="0,320,-858" yaw="180.000000">
-			<MapObject name="entry_n" id="FFFFFFFF"/>
+			<MapObject name="entry_n" id="FFFFFFFF" hidden="true"/>
 		</Marker>
 	</Markers>
 	<ScriptData>
@@ -4981,7 +4981,7 @@
 			<Exit type="Walk" hasCallback="false" entry="entry_e" destMap="jam_00" destEntry="Entry1" trigger="CaveExit"/>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>
-		<Fog world="1,0,0,0,255,900,1000" entity="1,0,0,0,255,900,1000"/>
+		<Fog world="1,0,0,0,255,800,1200" entity="1,0,0,0,255,800,1200"/>
 		<Options location="1F" hasMusic="true" song="75" hasSounds="false" sounds="1" hasShading="false" shadingName="None"/>
 		<Override tex="true"/>
 	</ScriptData>

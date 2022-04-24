@@ -177,3 +177,51 @@ tex: sam_s_doa1tif
 	filter: yes
 	combine: 8
 }
+
+tex: sbk_ramptif
+{
+	img: sbk_ramptif.png
+	{
+		format: CI-4
+		hwrap: mirror
+		vwrap: mirror
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: mac_mac_doortif
+{
+	img: mac_mac_doortif.png
+	{
+		format: CI-4
+		hwrap: mirror
+		vwrap: mirror
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: kmr_in_2tif
+{
+	img: kmr_in_2tif.png
+	{
+		format: CI-4
+		hwrap: mirror
+		vwrap: mirror
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: kmr_fencetif
+{
+	img: kmr_fencetif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}

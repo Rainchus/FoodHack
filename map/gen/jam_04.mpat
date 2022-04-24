@@ -1,46 +1,18 @@
-% Auto-generated script for jam_00
+% Auto-generated script for jam_04
 
 #new:Header $Header
 {
 	[MainScript] $Script_Main
-	[Background] 80200000
+	[Background] 00000000
 	[EntryList] $EntryList
-	[EntryCount] 4
+	[EntryCount] 3
 }
 
 #new:EntryList $EntryList
 {
-	~Vec4f:entry_e
-	~Vec4f:Entry1
+	~Vec4f:entry_s
+	~Vec4f:entry_w
 	~Vec4f:PipeEntry
-	~Vec4f:entry_fall
-}
-
-#new:Script $Script_ScriptedSpring_FollowCam
-{
-	Loop
-		Call  GetPlayerPos  ( *Var[0] *Var[1] *Var[2] )
-		Call  SetCamTarget  ( .Cam:Default *Var[0] *Var[1] *Var[2] )
-		Wait  1`
-	EndLoop
-	Return
-	End
-}
-#new:Script $Script_ScriptedSpring_Spring
-{
-	Call  DisablePlayerInput    ( .True )
-	Call  DisablePlayerPhysics  ( .True )
-	Call  SetPlayerActionState  ( .ActionState:Launch )
-	Wait  1`
-	Exec  $Script_ScriptedSpring_FollowCam *Var[A]
-	Call  SetPlayerJumpscale    ( *Fixed[0.7] )
-	Call  PlayerJump            ( ~Vec3d:SpringMarker 35` )
-	Kill  *Var[A]
-	Call  SetPlayerActionState  ( .ActionState:Idle )
-	Call  DisablePlayerPhysics  ( .False )
-	Call  DisablePlayerInput    ( .False )
-	Return
-	End
 }
 
 #new:Function $Function_Pipe_SetAnimFlag
@@ -510,6 +482,7 @@
 	Call  SetCamLeadPlayer   ( .Cam:Default .False )
 	Exec  $Script_MakeEntities
 	Exec  $Script_SetupMusic
+	Call  $Function_SetupFog
 	Exec  $Script_EnterMap
 	Return
 	End
@@ -517,32 +490,63 @@
 
 #new:Script $Script_MakeEntities
 {
-	Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring 80000000 )
-	Call  AssignScript    ( $Script_ScriptedSpring_Spring )
+	Call  MakeEntity    ( .Entity:SavePoint ~Vec4d:SaveBlock 80000000 )
+	Call  MakeEntity    ( .Entity:HealingBlock ~Vec4d:HealBlock 80000000 )
 	Return
 	End
 }
 
 #new:Script $Script_SetupMusic
 {
-	Call  SetMusicTrack ( 00000000 .Song:FlowerFieldsSunny 00000000 00000008 )
+	Call  SetMusicTrack ( 00000000 .Song:PenguinMystery 00000000 00000008 )
 	Call  ClearAmbientSounds ( 250` )
 	Return
 	End
 }
 
+#new:Function $Function_SetupFog
+{
+	PUSH RA
+	JAL       8011BB50
+	NOP
+	ADDIU     A0, R0, 320
+	JAL       8011BB74
+	ADDIU     A1, R0, 4B0
+	ADDIU     A0, R0, 0
+	ADDIU     A1, R0, 0
+	ADDIU     A2, R0, 0
+	JAL       8011BB88
+	ADDIU     A3, R0, FF
+	JAL       80122FEC
+	NOP
+	ADDIU     A0, R0, 320
+	JAL       80123010
+	ADDIU     A1, R0, 4B0
+	ADDIU     A0, R0, 0
+	ADDIU     A1, R0, 0
+	ADDIU     A2, R0, 0
+	JAL       80123028
+	ADDIU     A3, R0, FF
+	ADDIU     V0, R0, 2
+	JPOP RA
+}
+
 #new:Script $Script_EnterMap
 {
+	Call  GetLoadType   ( *Var[0] )
+	If  *Var[0]  ==  1
+		Exec  EnterSavePoint
+		Exec $Script_CreateExitTriggers
+		Return
+	EndIf
 	Call  GetEntryID    ( *Var[0] )
 	Switch  *Var[0]
 		Case  ==  ~Entry:PipeEntry
 			Set   *Var[A] $Script_CreateExitTriggers
 			Exec  $Script_EnterVerticalPipe
-		CaseOR  ==  ~Entry:Entry1
-		CaseOR  ==  ~Entry:entry_e
+		Case  ==  ~Entry:entry_w
 			Set   *Var[0] $Script_CreateExitTriggers
 			Exec  EnterWalk
-		EndCaseGroup
 		Default
 			Exec  $Script_CreateExitTriggers
 	EndSwitch
@@ -550,12 +554,12 @@
 	End
 }
 
-#new:Script $Script_Exit_Entry1
+#new:Script $Script_Exit_entry_w
 {
 	SetGroup 0000001B
-	Call     UseExitHeading ( 60` ~Entry:Entry1 )
+	Call     UseExitHeading ( 60` ~Entry:entry_w )
 	Exec     ExitWalk
-	Call  GotoMap   ( "jam_01" ~Entry:jam_01:entry_e )
+	Call  GotoMap   ( "jam_03" ~Entry:jam_03:entry_e )
 	Wait  100`
 	Return
 	End
@@ -563,7 +567,7 @@
 
 #new:Script $Script_CreateExitTriggers
 {
-	Bind  $Script_Exit_Entry1 .Trigger:FloorAbove ~Collider:EntryToCave 00000001 00000000
+	Bind  $Script_Exit_entry_w .Trigger:FloorAbove ~Collider:exit_trigger_w 00000001 00000000
 	Return
 	End
 }

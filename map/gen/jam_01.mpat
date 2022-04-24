@@ -42,9 +42,9 @@
 	PUSH RA
 	JAL       8011BB50
 	NOP
-	ADDIU     A0, R0, 384
+	ADDIU     A0, R0, 320
 	JAL       8011BB74
-	ADDIU     A1, R0, 3E8
+	ADDIU     A1, R0, 4B0
 	ADDIU     A0, R0, 0
 	ADDIU     A1, R0, 0
 	ADDIU     A2, R0, 0
@@ -52,9 +52,9 @@
 	ADDIU     A3, R0, FF
 	JAL       80122FEC
 	NOP
-	ADDIU     A0, R0, 384
+	ADDIU     A0, R0, 320
 	JAL       80123010
-	ADDIU     A1, R0, 3E8
+	ADDIU     A1, R0, 4B0
 	ADDIU     A0, R0, 0
 	ADDIU     A1, R0, 0
 	ADDIU     A2, R0, 0

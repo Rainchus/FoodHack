@@ -20,3 +20,5 @@ mod.cfg
 !/map/build
 !/image/texture/jam_tex/*
 !/image/texture/jam_tex.txa
+map/build/index.bin
+map/build/index.bin

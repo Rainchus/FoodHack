@@ -43,7 +43,7 @@
 	NOP
 	ADDIU     A0, R0, 320
 	JAL       8011BB74
-	ADDIU     A1, R0, 3E8
+	ADDIU     A1, R0, 4B0
 	ADDIU     A0, R0, 0
 	ADDIU     A1, R0, 0
 	ADDIU     A2, R0, 0
@@ -53,7 +53,7 @@
 	NOP
 	ADDIU     A0, R0, 320
 	JAL       80123010
-	ADDIU     A1, R0, 3E8
+	ADDIU     A1, R0, 4B0
 	ADDIU     A0, R0, 0
 	ADDIU     A1, R0, 0
 	ADDIU     A2, R0, 0
@@ -79,6 +79,17 @@
 	End
 }
 
+#new:Script $Script_Exit_entry_e
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_e )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_04" ~Entry:jam_04:entry_w )
+	Wait  100`
+	Return
+	End
+}
+
 #new:Script $Script_Exit_entry_w
 {
 	SetGroup 0000001B
@@ -92,6 +103,7 @@
 
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_entry_e .Trigger:FloorAbove ~Collider:exit_trigger_e 00000001 00000000
 	Bind  $Script_Exit_entry_w .Trigger:FloorAbove ~Collider:exit_trigger_w 00000001 00000000
 	Return
 	End
