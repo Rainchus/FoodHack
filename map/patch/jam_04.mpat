@@ -10,11 +10,57 @@
 	Call  MakeNpcs  ( .True $NpcGroupList_8025136C )
 	Exec  $Script_SetupMusic
 	Exec  $Script_MakeEntities
+	Call  MakeShop      ( $ShopItemPositions_8024BA68 $ShopInventory_8024B4FC $ShopPriceList_8024B550 00000000 )
+    Call  MakeShopOwner ( $ShopOwnerNPC_8024BA80 )
 	Call  $Function_SetupFog
 	Exec  $Script_EnterMap
 	Return
 	End
 }
+#new:IntTable $IntTable_8024B4A0
+{
+	00270049 0027004A 0027004B 0027004C 0027004D 0027004E 0027004F 00270050
+	00270051 00270052 00270053 00270054 00270055 00270056 00270057 00270058
+	00270059 0027005A 0027005B 0027005C 0027005D 0027005E 0027005F
+}
+
+#new:ShopOwnerNPC $ShopOwnerNPC_8024BA80
+{
+	00000000 004E0002 004E0005 00000000 00000000 00000000 $IntTable_8024B4A0
+}
+
+#new:ShopItemPositions $ShopItemPositions_8024BA68
+{
+	~Short:Model:mono1 ~Short:Collider:mono1
+	~Short:Model:mono2 ~Short:Collider:mono2
+	~Short:Model:mono3 ~Short:Collider:mono3
+	~Short:Model:mono4 ~Short:Collider:mono4
+	~Short:Model:mono5 ~Short:Collider:mono5
+	~Short:Model:mono6 ~Short:Collider:mono6
+}
+#new:ShopInventory $ShopInventory_8024B4FC
+{
+	.Item:ThunderBolt    00000005 00240003 % Lightning that strikes an enemy. Attack Power: 5
+	.Item:DustyHammer    00000002 00240005 % A dusty old Hammer. Throw it to damage an enemy.
+	.Item:HoneySyrup     00000005 00240016 % Sweet honey syrup. Restores 5 FP.
+	.Item:DriedShroom    00000002 0024000D % A very dry Mushroom. Restores 1 HP.
+	.Item:DriedPasta     00000003 0024001D % Pasta from Dry Dry Outpost. Restores 3 HP and 2 FP ...
+	.Item:Mushroom       00000003 00240009 % A regular Mushroom. Restores 5 HP.
+	00000000 00000000 00000000
+}
+
+#new:ShopPriceList $ShopPriceList_8024B550
+{
+	.Item:SnowmanDoll    0000000C 00000000
+	.Item:Melon          0000000A 00000000
+	.Item:IcedPotato     0000000A 00000000
+	.Item:TastyTonic     00000005 00000000
+	.Item:SuperSoda      00000006 00000000
+	.Item:SpecialShake   0000000F 00000000
+	.Item:DriedPasta     00000002 00000000
+	00000000 00000000 00000000
+}
+
 
 #new:NpcGroupList $NpcGroupList_8025136C
 {
