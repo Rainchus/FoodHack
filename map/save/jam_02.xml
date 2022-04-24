@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_02" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="176.490540,124.036812,928.693848" pitch="10.000000" yaw="-10.760272"/>
+		<Camera pos="71.128876,137.253769,720.782959" pitch="5.680089" yaw="354.680206"/>
 		<Camera pos="1.592441,65536.000000,326.700989"/>
 		<Camera pos="65536.000000,-682.183228,484.870331"/>
-		<Camera pos="-21.945757,455.737457,65536.000000"/>
+		<Camera pos="66.064384,416.763245,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="2E">
@@ -111,20 +111,20 @@
 					<F3DEX2 cmd="D9FFFFFF,200400"/>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="-432,23,533" uv="-1920,-131"/>
-							<Vertex xyz="0,-77,597" uv="1920,-1155"/>
-							<Vertex xyz="-432,-77,533" uv="-1920,-1155"/>
-							<Vertex xyz="0,23,597" uv="1920,-131"/>
+							<Vertex xyz="-432,38,533" uv="-3072,50"/>
+							<Vertex xyz="-432,-62,533" uv="-3072,-1024"/>
+							<Vertex xyz="0,-62,597" uv="1920,-1024"/>
+							<Vertex xyz="0,38,597" uv="1920,50"/>
 						</VertexTable>
 						<TriangleList>
 							<Triangle ijk="0,1,2"/>
-							<Triangle ijk="1,0,3"/>
+							<Triangle ijk="2,3,0"/>
 						</TriangleList>
 					</TriangleBatch>
 				</DisplayList>
 			</ShapeMesh>
 			<PropertyList>
-				<Property v="5C,0,1"/>
+				<Property v="5C,0,11"/>
 				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>

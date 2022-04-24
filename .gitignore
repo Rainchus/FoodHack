@@ -20,4 +20,3 @@ mod.cfg
 !/map/build
 !/image/texture/jam_tex/*
 !/image/texture/jam_tex.txa
-!/strings/src/"25 Item Descriptions III.str"
