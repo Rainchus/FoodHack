@@ -17,6 +17,66 @@
 	Return
 	End
 }
+
+
+@ $Script_MakeEntities
+{
+	If  *Jam04Pipe  ==  .False
+        
+		Call  MakeEntity        ( .Entity:BlueSwitch ~Vec4d:BlueSwitch 80000000 )
+		Call  AssignFlag    ( *Jam04Pipe)
+		Call  AssignScript  ( $Script_RisingPipe )
+	Else
+		Call  TranslateModel    ( ~Model:PipeModel 0 35` 0 )
+		Call  ModifyColliderFlags   ( 00000001 ~Collider:PipeCollider 7FFFFE00 )
+	EndIf
+	 Call  MakeEntity    ( .Entity:SavePoint ~Vec4d:SaveBlock 80000000 )
+	 Call  MakeEntity    ( .Entity:HealingBlock ~Vec4d:HealBlock 80000000 )
+    Return
+    End
+    
+}
+
+
+
+#new:Script $Script_RisingPipe
+{
+	Call DisablePlayerInput ( .True )
+	Thread
+		Call     SetCamSpeed     ( .Cam:Default *Fixed[2.0] )
+		Call     GetPlayerPos  ( *Var0 *Var1 *Var2 )
+		Call     UseSettingsFrom   ( .Cam:Default *Var0 *Var1 *Var2 )
+		Call     SetPanTarget     ( .Cam:Default ~Vec3D:CameraMarker )
+		Call     SetCamDistance    ( .Cam:Default 600` )
+		Call     PanToTarget     ( .Cam:Default .Easing:Linear 00000001 )
+		Call     WaitForCam    ( .Cam:Default *Fixed[1.0] )
+	EndThread
+	Call  ModifyColliderFlags   ( 00000001 ~Collider:PipeCollider 7FFFFE00 )
+	Set *Var0 0
+	Thread
+		ChildThread
+			Wait 60`
+			Call  PlaySoundWithVolume   ( 0000208E 00000000 )
+		EndChildThread
+		Wait 60`
+		Loop
+			Wait 1`
+			Call  TranslateModel    ( ~Model:PipeModel 0 *Var0 0 )
+    		Add *Var0 1
+
+			If *Var0 > 35`
+				BreakLoop
+			EndIf
+		EndLoop
+	EndThread
+	Set *Jam04Pipe  .True
+	Wait 100`
+	Call  ResetCam ( .Cam:Default *Fixed[2.0] )
+	Call DisablePlayerInput ( .False )
+	Return
+	End
+}
+
 #new:IntTable $IntTable_8024B4A0
 {
 	00270049 0027004A 0027004B 0027004C 0027004D 0027004E 0027004F 00270050

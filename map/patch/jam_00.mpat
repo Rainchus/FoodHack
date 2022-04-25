@@ -14,12 +14,47 @@
     Exec  $Script_MakeNpcs
     Exec  $Script_SetupMusic
     Exec  $Script_EnterMap
+    Exec  $Script_PipeCheck
     Bind  $ShadowRemoval .Trigger:FloorTouch ~Collider:CakeFloor 1 0
     Bind  $ShadowEnable .Trigger:FloorTouch ~Collider:main_floor 1 0
     Bind  $ShadowEnable .Trigger:FloorTouch ~Collider:EntryToCave 1 0
     Return
     End
 }
+
+#new:Script $Script_PipeCheck
+{
+	If  *GF_KMR02_WarpPipe  ==  .True
+        Call  TranslateModel    ( ~Model:PipeModel 0 35` 0 )
+        Call  ModifyColliderFlags   ( 00000001 ~Collider:PipeCollider 7FFFFE00 )
+    EndIf
+    Return
+    End
+}
+
+@ $Script_EnterMap
+{
+	Call  GetEntryID    ( *Var[0] )
+	Switch  *Var[0]
+		Case  ==  ~Entry:PipeEntry
+	If  *GF_KMR02_WarpPipe  ==  .False
+		Set   *GF_KMR02_WarpPipe  .True
+    Else
+	EndIf
+			Set   *Var[A] $Script_CreateExitTriggers
+			Exec  $Script_EnterVerticalPipe
+		CaseOR  ==  ~Entry:Entry1
+		CaseOR  ==  ~Entry:entry_e
+			Set   *Var[0] $Script_CreateExitTriggers
+			Exec  EnterWalk
+		EndCaseGroup
+		Default
+			Exec  $Script_CreateExitTriggers
+	EndSwitch
+	Return
+	End
+}
+
 
 #new:Script $Script_MakeNpcs
 {

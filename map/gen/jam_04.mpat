@@ -15,6 +15,8 @@
 	~Vec4f:PipeEntry
 }
 
+#define .AreaFlag_Entity_BlueSwitch 0
+
 #new:Function $Function_Pipe_SetAnimFlag
 {
 	LAW       V0, 800F7B30
@@ -492,6 +494,8 @@
 {
 	Call  MakeEntity    ( .Entity:SavePoint ~Vec4d:SaveBlock 80000000 )
 	Call  MakeEntity    ( .Entity:HealingBlock ~Vec4d:HealBlock 80000000 )
+	Call  MakeEntity    ( .Entity:BlueSwitch ~Vec4d:BlueSwitch 80000000 )
+	Call  AssignAreaFlag      ( *AreaFlag[.AreaFlag_Entity_BlueSwitch] )
 	Return
 	End
 }
