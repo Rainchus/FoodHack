@@ -192,7 +192,7 @@
 	<Item index="0BD" nameMsg="26-03E" desc1Msg="23-03E" desc2Msg="25-03E" typeFlags="1087" targetFlags="0009" name="BlandMeal" sellValue="10" powA="10" powB="10"/>
 	<Item index="0BE" nameMsg="26-040" desc1Msg="23-040" desc2Msg="25-040" typeFlags="1087" targetFlags="0009" name="DeluxeFeast" sellValue="60" powA="40" powB="40"/>
 	<Item index="0BF" nameMsg="26-041" desc1Msg="23-041" desc2Msg="25-041" typeFlags="1187" targetFlags="0009" name="SpecialShake" sellValue="10" powB="20"/>
-	<Item index="0C0" nameMsg="26-043" desc1Msg="23-043" desc2Msg="25-043" typeFlags="1087" targetFlags="0009" name="BigCookie" sellValue="10" powB="20"/>
+	<Item index="0C0" nameMsg="26-043" desc1Msg="23-043" desc2Msg="25-043" typeFlags="1087" targetFlags="0009" name="BigCookie" sellValue="10" powA="15" powB="5"/>
 	<Item index="0C1" nameMsg="26-044" desc1Msg="23-044" desc2Msg="25-044" typeFlags="1087" targetFlags="0009" name="Cake" sellValue="10" powB="15"/>
 	<Item index="0C2" nameMsg="26-045" desc1Msg="23-045" desc2Msg="25-045" typeFlags="1087" targetFlags="0009" name="Mistake" sellValue="1" powA="1" powB="1"/>
 	<Item index="0C3" nameMsg="26-046" desc1Msg="23-046" desc2Msg="25-046" typeFlags="1187" targetFlags="0009" name="KoopaTea" sellValue="3" powB="7"/>

@@ -1,5 +1,6 @@
 #define .NpcID:ShopGhost            00
 #define .NpcID:TentGuy				01
+#define .NpcID:TentGhost			02
 
 @ $Script_Main {
 	Set   *GB_WorldLocation  .Location:GoombaRoad
@@ -102,10 +103,10 @@
 {
 	.Item:EggMissile    20` 00230048 % Lightning that strikes an enemy. Attack Power: 5
 	.Item:ApplePie    15` 0023002E % A dusty old Hammer. Throw it to damage an enemy.
-	.Item:BlandMeal    30` 0023003E % Sweet honey syrup. Restores 5 FP.
-	.Item:HotShroom    15` 0023003A % A very dry Mushroom. Restores 1 HP.
+	.Item:ShroomCake    30` 0023003C % Sweet honey syrup. Restores 5 FP.
+	.Item:BigCookie    15` 00230043 % A very dry Mushroom. Restores 1 HP.
 	.Item:YummyMeal     50` 0023003F % Pasta from Dry Dry Outpost. Restores 3 HP and 2 FP ...
-	.Item:DeluxeFeast      100` 00230040 % A regular Mushroom. Restores 5 HP.
+	.Item:FirePop      40` 0023004C % A regular Mushroom. Restores 5 HP.
 	00000000 00000000 00000000
 }
 
@@ -124,7 +125,7 @@
 
 #new:NpcGroupList $NpcGroupList_8025136C
 {
-	00000002 $NpcGroup_8024E864 00000000
+	00000003 $NpcGroup_8024E864 00000000
 	00000000 00000000 00000000
 }
 
@@ -142,6 +143,13 @@
 	~NoDrops
 	~Movement:TentGuy
 	~AnimationTable:TentGuy % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+	.NpcID:TentGhost   $NpcSettings_80247CE4 ~Vec3f:TentGhost % 100 0 -256
+	00002809 $Script_Init_TentGhost 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:TentGhost
+	~AnimationTable:TentGhost % .Sprite:Gooma
 	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
 }
 
@@ -247,7 +255,7 @@
 {
 	[Style Right]
 	We brought these lanterns with us[br]
-	but we did not bring any fuel.[pause:5].[pause:5].[br]
+	but we did not bring any fuel.[pause:5].[pause:5].[pause:5][br]
 	So we just placed them near the[br]
 	tents as decoration.[br]
 	[Wait][Next]
@@ -255,5 +263,42 @@
 	I think they make for a neat[br]
 	decoration for the tents.[br]
 	What do you think, Mario?[br]
+	[Wait][End]
+}
+
+#new:Script $Script_Init_TentGhost
+{
+    0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_TentGhost )
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_TentGhost )
+   28:  Return
+   30:  End
+}
+
+#new:Script $Script_Idle_TentGhost
+{
+	Call SetNpcAnimation ( .NpcID:TentGhost 004E0002 )
+   C4:  Return
+   CC:  End
+}
+
+#new:Script $Script_Interact_TentGhost
+{
+	Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
+	Call  SpeakToPlayer ( .NpcID:TentGhost 004E0005 004E0002 00000005 $TentGhostString )
+	Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+	Return
+	End
+}
+
+#new:String $TentGhostString
+{
+	[Style Right]
+	Maybe bringing these lanters[br]
+	wasn't such a good idea.[pause:5].[pause:5].[pause:5][br]
+	[Wait][Next]
+	They are a waste of space[br]
+	and were a waste of time![br]
+	If only that DummyGuy did[br]
+	not forget the fuel.[pause:5].[pause:5].[pause:5][br]
 	[Wait][End]
 }
