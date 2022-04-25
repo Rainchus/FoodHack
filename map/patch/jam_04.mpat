@@ -40,12 +40,12 @@
 }
 #new:ShopInventory $ShopInventory_8024B4FC
 {
-	.Item:ThunderBolt    00000005 00240003 % Lightning that strikes an enemy. Attack Power: 5
-	.Item:DustyHammer    00000002 00240005 % A dusty old Hammer. Throw it to damage an enemy.
-	.Item:HoneySyrup     00000005 00240016 % Sweet honey syrup. Restores 5 FP.
-	.Item:DriedShroom    00000002 0024000D % A very dry Mushroom. Restores 1 HP.
-	.Item:DriedPasta     00000003 0024001D % Pasta from Dry Dry Outpost. Restores 3 HP and 2 FP ...
-	.Item:Mushroom       00000003 00240009 % A regular Mushroom. Restores 5 HP.
+	.Item:EggMissile    20` 00230048 % Lightning that strikes an enemy. Attack Power: 5
+	.Item:ApplePie    15` 0023002E % A dusty old Hammer. Throw it to damage an enemy.
+	.Item:BlandMeal    30` 0023003E % Sweet honey syrup. Restores 5 FP.
+	.Item:HotShroom    15` 0023003A % A very dry Mushroom. Restores 1 HP.
+	.Item:YummyMeal     50` 0023003F % Pasta from Dry Dry Outpost. Restores 3 HP and 2 FP ...
+	.Item:DeluxeFeast      100` 00230040 % A regular Mushroom. Restores 5 HP.
 	00000000 00000000 00000000
 }
 
