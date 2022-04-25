@@ -77,7 +77,6 @@
 
 #new:Script $Script_Interact_8024CE80
 {
-	Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
 	Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $GourmetGuyString )
 	Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
 	Return

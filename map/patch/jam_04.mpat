@@ -1,6 +1,8 @@
 #define .NpcID:ShopGhost            00
 #define .NpcID:TentGuy				01
 #define .NpcID:TentGhost			02
+#define .NpcID:TentGuy2				03
+#define .NpcID:TentGhost2			04
 
 @ $Script_Main {
 	Set   *GB_WorldLocation  .Location:GoombaRoad
@@ -125,7 +127,7 @@
 
 #new:NpcGroupList $NpcGroupList_8025136C
 {
-	00000003 $NpcGroup_8024E864 00000000
+	00000005 $NpcGroup_8024E864 00000000
 	00000000 00000000 00000000
 }
 
@@ -150,6 +152,20 @@
 	~NoDrops
 	~Movement:TentGhost
 	~AnimationTable:TentGhost % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+	.NpcID:TentGuy2   $NpcSettings_80247CE4 ~Vec3f:TentGuy2 % 100 0 -256
+	00002809 $Script_Init_TentGuy2 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:TentGuy2
+	~AnimationTable:TentGuy2 % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+	.NpcID:TentGhost2   $NpcSettings_80247CE4 ~Vec3f:TentGhost2 % 100 0 -256
+	00002809 $Script_Init_TentGhost2 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:TentGhost2
+	~AnimationTable:TentGhost2 % .Sprite:Gooma
 	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
 }
 
@@ -210,9 +226,11 @@
 {
 	[Style Right]
 	Hello Mario![br]
+	[Wait][Next]
 	We've just recently gotten here[br]
-	and now we've set up camp and a shop,[br]
-	so we can finally start surviving.[br]
+	and now we've set up camp and[br]
+	a shop, we can finally start[br]
+	surviving down here![br]
 	[Wait][Next]
 	Unfortunately we can only sell[br]
 	you things grown on our[br]
@@ -260,8 +278,10 @@
 	tents as decoration.[br]
 	[Wait][Next]
 	Neat isn't it?[br]
-	I think they make for a neat[br]
+	I think they make for a unique[br]
 	decoration for the tents.[br]
+	It really adds to the atmosphere.[br]
+	[Wait][Next]
 	What do you think, Mario?[br]
 	[Wait][End]
 }
@@ -276,6 +296,7 @@
 
 #new:Script $Script_Idle_TentGhost
 {
+	Call SetNpcYaw ( .NpcID:TentGhost -90` )
 	Call SetNpcAnimation ( .NpcID:TentGhost 004E0002 )
    C4:  Return
    CC:  End
@@ -300,5 +321,92 @@
 	and were a waste of time![br]
 	If only that DummyGuy did[br]
 	not forget the fuel.[pause:5].[pause:5].[pause:5][br]
+	[Wait][End]
+}
+
+#new:Script $Script_Init_TentGuy2
+{
+    0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_TentGuy2 )
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_TentGuy2 )
+   28:  Return
+   30:  End
+}
+
+#new:Script $Script_Idle_TentGuy2
+{
+	Call SetNpcYaw ( .NpcID:TentGuy2 -90` )
+	Call SetNpcAnimation ( .NpcID:TentGuy2 003B0101 )
+   C4:  Return
+   CC:  End
+}
+
+#new:Script $Script_Interact_TentGuy2
+{
+	Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
+	Call  SpeakToPlayer ( .NpcID:TentGuy2 003B0111 003B0101 00000005 $TentGuyString2 )
+	Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+	Return
+	End
+}
+
+#new:String $TentGuyString2
+{
+	[Style Right]
+	Arrrrgh![br]
+	Can they stop blaming me for[br]
+	not having any fuel for the[br]
+	lanterns?!
+	[Wait][Next]
+	It is getting on my nerves[br]
+	Gourmet Guy told me we would[br]
+	not need it so I left it[br]
+	back in the Mushroom Kingdom![br]
+	[Wait][End]
+}
+
+#new:Script $Script_Init_TentGhost2
+{
+    0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_TentGhost2 )
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_TentGhost2 )
+   28:  Return
+   30:  End
+}
+
+#new:Script $Script_Idle_TentGhost2
+{
+	Call SetNpcAnimation ( .NpcID:TentGhost2 004E0002 )
+   C4:  Return
+   CC:  End
+}
+
+#new:Script $Script_Interact_TentGhost2
+{
+	Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
+	Call  SpeakToPlayer ( .NpcID:TentGhost2 004E0005 004E0002 00000005 $TentGhostString2 )
+	Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+	Return
+	End
+}
+
+#new:String $TentGhostString2
+{
+	[Style Right]
+	I like it here, very cozy.[br]
+	We've made this place a home.[br]
+	From an abandoned cavern to[br]
+	a happy little village.[br]
+	[Wait][Next]
+	We mostly get along, except[br]
+	those two Shy Guys.[pause:5].[pause:5].[pause:5][br]
+	They always end up fighting[br]
+	about the same thing.[br]
+	[Wait][Next]
+	Oh! I also take care of our[br]
+	storage as you might have[br]
+	noticed! Unfortunately[br]
+	I can't store anything for[br]
+	[Wait][Next]
+	Strangers.[br]
+	Sorry, Mario![br]
 	[Wait][End]
 }
