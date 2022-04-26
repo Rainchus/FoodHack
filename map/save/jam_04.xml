@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_04" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-231.761444,124.036812,831.179504" pitch="10.000000" yaw="0.000000"/>
-		<Camera pos="-268.722321,65536.000000,394.296661"/>
-		<Camera pos="65536.000000,8.004709,-302.584045"/>
+		<Camera pos="742.766541,59.676479,339.232666" pitch="21.199993" yaw="19.840033"/>
+		<Camera pos="850.220642,65536.000000,241.980057"/>
+		<Camera pos="65536.000000,36.921299,-369.130554"/>
 		<Camera pos="1178.312012,-3820.905762,65536.000000"/>
 	</Editor>
 	<ModelTree>
@@ -135,7 +135,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="D">
+		<Node name="Root" id="13">
 			<Node name="Entrances" id="1">
 				<Node name="entry_s" id="FFFFFFFF"/>
 				<Node name="entry_w" id="0"/>
@@ -151,6 +151,12 @@
 			<Node name="HiddenItem" id="A"/>
 			<Node name="TentGuy2" id="B"/>
 			<Node name="TentGhost2" id="C"/>
+			<Node name="GuardianGhost" id="D"/>
+			<Node name="AntiGuy1" id="E"/>
+			<Node name="AntiGuy2" id="F"/>
+			<Node name="AntiGuy3" id="10"/>
+			<Node name="AntiGuy1Pos1" id="11"/>
+			<Node name="AntiGuy1Pos2" id="12"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -9285,7 +9291,33 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="D"/>
+			<MapObject name="Root" id="13"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="703,0,-106" yaw="-90.000000">
+			<MapObject name="AntiGuy1Pos2" id="12"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="961,0,28" yaw="-90.000000">
+			<MapObject name="AntiGuy1Pos1" id="11"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="612,50,-373" yaw="150.000000">
+			<MapObject name="AntiGuy3" id="10"/>
+			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="961,0,28" yaw="90.000000">
+			<MapObject name="AntiGuy2" id="F"/>
+			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="860,0,220" yaw="-90.000000">
+			<MapObject name="AntiGuy1" id="E"/>
+			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="-194,0,-302" yaw="270.000000">
+			<MapObject name="GuardianGhost" id="D"/>
+			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="4E" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-309,0,363" yaw="150.000000">
 			<MapObject name="TentGhost2" id="C"/>

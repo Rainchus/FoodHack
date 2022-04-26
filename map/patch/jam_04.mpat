@@ -3,6 +3,10 @@
 #define .NpcID:TentGhost			02
 #define .NpcID:TentGuy2				03
 #define .NpcID:TentGhost2			04
+#define .NpcID:GuardianGhost		05
+#define .NpcID:AntiGuy1				06
+#define .NpcID:AntiGuy2				07
+#define .NpcID:AntiGuy3				08
 
 @ $Script_Main {
 	Set   *GB_WorldLocation  .Location:GoombaRoad
@@ -127,7 +131,7 @@
 
 #new:NpcGroupList $NpcGroupList_8025136C
 {
-	00000005 $NpcGroup_8024E864 00000000
+	00000009 $NpcGroup_8024E864 00000000
 	00000000 00000000 00000000
 }
 
@@ -166,6 +170,34 @@
 	~NoDrops
 	~Movement:TentGhost2
 	~AnimationTable:TentGhost2 % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+	.NpcID:GuardianGhost   $NpcSettings_80247CE4 ~Vec3f:GuardianGhost % 100 0 -256
+	00002809 $Script_Init_GuardianGhost 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:GuardianGhost
+	~AnimationTable:GuardianGhost % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+	.NpcID:AntiGuy1   $NpcSettings_80247CE4 ~Vec3f:AntiGuy1 % 100 0 -256
+	00002809 $Script_Init_AntiGuy1 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:AntiGuy1
+	~AnimationTable:AntiGuy1 % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+	.NpcID:AntiGuy2   $NpcSettings_80247CE4 ~Vec3f:AntiGuy2 % 100 0 -256
+	00002809 $Script_Init_AntiGuy2 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:AntiGuy2
+	~AnimationTable:AntiGuy2 % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+	.NpcID:AntiGuy3   $NpcSettings_80247CE4 ~Vec3f:AntiGuy3 % 100 0 -256
+	00002809 $Script_Init_AntiGuy3 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:AntiGuy3
+	~AnimationTable:AntiGuy3 % .Sprite:Gooma
 	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
 }
 
@@ -278,7 +310,7 @@
 	tents as decoration.[br]
 	[Wait][Next]
 	Neat isn't it?[br]
-	I think they make for a unique[br]
+	[Pause:10]I think they make for a unique[br]
 	decoration for the tents.[br]
 	It really adds to the atmosphere.[br]
 	[Wait][Next]
@@ -319,8 +351,8 @@
 	[Wait][Next]
 	They are a waste of space[br]
 	and were a waste of time![br]
-	If only that DummyGuy did[br]
-	not forget the fuel.[pause:5].[pause:5].[pause:5][br]
+	[Pause:5]If only that Dummy Guy[br]
+	did not forget the fuel.[pause:5].[pause:5].[pause:5][br]
 	[Wait][End]
 }
 
@@ -352,10 +384,10 @@
 #new:String $TentGuyString2
 {
 	[Style Right]
-	Arrrrgh![br]
-	Can they stop blaming me for[br]
+	[PrintRising]Arrrrgh![/fx][br]
+	[Pause:10]Can they stop blaming me for[br]
 	not having any fuel for the[br]
-	lanterns?!
+	lanterns?![br]
 	[Wait][Next]
 	It is getting on my nerves[br]
 	Gourmet Guy told me we would[br]
@@ -392,21 +424,232 @@
 {
 	[Style Right]
 	I like it here, very cozy.[br]
-	We've made this place a home.[br]
+	[Pause:10]We've made this place a home.[br]
 	From an abandoned cavern to[br]
 	a happy little village.[br]
 	[Wait][Next]
 	We mostly get along, except[br]
 	those two Shy Guys.[pause:5].[pause:5].[pause:5][br]
-	They always end up fighting[br]
+	[Pause:10]They always end up fighting[br]
 	about the same thing.[br]
 	[Wait][Next]
 	Oh! I also take care of our[br]
 	storage as you might have[br]
-	noticed! Unfortunately[br]
+	noticed! [Pause:10]Unfortunately[br]
 	I can't store anything for[br]
 	[Wait][Next]
 	Strangers.[br]
 	Sorry, Mario![br]
+	[Wait][End]
+}
+
+#new:Script $Script_Init_GuardianGhost
+{
+    0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_GuardianGhost )
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_GuardianGhost )
+   28:  Return
+   30:  End
+}
+
+#new:Script $Script_Idle_GuardianGhost
+{
+	Call SetNpcYaw ( .NpcID:TentGhost -90` )
+	Call SetNpcAnimation ( .NpcID:GuardianGhost 004E0002 )
+   C4:  Return
+   CC:  End
+}
+
+#new:Script $Script_Interact_GuardianGhost
+{
+	Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
+	Call  SpeakToPlayer ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 $GuardianGhostString )
+	Call  EndSpeech ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 )
+	Call  ShowChoice    ( 001E0044 ) % Don't fight Fight
+	If  *Var0  ==  00000000
+		Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightDecline1 ) % Good. You're a smart boy!
+	Else
+		Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightRequest1 ) % You wanna fight? Are you nuts? You don't wanna mes ...
+		Call  EndSpeech ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 )
+		Call  ShowChoice        ( 001E0044 ) % Don't fight Fight
+			If  *Var0  ==  00000000
+				Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightDecline2 ) % Good. You're a smart boy!
+			Else
+			Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightRequest2 ) % What!! Well, all right... I do love a challenge! H ...
+			%Call $AntiGuyAmbush
+		EndIf
+	EndIf
+	Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+	Return
+	End
+}
+
+#new:String $GuardianGhostString
+{
+	[Style Right]
+	Hello, Mario![br]
+	[Pause:10]We can't let you pass here[br]
+	due to this area being[br]
+	off limits to strangers![br]
+	[Wait][Next]
+	You understand, right?[Pause:15][br]
+	[Yield][End]
+}
+
+#new:String $GuardianGhostStringFightDecline1
+{
+	[Style Right]
+	[Next]
+	Whoa, you even considered[br]
+	fighting me?![br]
+	[Pause:10]Well, I'm sure happy you[br]
+	did not.[pause:5].[pause:5].[pause:5][br]
+	[Wait][End]
+}
+
+#new:String $GuardianGhostStringFightDecline2
+{
+	[Style Right]
+	[Next]
+	Wise decision, this could[br]
+	have been very ugly.[pause:5].[pause:5].[pause:5][br]
+	[Wait][End]
+}
+
+#new:String $GuardianGhostStringFightRequest1
+{
+	[Style Right]
+	[Next]
+	Wait, what?![br]
+	[Pause:10]You want to fight?![br]
+	Please,[Pause:5] let's not.[pause:5].[pause:5].[pause:5][br]
+	[Wait][Next]
+	It's not worth the effort[br]
+	what [COLOR:20]they[COLOR:0A] are gonna do[br]
+	to you.[br]
+	[Wait][Next]
+	I don't want to do this,[br]
+	Mario.[Pause:15][br]
+	[Yield][End]
+}
+
+#new:String $GuardianGhostStringFightRequest2
+{
+	[Style Right]
+	[Next]
+	Oh well, I warned you.[pause:5].[pause:5].[pause:5][br]
+	[PrintRising][Pause:10][Color:20]C'mere, Anti Guys![br]
+	[Wait][End]
+}
+
+#new:Script $AntiGuyAmbush{
+	Return
+	End
+}
+
+#new:Script $Script_Init_AntiGuy1
+{
+    0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_AntiGuy1 )
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_AntiGuy1 )
+   28:  Return
+   30:  End
+}
+
+#new:Script $Script_Idle_AntiGuy1
+{
+	Call SetNpcYaw ( .NpcID:AntiGuy1 -90` )
+	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0501 )
+   C4:  Return
+   CC:  End
+}
+
+#new:Script $Script_Interact_AntiGuy1
+{
+	Return
+	End
+}
+
+#new:Script $Script_Init_AntiGuy2
+{
+    0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_AntiGuy2 )
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_AntiGuy2 )
+   28:  Return
+   30:  End
+}
+
+#new:Script $Script_Idle_AntiGuy2
+{
+	Loop 
+		Call SetNpcAnimation ( .NpcID:AntiGuy2 003B0502 )
+		Call NpcMoveTo ( .NpcID:AntiGuy2 703` -106` 60` )
+		Call SetNpcAnimation ( .NpcID:AntiGuy2 003B0501 )
+		Thread
+			Call InterpNpcYaw ( .NpcID:AntiGuy2 90` 10` )
+			Wait 10`
+			Call InterpNpcYaw ( .NpcID:AntiGuy2 -90` 10` )
+			Wait 15`
+			Call InterpNpcYaw ( .NpcID:AntiGuy2 -90` 20` )
+			Wait 25`
+			Call InterpNpcYaw ( .NpcID:AntiGuy2 90` 10` )
+			Wait 10`
+			Call InterpNpcYaw ( .NpcID:AntiGuy2 -90` 10` )
+		EndThread
+		Wait 60`
+		Call SetNpcAnimation ( .NpcID:AntiGuy2 003B0502 )
+		Call NpcMoveTo ( .NpcID:AntiGuy2 961` 28` 60` )
+		Call SetNpcAnimation ( .NpcID:AntiGuy2 003B0501 )
+		Thread
+			Call InterpNpcYaw ( .NpcID:AntiGuy2 -90` 10` )
+			Wait 25`
+			Call InterpNpcYaw ( .NpcID:AntiGuy2 90` 10` )
+			Wait 15`
+			Call InterpNpcYaw ( .NpcID:AntiGuy2 -90` 10` )
+		EndThread
+		Wait 40`
+	EndLoop
+   C4:  Return
+   CC:  End
+}
+
+#new:Script $Script_Interact_AntiGuy2
+{
+	Call SpeakToPlayer ( .NpcID:AntiGuy2 003B0511 003B0501 00000000 $AntiWalkerString )
+	Return
+	End
+}
+
+#new:Script $Script_Init_AntiGuy3
+{
+    0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_AntiGuy3 )
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_AntiGuy3 )
+   28:  Return
+   30:  End
+}
+
+#new:Script $Script_Idle_AntiGuy3
+{
+	Call SetNpcYaw ( .NpcID:AntiGuy3 -90` )
+	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0501 )
+   C4:  Return
+   CC:  End
+}
+
+#new:Script $Script_Interact_AntiGuy3
+{
+	Return
+	End
+}
+
+#new:String $AntiWalkerString
+{
+	[Style Right]
+	[Wave]Hi there Buddy![HEART][br]
+	I'm one of the three[br]
+	Antis keeping this sweet[br]
+	little village free from[br]
+	[Wait][Next]
+	rapscalions like you! [HEART][br]
+	I am on patrol right now,[br]
+	the others must be hiding and[br]
+	waiting for commands.[br]
 	[Wait][End]
 }
