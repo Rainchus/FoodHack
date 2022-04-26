@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_04" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="742.766541,59.676479,339.232666" pitch="21.199993" yaw="19.840033"/>
-		<Camera pos="850.220642,65536.000000,241.980057"/>
+		<Camera pos="-266.719391,124.036812,186.984299" pitch="9.999999" yaw="0.000000"/>
+		<Camera pos="-232.229691,65536.000000,-271.069427"/>
 		<Camera pos="65536.000000,36.921299,-369.130554"/>
-		<Camera pos="1178.312012,-3820.905762,65536.000000"/>
+		<Camera pos="1178.312012,-3831.592773,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="5B">
@@ -122,7 +122,7 @@
 			<Node name="MeshCollider" id="D"/>
 			<Node name="MeshCollider" id="E"/>
 			<Node name="MeshCollider" id="F"/>
-			<Node name="MeshCollider" id="10"/>
+			<Node name="FenceGateCollider" id="10"/>
 			<Node name="MeshCollider" id="11"/>
 			<Node name="MeshCollider" id="12"/>
 			<Node name="MeshCollider" id="13"/>
@@ -135,7 +135,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="13">
+		<Node name="Root" id="18">
 			<Node name="Entrances" id="1">
 				<Node name="entry_s" id="FFFFFFFF"/>
 				<Node name="entry_w" id="0"/>
@@ -157,6 +157,11 @@
 			<Node name="AntiGuy3" id="10"/>
 			<Node name="AntiGuy1Pos1" id="11"/>
 			<Node name="AntiGuy1Pos2" id="12"/>
+			<Node name="AntiJumpTo1" id="13"/>
+			<Node name="AntiJumpTo2" id="14"/>
+			<Node name="AntiJumpTo3" id="15"/>
+			<Node name="AntiGuy2CE" id="16"/>
+			<Node name="AntiJumpPos" id="17"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -7995,20 +8000,20 @@
 						<Vertex xyz="-249,0,-413" uv="531,0"/>
 					</VertexTable>
 					<TriangleList>
-						<Triangle ijk="0,1,2"/>
-						<Triangle ijk="3,4,5"/>
-						<Triangle ijk="6,7,8"/>
-						<Triangle ijk="9,10,11"/>
-						<Triangle ijk="12,13,14" doubleSided="true"/>
-						<Triangle ijk="15,16,17" doubleSided="true"/>
-						<Triangle ijk="18,19,20" doubleSided="true"/>
-						<Triangle ijk="21,22,23" doubleSided="true"/>
+						<Triangle ijk="0,1,2" doubleSided="true"/>
+						<Triangle ijk="3,4,5" doubleSided="true"/>
+						<Triangle ijk="6,7,8" doubleSided="true"/>
+						<Triangle ijk="9,10,11" doubleSided="true"/>
+						<Triangle ijk="12,13,14"/>
+						<Triangle ijk="15,16,17"/>
+						<Triangle ijk="18,19,20"/>
+						<Triangle ijk="21,22,23"/>
 					</TriangleList>
 				</TriangleBatch>
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="10" hidden="true"/>
+			<MapObject name="FenceGateCollider" id="10" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8487,32 +8492,32 @@
 						<Vertex xyz="-349,0,404" uv="-16433,-2400"/>
 					</VertexTable>
 					<TriangleList>
-						<Triangle ijk="0,1,2" doubleSided="true"/>
-						<Triangle ijk="3,4,5" doubleSided="true"/>
-						<Triangle ijk="6,7,8" doubleSided="true"/>
-						<Triangle ijk="9,10,11" doubleSided="true"/>
-						<Triangle ijk="12,13,14" doubleSided="true"/>
-						<Triangle ijk="15,16,17" doubleSided="true"/>
-						<Triangle ijk="18,19,20" doubleSided="true"/>
-						<Triangle ijk="21,22,23" doubleSided="true"/>
-						<Triangle ijk="24,25,26" doubleSided="true"/>
-						<Triangle ijk="27,28,29" doubleSided="true"/>
-						<Triangle ijk="30,31,32" doubleSided="true"/>
-						<Triangle ijk="33,34,35" doubleSided="true"/>
-						<Triangle ijk="36,37,38" doubleSided="true"/>
-						<Triangle ijk="39,40,41" doubleSided="true"/>
-						<Triangle ijk="42,43,44" doubleSided="true"/>
-						<Triangle ijk="45,46,47" doubleSided="true"/>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+						<Triangle ijk="6,7,8"/>
+						<Triangle ijk="9,10,11"/>
+						<Triangle ijk="12,13,14"/>
+						<Triangle ijk="15,16,17"/>
+						<Triangle ijk="18,19,20"/>
+						<Triangle ijk="21,22,23"/>
+						<Triangle ijk="24,25,26"/>
+						<Triangle ijk="27,28,29"/>
+						<Triangle ijk="30,31,32"/>
+						<Triangle ijk="33,34,35"/>
+						<Triangle ijk="36,37,38"/>
+						<Triangle ijk="39,40,41"/>
+						<Triangle ijk="42,43,44"/>
+						<Triangle ijk="45,46,47"/>
 						<Triangle ijk="48,49,50"/>
 						<Triangle ijk="51,52,53"/>
 						<Triangle ijk="54,55,56"/>
 						<Triangle ijk="57,58,59"/>
 						<Triangle ijk="60,61,62"/>
 						<Triangle ijk="63,64,65"/>
-						<Triangle ijk="66,67,68" doubleSided="true"/>
-						<Triangle ijk="69,70,71" doubleSided="true"/>
-						<Triangle ijk="72,73,74" doubleSided="true"/>
-						<Triangle ijk="75,76,77" doubleSided="true"/>
+						<Triangle ijk="66,67,68"/>
+						<Triangle ijk="69,70,71"/>
+						<Triangle ijk="72,73,74"/>
+						<Triangle ijk="75,76,77"/>
 						<Triangle ijk="78,79,80"/>
 						<Triangle ijk="81,82,83"/>
 						<Triangle ijk="84,85,86"/>
@@ -9291,7 +9296,24 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="13"/>
+			<MapObject name="Root" id="18"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-262,32,-203" yaw="-90.000000">
+			<MapObject name="AntiJumpPos" id="17"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="849,0,-354" yaw="90.000000">
+			<MapObject name="AntiGuy2CE" id="16"/>
+			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-220,0,-235" yaw="-90.000000">
+			<MapObject name="AntiJumpTo3" id="15"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-292,0,-166" yaw="90.000000">
+			<MapObject name="AntiJumpTo2" id="14"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-230,0,-178" yaw="-90.000000">
+			<MapObject name="AntiJumpTo1" id="13"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="703,0,-106" yaw="-90.000000">
 			<MapObject name="AntiGuy1Pos2" id="12"/>
@@ -9314,7 +9336,7 @@
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="-194,0,-302" yaw="270.000000">
+		<Marker ver="4" type="NPC" pos="-297,0,-252" yaw="270.000000">
 			<MapObject name="GuardianGhost" id="D"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="4E" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>

@@ -7,6 +7,7 @@
 #define .NpcID:AntiGuy1				06
 #define .NpcID:AntiGuy2				07
 #define .NpcID:AntiGuy3				08
+#define .NpcID:AntiGuy2CE			09
 
 @ $Script_Main {
 	Set   *GB_WorldLocation  .Location:GoombaRoad
@@ -131,7 +132,7 @@
 
 #new:NpcGroupList $NpcGroupList_8025136C
 {
-	00000009 $NpcGroup_8024E864 00000000
+	0000000A $NpcGroup_8024E864 00000000
 	00000000 00000000 00000000
 }
 
@@ -172,7 +173,7 @@
 	~AnimationTable:TentGhost2 % .Sprite:Gooma
 	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
 
-	.NpcID:GuardianGhost   $NpcSettings_80247CE4 ~Vec3f:GuardianGhost % 100 0 -256
+	.NpcID:GuardianGhost   $NpcSettings_GuardianGhost ~Vec3f:GuardianGhost % 100 0 -256
 	00002809 $Script_Init_GuardianGhost 00000000 00000000 0000005A
 	~NoDrops
 	~Movement:GuardianGhost
@@ -199,11 +200,24 @@
 	~Movement:AntiGuy3
 	~AnimationTable:AntiGuy3 % .Sprite:Gooma
 	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+	.NpcID:AntiGuy2CE   $NpcSettings_80247CE4 ~Vec3f:AntiGuy2CE % 100 0 -256
+	00002809 $Script_Init_AntiGuy2CE 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:AntiGuy2CE
+	~AnimationTable:AntiGuy2CE % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
 }
 
 #new:NpcSettings $NpcSettings_80247CE4
 {
 	00000000 00160018 00000000 00000000 $Script_NpcAI_80247CC4 00000000 00000000 00000000
+	00000000 00000000 00630010
+}
+
+#new:NpcSettings $NpcSettings_GuardianGhost
+{
+	00000000 00240022 00000000 00000000 $Script_NpcAI_80247CC4 00000000 00000000 00000000
 	00000000 00000000 00630010
 }
 
@@ -346,7 +360,7 @@
 #new:String $TentGhostString
 {
 	[Style Right]
-	Maybe bringing these lanters[br]
+	Maybe bringing these lanterns[br]
 	wasn't such a good idea.[pause:5].[pause:5].[pause:5][br]
 	[Wait][Next]
 	They are a waste of space[br]
@@ -467,18 +481,24 @@
 	Call  ShowChoice    ( 001E0044 ) % Don't fight Fight
 	If  *Var0  ==  00000000
 		Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightDecline1 ) % Good. You're a smart boy!
+		Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
 	Else
 		Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightRequest1 ) % You wanna fight? Are you nuts? You don't wanna mes ...
 		Call  EndSpeech ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 )
 		Call  ShowChoice        ( 001E0044 ) % Don't fight Fight
 			If  *Var0  ==  00000000
 				Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightDecline2 ) % Good. You're a smart boy!
+				Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
 			Else
+			Call PlayerMoveTo ( -262` -203` 30` )
 			Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightRequest2 ) % What!! Well, all right... I do love a challenge! H ...
-			%Call $AntiGuyAmbush
+			Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+			Wait 5`
+			Call SetMusicTrack ( 00000000 .Song:KoopaBrosTheme 00000001 00000008 )
+			ExecWait $AntiGuyAmbush
+			Wait 30`
 		EndIf
 	EndIf
-	Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
 	Return
 	End
 }
@@ -487,11 +507,11 @@
 {
 	[Style Right]
 	Hello, Mario![br]
-	[Pause:10]We can't let you pass here[br]
+	[Pause:5]We can't let you pass here[br]
 	due to this area being[br]
 	off limits to strangers![br]
 	[Wait][Next]
-	You understand, right?[Pause:15][br]
+	You understand, right?[Pause:5][br]
 	[Yield][End]
 }
 
@@ -542,6 +562,162 @@
 }
 
 #new:Script $AntiGuyAmbush{
+	ExecWait $Anti1Jump
+	Call InterpPlayerYaw ( 90` 15` )
+	Wait 45`
+	Call SetPlayerAnimation ( 00010033 )
+	ExecWait $Anti2CEJump
+	Call SetPlayerAnimation ( 00010002 )
+	Call InterpPlayerYaw ( -90` 15` )
+	Wait 45`
+	Call SetPlayerAnimation ( 00010033 )
+	ExecWait $Anti3Jump
+	Call SetPlayerAnimation ( 00010002 )
+	Call InterpPlayerYaw ( 90` 15` )
+	Wait 15`
+	Call SetPlayerAnimation ( 00010021 )
+	Wait 45`
+	Call SetPlayerAnimation ( 00010033 )
+	Wait 15`
+	Thread
+		Call PlaySoundAtPlayer ( 00000234 00000000 )
+	EndThread
+	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0509 )
+	Wait 30`
+	Thread
+		Call PlaySoundAtPlayer ( 00000234 00000000 )
+	EndThread
+	Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0509 )
+	Wait 30`
+	Thread
+		Call PlaySoundAtPlayer ( 00000234 00000000 )
+	EndThread
+	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0509 )
+	Wait 30`
+	Thread
+		Call SetNpcCollisionSize ( .NpcID:AntiGuy1 1` 1` )
+		Call SetPlayerCollisionSize ( 1` 1` )
+		Wait 15`
+		Call PlaySoundAtPlayer ( 000000E1 00000000 )
+		Call  PlayEffect    ( ~FX:Stars:Orbiting ~Vec3D:AntiJumpPos 15` 5` *VarF 00000000 00000000 00000000 00000000 00000000 00000000 )
+		Call SetPlayerAnimation ( 00010017 )
+		Wait 90`
+		Call RemoveEffect ( *Var[F] )
+	EndThread
+	Thread
+		Wait 10`
+		Call SetNpcAnimation ( .NpcID:AntiGuy1 003B050A )
+	EndThread
+	Call SetNpcJumpscale ( .NpcID:AntiGuy1 *Fixed[0.8] )
+	Call NpcJump1 ( .NpcID:AntiGuy1 ~Vec3D:AntiJumpPos 15` )
+	Call SetNpcJumpscale ( .NpcID:AntiGuy1 *Fixed[0.5] )
+	Call NpcJump1 ( .NpcID:AntiGuy1 ~Vec3D:AntiJumpTo1 5` )
+	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0501 )
+	Call SetPlayerAnimation ( 00010022 )
+	Wait 15`
+	Thread
+		Wait 15`
+		Call PlaySoundAtPlayer ( 000000E1 00000000 )
+	EndThread
+	Thread
+		Wait 10`
+		Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B050A )
+	EndThread
+	Call SetNpcJumpscale ( .NpcID:AntiGuy2CE *Fixed[0.8] )
+	Call NpcJump1 ( .NpcID:AntiGuy2CE ~Vec3D:AntiJumpPos 15` )
+	Call SetNpcJumpscale ( .NpcID:AntiGuy2CE *Fixed[0.5] )
+	Call NpcJump1 ( .NpcID:AntiGuy2CE ~Vec3D:AntiJumpTo2 5` )
+	Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0501 )
+	Call SetPlayerAnimation ( 00010022 )
+	Wait 15`
+	Thread
+		Wait 15`
+		Call PlaySoundAtPlayer ( 000000E1 00000000 )
+	EndThread
+	Thread
+		Wait 10`
+		Call SetNpcAnimation ( .NpcID:AntiGuy3 003B050A )
+	EndThread
+	Call SetNpcJumpscale ( .NpcID:AntiGuy3 *Fixed[0.8] )
+	Call NpcJump1 ( .NpcID:AntiGuy3 ~Vec3D:AntiJumpPos 15` )
+	Call SetNpcJumpscale ( .NpcID:AntiGuy3 *Fixed[0.5] )
+	Call NpcJump1 ( .NpcID:AntiGuy3 ~Vec3D:AntiJumpTo3 5` )
+	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0501 )
+	Call SetPlayerAnimation ( 00010022 )
+	Thread
+		Wait 10`
+		Call InterpPlayerYaw ( -90` 15` )
+		Call SetPlayerAnimation ( 00010017 )
+		Wait 20`
+		Call SetPlayerAnimation ( 00010018 )
+	EndThread
+	Wait 60`
+	Thread
+		Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0502 )
+		Call NpcMoveTo ( .NpcID:AntiGuy1 -246` -187` 60` )
+	EndThread
+	Thread
+		Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0502 )
+		Call NpcMoveTo ( .NpcID:AntiGuy2CE -278` -187` 60` )
+	EndThread
+	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0502 )
+	Call NpcMoveTo ( .NpcID:AntiGuy3 -246` -219` 60` )
+	Call DisablePlayerPhysics ( .True )
+	% Thread
+	% 	Thread
+	% 		Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0501 )
+	% 	EndThread
+	% 		Thread
+	% 			Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0501 )
+	% 		EndThread
+	% 	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0501 )
+	% 	Wait 5`
+	% 	Thread
+	% 		Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0516 )
+	% 	EndThread
+	% 		Thread
+	% 			Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0516 )
+	% 		EndThread
+	% 	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0516 )
+	% EndThread
+	Set *Var1 0`
+	Loop 16
+		Add *Var1 1`
+		Call SetPlayerPos ( -262` *Var1 -203` )
+		Wait 1`
+	EndLoop
+	Call DisablePlayerInput ( .False )
+	Return
+	End
+}
+
+#new:Script $Anti1Jump
+{
+	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B050A )
+	Call SetNpcJumpscale ( .NpcID:AntiGuy1 *Fixed[1.5] )
+	Call NpcJump1 ( .NpcID:AntiGuy1 ~Vec3D:AntiJumpTo1 45` )
+	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0501 )
+	Return
+	End
+}
+
+#new:Script $Anti2CEJump
+{
+	Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B050A )
+	Call SetNpcJumpscale ( .NpcID:AntiGuy2CE *Fixed[1.5] )
+	Call NpcJump1 ( .NpcID:AntiGuy2CE ~Vec3D:AntiJumpTo2 45` )
+	Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0501 )
+	Return
+	End
+}
+
+
+#new:Script $Anti3Jump
+{
+	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B050A )
+	Call SetNpcJumpscale ( .NpcID:AntiGuy3 *Fixed[1.5] )
+	Call NpcJump1 ( .NpcID:AntiGuy3 ~Vec3D:AntiJumpTo3 45` )
+	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0501 )
 	Return
 	End
 }
@@ -652,4 +828,25 @@
 	the others must be hiding and[br]
 	waiting for commands.[br]
 	[Wait][End]
+}
+
+#new:Script $Script_Init_AntiGuy2CE
+{
+	0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_AntiGuy2CE )
+	14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_AntiGuy2CE )
+    28:  Return
+    30:  End
+}
+
+#new:Script $Script_Idle_AntiGuy2CE
+{
+	Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0501 )
+   C4:  Return
+   CC:  End
+}
+
+#new:Script $Script_Interact_AntiGuy2CE
+{
+	Return
+	End
 }

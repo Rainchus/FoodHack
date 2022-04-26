@@ -323,5 +323,19 @@
 				<Command val="2000"/>
 			</Component>
 		</Animation>
+		<Animation name="Anim_16">
+			<Component xyz="0,0,0">
+				<Command val="1012"/>
+				<Command val="A"/>
+				<Command val="1013"/>
+				<Command val="5"/>
+				<Command val="1012"/>
+				<Command val="3"/>
+				<Command val="1011"/>
+				<Command val="2"/>
+				<Command val="1010"/>
+				<Command val="2007"/>
+			</Component>
+		</Animation>
 	</AnimationList>
 </SpriteSheet>
