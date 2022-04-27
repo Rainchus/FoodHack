@@ -40,6 +40,7 @@
 	EndIf
 	 Call  MakeEntity    ( .Entity:SavePoint ~Vec4d:SaveBlock 80000000 )
 	 Call  MakeEntity    ( .Entity:HealingBlock ~Vec4d:HealBlock 80000000 )
+	 Call  MakeItemEntity    ( .Item:MegaRush ~Vec3d:Hiddenbadge .ItemSpawnMode:Fixed_NeverVanish *GF_DGB13_Item_MegaRush )
     Return
     End
     
@@ -596,6 +597,8 @@
 	Wait 30`
 	Thread
 		Call SetNpcCollisionSize ( .NpcID:AntiGuy1 1` 1` )
+		Call SetNpcCollisionSize ( .NpcID:AntiGuy2CE 1` 1` )
+		Call SetNpcCollisionSize ( .NpcID:AntiGuy3 1` 1` )
 		Call SetPlayerCollisionSize ( 1` 1` )
 		Wait 15`
 		Call PlaySoundAtPlayer ( 000000E1 00000000 )
@@ -608,6 +611,7 @@
 		Wait 10`
 		Call SetNpcAnimation ( .NpcID:AntiGuy1 003B050A )
 	EndThread
+	Call PlaySoundAtPlayer ( 00000160 00000000 )
 	Call SetNpcJumpscale ( .NpcID:AntiGuy1 *Fixed[0.8] )
 	Call NpcJump1 ( .NpcID:AntiGuy1 ~Vec3D:AntiJumpPos 15` )
 	Call SetNpcJumpscale ( .NpcID:AntiGuy1 *Fixed[0.5] )
@@ -623,6 +627,7 @@
 		Wait 10`
 		Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B050A )
 	EndThread
+	Call PlaySoundAtPlayer ( 00000160 00000000 )
 	Call SetNpcJumpscale ( .NpcID:AntiGuy2CE *Fixed[0.8] )
 	Call NpcJump1 ( .NpcID:AntiGuy2CE ~Vec3D:AntiJumpPos 15` )
 	Call SetNpcJumpscale ( .NpcID:AntiGuy2CE *Fixed[0.5] )
@@ -638,6 +643,7 @@
 		Wait 10`
 		Call SetNpcAnimation ( .NpcID:AntiGuy3 003B050A )
 	EndThread
+	Call PlaySoundAtPlayer ( 00000160 00000000 )
 	Call SetNpcJumpscale ( .NpcID:AntiGuy3 *Fixed[0.8] )
 	Call NpcJump1 ( .NpcID:AntiGuy3 ~Vec3D:AntiJumpPos 15` )
 	Call SetNpcJumpscale ( .NpcID:AntiGuy3 *Fixed[0.5] )
@@ -646,10 +652,7 @@
 	Call SetPlayerAnimation ( 00010022 )
 	Thread
 		Wait 10`
-		Call InterpPlayerYaw ( -90` 15` )
-		Call SetPlayerAnimation ( 00010017 )
-		Wait 20`
-		Call SetPlayerAnimation ( 00010018 )
+		ExecWait $MarioDies
 	EndThread
 	Wait 60`
 	Thread
@@ -663,30 +666,57 @@
 	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0502 )
 	Call NpcMoveTo ( .NpcID:AntiGuy3 -246` -219` 60` )
 	Call DisablePlayerPhysics ( .True )
-	% Thread
-	% 	Thread
-	% 		Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0501 )
-	% 	EndThread
-	% 		Thread
-	% 			Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0501 )
-	% 		EndThread
-	% 	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0501 )
-	% 	Wait 5`
-	% 	Thread
-	% 		Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0516 )
-	% 	EndThread
-	% 		Thread
-	% 			Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0516 )
-	% 		EndThread
-	% 	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0516 )
-	% EndThread
+	Thread
+		Exec $AntiGuy1_Idle
+		Exec $AntiGuy2_Idle
+		Exec $AntiGuy3_Idle
+		Wait 3`
+		Exec $AntiGuy1_PickUp
+		Exec $AntiGuy2_PickUp
+		Exec $AntiGuy3_PickUp
+	EndThread
 	Set *Var1 0`
-	Loop 16
-		Add *Var1 1`
-		Call SetPlayerPos ( -262` *Var1 -203` )
+	Set *Var2 -262`
+	Loop 9
+		Add *Var1 2`
+		Sub *Var2 1`
+		Call SetPlayerPos ( *Var2 *Var1 -203` )
 		Wait 1`
 	EndLoop
+	Call     SetCamSpeed     ( .Cam:Default *Fixed[2] )
+	% Call     GetPlayerPos  ( *Var4 *Var5 *Var6 )
+	% Call     UseSettingsFrom   ( .Cam:Default *Var4 *Var5 *Var6 )
+	Call     SetPanTarget     ( .Cam:Default ~Vec3D:CutsceneCamMarker )
+	Call     SetCamDistance    ( .Cam:Default  100` )
+	Call     PanToTarget     ( .Cam:Default .Easing:Linear 00000001 )
+	Call     WaitForCam    ( .Cam:Default *Fixed[1.0] )
 	Call DisablePlayerInput ( .False )
+	Thread
+		Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0502 )
+		Call NpcMoveTo ( .NpcID:AntiGuy1 -246` -187` 60` )
+	EndThread
+	Thread
+		Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0502 )
+		Call NpcMoveTo ( .NpcID:AntiGuy2CE -278` -187` 60` )
+	EndThread
+	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0502 )
+	Call SetNpcYaw ( .NpcID:AntiGuy3 90` )
+	Wait 10`
+	Thread
+		Call PlaySoundAtPlayer ( 00000234 00000000 )
+	EndThread
+	Exec $AntiGuySyncUpThing
+	Wait 15`
+	Call SetNpcYaw ( .NpcID:AntiGuy1 90` )
+	Exec $AntiThrow
+	Thread
+		Wait 30`
+		Call PlaySoundAtPlayer ( 00000161 00000000 )
+	EndThread
+	Call SetPlayerJumpscale    ( *Fixed[1] )
+	Call PlayerJump1 ( ~Vec3D:MarioYeetToHole 40` )
+	Wait 10`
+	Call GotoMap ( "jam_05" 0 )
 	Return
 	End
 }
@@ -694,6 +724,7 @@
 #new:Script $Anti1Jump
 {
 	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B050A )
+	Call PlaySoundAtPlayer ( 00000160 00000000 )
 	Call SetNpcJumpscale ( .NpcID:AntiGuy1 *Fixed[1.5] )
 	Call NpcJump1 ( .NpcID:AntiGuy1 ~Vec3D:AntiJumpTo1 45` )
 	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0501 )
@@ -704,6 +735,7 @@
 #new:Script $Anti2CEJump
 {
 	Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B050A )
+	Call PlaySoundAtPlayer ( 00000160 00000000 )
 	Call SetNpcJumpscale ( .NpcID:AntiGuy2CE *Fixed[1.5] )
 	Call NpcJump1 ( .NpcID:AntiGuy2CE ~Vec3D:AntiJumpTo2 45` )
 	Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0501 )
@@ -715,6 +747,7 @@
 #new:Script $Anti3Jump
 {
 	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B050A )
+	Call PlaySoundAtPlayer ( 00000160 00000000 )
 	Call SetNpcJumpscale ( .NpcID:AntiGuy3 *Fixed[1.5] )
 	Call NpcJump1 ( .NpcID:AntiGuy3 ~Vec3D:AntiJumpTo3 45` )
 	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0501 )
@@ -847,6 +880,88 @@
 
 #new:Script $Script_Interact_AntiGuy2CE
 {
+	Return
+	End
+}
+
+#new:Script $AntiGuy1_Idle
+{
+	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0501 )
+	Return
+	End
+}
+
+#new:Script $AntiGuy2_Idle
+{
+	Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0501 )
+	Return
+	End
+}
+
+#new:Script $AntiGuy3_Idle
+{
+	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0501 )
+	Return
+	End
+}
+
+#new:Script $AntiGuy1_PickUp
+{
+	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0516 )
+	Return
+	End
+}
+
+#new:Script $AntiGuy2_PickUp
+{
+	Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0516 )
+	Return
+	End
+}
+
+#new:Script $AntiGuy3_PickUp
+{
+	Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0516 )
+	Return
+	End
+}
+
+#new:Script $AntiThrow
+{
+	Thread
+		Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0505 )
+	EndThread
+	Thread
+		Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0505 )
+	EndThread
+	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0505 )
+	Return
+	End
+}
+
+#new:Script $AntiGuySyncUpThing
+{
+	Thread
+		Call SetNpcAnimation ( .NpcID:AntiGuy2CE 003B0509 )
+	EndThread
+	Thread
+		Call SetNpcAnimation ( .NpcID:AntiGuy3 003B0509 )
+	EndThread
+	Call SetNpcAnimation ( .NpcID:AntiGuy1 003B0509 )
+	Return
+	End
+}
+
+#new:Script $MarioDies
+{
+	Call InterpPlayerYaw ( -90` 15` )
+	Call SetPlayerAnimation ( 00010017 )
+	Wait 20`
+	Thread
+		Call  PlaySoundAtPlayer ( 000003E3 00000000 )
+		Call ShakeCam ( .Cam:Default 1 5` 1` )
+	EndThread
+	Call SetPlayerAnimation ( 00010018 )
 	Return
 	End
 }

@@ -1,0 +1,51 @@
+@ $Script_EnterMap {
+    Call  GetEntryID    ( *Var[0] )
+    Switch  *Var[0]
+        Case  ==  ~Entry:entry_e
+            Set   *Var[0] $Script_CreateExitTriggers
+            Exec  EnterWalk
+        Case  ==  ~Entry:EntryMarioFall
+            ExecWait $MarioFallDown
+            Exec  $Script_CreateExitTriggers
+        EndCaseGroup
+        Default
+            Exec  $Script_CreateExitTriggers
+    EndSwitch
+    Return
+    End
+}
+
+#new:Script $MarioFallDown{
+    Call DisablePlayerPhysics ( .True )
+    Call DisablePlayerInput ( .True )
+    Call SetPlayerPos ( ~Vec3D:MarioEntryFallPos )
+	Call InterpPlayerYaw ( -90` 15` )
+    ExecWait $CameraBS
+	Call SetPlayerAnimation ( 00010018 )
+	Call SetPlayerJumpscale    ( *Fixed[2] )
+    Call PlayerJump2 (  ~Vec3D:MarioFall 60` )
+	Call SetPlayerAnimation ( 00010018 )
+    Wait 5`
+	Call SetPlayerAnimation ( 00010018 )
+    Call  PlaySoundAtPlayer ( 000003E3 00000000 )
+    Call ShakeCam ( .Cam:Default 1 5` 1` )
+    Thread
+	    Call  ResetCam ( .Cam:Default *Fixed[2.0] )
+    EndThread
+    Wait 30`
+    Return
+    End
+}
+
+#new:Script $CameraBS
+{
+    Call     SetCamSpeed     ( .Cam:Default *Fixed[2.0] )
+    Call     GetPlayerPos  ( *Var0 *Var1 *Var2 )
+    Call     UseSettingsFrom   ( .Cam:Default *Var0 *Var1 *Var2 )
+    Call     SetPanTarget     ( .Cam:Default ~Vec3D:CameraMarker )
+    Call     SetCamDistance    ( .Cam:Default 600` )
+    Call     PanToTarget     ( .Cam:Default .Easing:Linear 00000001 )
+    Call     WaitForCam    ( .Cam:Default *Fixed[1.0] )
+    Return
+    End
+}

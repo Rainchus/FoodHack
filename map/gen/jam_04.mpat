@@ -513,6 +513,19 @@
 	End
 }
 
+#new:Script $Script_SetCamera_CutsceneCamMarker
+{
+	Call  SetCamType        ( .Cam:Default 00000000 .False )
+	Call  SetCamPitch       ( .Cam:Default *Fixed[16.000000] *Fixed[-6.000000] )
+	Call  SetCamDistance    ( .Cam:Default 450` )
+	Call  SetCamPosA        ( .Cam:Default 97` 107` )
+	Call  SetCamPosB        ( .Cam:Default 335` 97` )
+	Call  SetCamPosC        ( .Cam:Default 295` 235` )
+	Call  SetPanTarget      ( .Cam:Default ~Vec3d:CutsceneCamMarker )
+	Return
+	End
+}
+
 #new:Script $Script_SetupMusic
 {
 	Call  SetMusicTrack ( 00000000 .Song:PenguinMystery 00000000 00000008 )

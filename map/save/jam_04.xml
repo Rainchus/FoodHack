@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_04" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-266.719391,124.036812,186.984299" pitch="9.999999" yaw="0.000000"/>
-		<Camera pos="-232.229691,65536.000000,-271.069427"/>
-		<Camera pos="65536.000000,36.921299,-369.130554"/>
+		<Camera pos="232.014557,344.505554,636.732666" pitch="18.480011" yaw="357.279938"/>
+		<Camera pos="-71.363297,65536.000000,33.197914"/>
+		<Camera pos="65536.000000,-58.027225,12.330246"/>
 		<Camera pos="1178.312012,-3831.592773,65536.000000"/>
 	</Editor>
 	<ModelTree>
@@ -135,7 +135,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="18">
+		<Node name="Root" id="1A">
 			<Node name="Entrances" id="1">
 				<Node name="entry_s" id="FFFFFFFF"/>
 				<Node name="entry_w" id="0"/>
@@ -148,7 +148,7 @@
 			<Node name="PipeEntry" id="7"/>
 			<Node name="BlueSwitch" id="8"/>
 			<Node name="CameraMarker" id="9"/>
-			<Node name="HiddenItem" id="A"/>
+			<Node name="Hiddenbadge" id="A"/>
 			<Node name="TentGuy2" id="B"/>
 			<Node name="TentGhost2" id="C"/>
 			<Node name="GuardianGhost" id="D"/>
@@ -162,6 +162,8 @@
 			<Node name="AntiJumpTo3" id="15"/>
 			<Node name="AntiGuy2CE" id="16"/>
 			<Node name="AntiJumpPos" id="17"/>
+			<Node name="CutsceneCamMarker" id="18"/>
+			<Node name="MarioYeetToHole" id="19"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -9296,7 +9298,16 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="18"/>
+			<MapObject name="Root" id="1A"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="100,-200,0" yaw="0.000000">
+			<MapObject name="MarioYeetToHole" id="19"/>
+		</Marker>
+		<Marker ver="4" type="CamTarget" pos="-100,100,300" yaw="0.000000">
+			<MapObject name="CutsceneCamMarker" id="18"/>
+			<CamTarget sampleZone="false" generatePan="false" panSpeed="1.000000">
+				<Camera type="TYPE_0" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="97,110,335" posB="97,110,235" posC="107,100,295"/>
+			</CamTarget>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-262,32,-203" yaw="-90.000000">
 			<MapObject name="AntiJumpPos" id="17"/>
@@ -9352,7 +9363,7 @@
 			<Sprite sprite="3B" palette="1" animations="1,2,3,4,0,0,C,C,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-3,0,-444" yaw="0.000000">
-			<MapObject name="HiddenItem" id="A"/>
+			<MapObject name="Hiddenbadge" id="A"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="205,33,469" yaw="0.000000">
 			<MapObject name="CameraMarker" id="9"/>

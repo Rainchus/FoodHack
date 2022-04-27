@@ -574,6 +574,7 @@
 		<Map name="jam_02" nickname="Cake Upper :D"/>
 		<Map name="jam_03" nickname="Flour Cavern ooooooooooo"/>
 		<Map name="jam_04" nickname="Flour City yay"/>
+		<Map name="jam_05" nickname="Flour Dungeon Map 1"/>
 		<Stage name="jam_bt1"/>
 	</Area>
 	<Resource name="mac_tex" compressed="false"/>
