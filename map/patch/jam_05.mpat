@@ -18,8 +18,9 @@
 #new:Script $MarioFallDown{
     Call DisablePlayerPhysics ( .True )
     Call DisablePlayerInput ( .True )
+	Call PlaySoundAtPlayer ( 00000161 00000000 )
     Call SetPlayerPos ( ~Vec3D:MarioEntryFallPos )
-	Call InterpPlayerYaw ( -90` 15` )
+    Call InterpPlayerYaw ( -90` 15` )
     ExecWait $CameraBS
 	Call SetPlayerAnimation ( 00010018 )
 	Call SetPlayerJumpscale    ( *Fixed[2] )
@@ -29,10 +30,23 @@
 	Call SetPlayerAnimation ( 00010018 )
     Call  PlaySoundAtPlayer ( 000003E3 00000000 )
     Call ShakeCam ( .Cam:Default 1 5` 1` )
-    Thread
-	    Call  ResetCam ( .Cam:Default *Fixed[2.0] )
-    EndThread
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Call    ResetCam ( .Cam:Default *Fixed[4.0] )
+    Call    SetCamSpeed     ( .Cam:Default *Fixed[1.0] )
     Wait 30`
+    Call SetPlayerAnimation ( 00010030 )
+    Wait 10`
+    Call SetPlayerAnimation ( 00010003 )
+    Wait 15`
+        Thread
+            Call  PlaySoundAtPlayer ( 00000172 00000000 )
+            Wait 10`
+            Call  PlaySoundAtPlayer ( 00000172 00000000 )
+        EndThread
+    Call SetPlayerAnimation ( 00010031 )
+    Wait 15`
+    Call DisablePlayerPhysics ( .False )
+    Call DisablePlayerInput ( .False )
     Return
     End
 }
