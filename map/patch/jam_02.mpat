@@ -77,12 +77,103 @@
 
 #new:Script $Script_Interact_8024CE80
 {
-	Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $GourmetGuyString )
-	Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+	If *TalkedToGourmetGuy == .False
+		Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $GourmetGuyString )
+		Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+		Set *TalkedToGourmetGuy .True
+
+	Else
+		Call FindKeyItem ( .Item:BakingFlour *Var0 )
+		Call FindKeyItem ( .Item:BakingEgg *Var1 )
+		Call FindKeyItem ( .Item:BakingStrawberry *Var2 )
+		Call FindKeyItem ( .Item:BakingSugar *Var3 )
+	
+		Set *ItemStateTest $validKeyItems1
+				If *GivingAnItem == .False
+					If *Var0 != FFFFFFFF
+						Set *Var5 .Item:BakingFlour
+						Set *GivingAnItem .True
+						ExecWait $BindScriptMenuForKeyItemsMenu
+						Switch *ItemStateTest
+							Case == FFFFFFFF
+						  		%B pressed
+						 	 	Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $Sad ) % Sadge
+							Default
+						  		Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $happy ) % Yay!
+					  			Add *ItemsDelivered 1
+					  EndSwitch
+					EndIf
+				EndIf
+				If *GivingAnItem == .False
+					If *Var1 != FFFFFFFF
+						Set *Var5 .Item:BakingEgg
+						Set *GivingAnItem .True
+						ExecWait $BindScriptMenuForKeyItemsMenu
+						Switch *ItemStateTest
+						Case == FFFFFFFF
+							  %B pressed
+							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $Sad ) % Sadge
+						Default
+							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $happy ) % Yay!
+							  Add *ItemsDelivered 1
+							EndSwitch
+					EndIf
+				EndIf
+				If *GivingAnItem == .False
+					If *Var2 != FFFFFFFF
+						Set *Var5 .Item:BakingStrawberry
+						Set *GivingAnItem .True
+						ExecWait $BindScriptMenuForKeyItemsMenu
+						Switch *ItemStateTest
+						Case == FFFFFFFF
+							  %B pressed
+							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $Sad ) % Sadge
+						Default
+							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $happy ) % Yay!
+							  Add *ItemsDelivered 1
+							EndSwitch
+					EndIf
+				EndIf
+				If *GivingAnItem == .False
+					If *Var3 != FFFFFFFF
+						Set *Var5 .Item:BakingSugar
+						Set *GivingAnItem .True
+						ExecWait $BindScriptMenuForKeyItemsMenu
+						Switch *ItemStateTest
+						Case == FFFFFFFF
+							  %B pressed
+							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $Sad ) % Sadge
+						Default
+							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $happy ) % Yay!
+							  Add *ItemsDelivered 1
+							EndSwitch
+					EndIf
+				EndIf
+	EndIf
+	ExecWait $Script_Ingredientlist
+	Set *GivingAnItem .False
 	Return
 	End
 }
-
+#new:Script $Script_Ingredientlist
+{
+	Call SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $GourmetGuyString2 )
+	If *GaveEgg == .False
+		Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $Egg )
+	EndIf
+	If *GaveSugar == .False
+		Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $Sugar )
+	EndIf
+	If *GaveFlour == .False
+		Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $Flour )
+	EndIf
+	If *GaveStrawberry == .False
+		Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $Strawberry )
+	EndIf
+	Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $GourmetGuyString3 )
+	Return
+	End
+}
 #new:String $GourmetGuyString
 {
 	[Style Right]
@@ -92,14 +183,126 @@
 	Star Rod from Star Haven![br]
 	[Wait][Next]
 	It's the PERFECT cake.[br]
-	It is after my image of a perfect[br]
-	cake and thus perfect to me anyways.[br]
+	It's after my image of a perfect[br]
+	cake and thus perfect to me![br]
 	[Wait][Next]
-	Because we just recently[br]
-	arrived here and are living[br]
-	on edge, we can't sell[br]
-	check or claim anything for you.[br]
+	It's too big to eat though...[br]
+	mario, get me the ingredients[br]
+	for a better cake![br]
 	[Wait][Next]
-	Sorry, Mario!
+	If you do, I might give[br]
+	you back the star rod![br]
+	[Wait][Next]
+	Here's also something to[br]
+	help you along your journey.
 	[Wait][End]
+}
+
+#new:String $GourmetGuyString2
+{
+	[style right]
+Okay, so I need the following[br]
+ingredients to bake my cake:[br]
+[Wait][End]
+}
+
+#new:String $Flour
+{
+	[style right]
+Flour from the flour mines
+[Wait][End]
+}
+#new:String $Egg
+
+{
+	[style right]
+A fresh egg from a farm
+[Wait][End]
+}
+#new:String $Strawberry
+{[style right]
+A strawberry from the[br]
+strawberry fields south[br]
+of here[Wait][End]}
+#new:String $Sugar{
+{[style right]
+Some sugar from the sugarcane[br]
+fields on the outskirts of[br]
+strawberry fields[Wait][End]}
+}
+
+
+#new:String $GourmetGuyString3
+{
+	[style right]
+Get to it!
+[Wait][End]
+}
+
+
+#new:Data $validKeyItems1 {
+.Item:BakingFlour 00000000
+.Item:BakingEgg 00000001
+.Item:BakingStrawberry 00000002
+.Item:BakingSugar 00000003
+}
+	
+	#new:String $Happy
+
+{
+	[style right]
+Yay
+[Wait][End]
+}
+#new:String $Sad
+
+{
+	[style right]
+Sadge
+[Wait][End]
+}
+
+
+
+#new:Script $Script_80241450
+{
+If  *GF_TIK25_GiantChest  ==  .False
+	Label  A
+	If  *GF_TIK25_GiantChest  ==  .False
+		Wait  1`
+		Goto  A
+	EndIf
+Wait  60`
+Exec  $Script_8024239C
+Call  ShowMessageAtScreenPos    ( 001D0186  160`  40` ) % You got the Ultra Hammer! The attack power of Mari ...
+Call  $Function_802407F4 ( )
+  EndIf
+  Return
+  End
+  }
+  
+  
+  
+  #new:Function $Function_802407F4
+{
+    0:  ADDIU     SP, SP, FFE8
+    4:  SW        RA, 10 (SP)
+    8:  JAL       ~Func:get_entity_by_index
+    C:  LW        A0, 84 (A0)
+   10:  LW        A0, 40 (V0)
+   14:  LI        V1, 1
+   18:  SB        V1, 30 (A0)
+   1C:  LW        RA, 10 (SP)
+   20:  LI        V0, 2
+   24:  JR        RA
+   28:  ADDIU     SP, SP, 18
+}
+
+#new:Script $Script_8024239C
+{
+    0:  Call  PushSong  ( 00000042 00000001 )
+   14:  Wait  130`
+   20:  Call  PopSong ( )
+   2C:  Return
+   34:  End
 }

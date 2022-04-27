@@ -1,1 +1,7 @@
 000 = Pipe_Jam_04 = Jam04Pipe
+001 = Jam_02_gourmet = TalkedToGourmetGuy
+002 = Jam_02_egg = GaveEgg
+003 = Jam_02_Sugar = GaveSugar
+004 = Jam_02_Strawberry = GaveStrawberry
+005 = Jam_02_egg_Flour = GaveFlour
+006 = Jam_02_item = GivingAnItem
