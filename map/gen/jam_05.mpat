@@ -28,6 +28,19 @@
 	End
 }
 
+#new:Script $Script_SetCamera_CameraMarker
+{
+	Call  SetCamType        ( .Cam:Default 00000000 .False )
+	Call  SetCamPitch       ( .Cam:Default *Fixed[16.000000] *Fixed[-6.000000] )
+	Call  SetCamDistance    ( .Cam:Default 450` )
+	Call  SetCamPosA        ( .Cam:Default 15` 25` )
+	Call  SetCamPosB        ( .Cam:Default 362` 15` )
+	Call  SetCamPosC        ( .Cam:Default 322` 262` )
+	Call  SetPanTarget      ( .Cam:Default ~Vec3d:CameraMarker )
+	Return
+	End
+}
+
 #new:Script $Script_SetupMusic
 {
 	Call  SetMusicTrack ( 00000000 .Song:PeachSneaking 00000000 00000008 )
@@ -67,11 +80,9 @@
 {
 	Call  GetEntryID    ( *Var[0] )
 	Switch  *Var[0]
-		CaseOR  ==  ~Entry:EntryMarioFall
-		CaseOR  ==  ~Entry:entry_e
+		Case  ==  ~Entry:entry_e
 			Set   *Var[0] $Script_CreateExitTriggers
 			Exec  EnterWalk
-		EndCaseGroup
 		Default
 			Exec  $Script_CreateExitTriggers
 	EndSwitch

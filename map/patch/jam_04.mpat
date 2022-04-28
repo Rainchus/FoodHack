@@ -716,7 +716,7 @@
 	Call SetPlayerJumpscale    ( *Fixed[1] )
 	Call PlayerJump1 ( ~Vec3D:MarioYeetToHole 40` )
 	Wait 10`
-	Call GotoMap ( "jam_05" 0 )
+	Call GotoMap ( "jam_05" 1 )
 	Return
 	End
 }

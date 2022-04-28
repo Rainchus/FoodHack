@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_05" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-216.568405,27.901981,67.775726" pitch="33.528919" yaw="358.400177"/>
-		<Camera pos="-256.998474,65536.000000,-0.509950"/>
+		<Camera pos="-311.458008,599.036804,432.405945" pitch="9.999999" yaw="0.000000"/>
+		<Camera pos="-147.075104,65536.000000,110.726143"/>
 		<Camera pos="65536.000000,-8.563145,0.763288"/>
 		<Camera pos="-206.584366,342.987244,65536.000000"/>
 	</Editor>
@@ -22,7 +22,7 @@
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="6">
+		<Node name="Root" id="7">
 			<Node name="Stage" id="2">
 				<Node name="main_floor" id="0"/>
 				<Node name="main_walls" id="1"/>
@@ -31,6 +31,7 @@
 				<Node name="exit_trigger_e" id="3"/>
 			</Node>
 			<Node name="ExitGuards" id="5"/>
+			<Node name="Planar GridCollider" id="6"/>
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
@@ -61,7 +62,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="8" hidden="true"/>
+			<MapObject name="Planar GridModel" id="8"/>
 			<ShapeMesh ver="3" texture="mgm_star_floortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -149,7 +150,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_e_edge" id="4" hidden="true"/>
+			<MapObject name="ex_e_edge" id="4"/>
 			<ShapeMesh ver="3" texture="kmr_berosaidetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -187,7 +188,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_e_floor" id="3" hidden="true"/>
+			<MapObject name="ex_e_floor" id="3"/>
 			<ShapeMesh ver="3" texture="mgm_star_floortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -229,7 +230,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="main_floor" id="0" hidden="true"/>
+			<MapObject name="main_floor" id="0"/>
 			<ShapeMesh ver="3" texture="mgm_star_floortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -265,8 +266,77 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0">
-			<MapObject name="Root" id="6"/>
+			<MapObject name="Root" id="7"/>
 			<HitObject type="ROOT"/>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="Planar GridCollider" id="6"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-337,475,-15" uv="-2048,-1024"/>
+						<Vertex xyz="-322,475,-30" uv="-1024,-2048"/>
+						<Vertex xyz="-337,475,-30" uv="-2048,-2048"/>
+						<Vertex xyz="-322,475,-15" uv="-1024,-1024"/>
+						<Vertex xyz="-337,475,0" uv="-2048,0"/>
+						<Vertex xyz="-322,475,0" uv="-1024,0"/>
+						<Vertex xyz="-337,475,15" uv="-2048,1024"/>
+						<Vertex xyz="-322,475,15" uv="-1024,1024"/>
+						<Vertex xyz="-337,475,30" uv="-2048,2048"/>
+						<Vertex xyz="-322,475,30" uv="-1024,2048"/>
+						<Vertex xyz="-307,475,-30" uv="0,-2048"/>
+						<Vertex xyz="-307,475,-15" uv="0,-1024"/>
+						<Vertex xyz="-307,475,0"/>
+						<Vertex xyz="-307,475,15" uv="0,1024"/>
+						<Vertex xyz="-307,475,30" uv="0,2048"/>
+						<Vertex xyz="-292,475,-30" uv="1024,-2048"/>
+						<Vertex xyz="-292,475,-15" uv="1024,-1024"/>
+						<Vertex xyz="-292,475,0" uv="1024,0"/>
+						<Vertex xyz="-292,475,15" uv="1024,1024"/>
+						<Vertex xyz="-292,475,30" uv="1024,2048"/>
+						<Vertex xyz="-277,475,-30" uv="2048,-2048"/>
+						<Vertex xyz="-277,475,-15" uv="2048,-1024"/>
+						<Vertex xyz="-277,475,0" uv="2048,0"/>
+						<Vertex xyz="-277,475,15" uv="2048,1024"/>
+						<Vertex xyz="-277,475,30" uv="2048,2048"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="1,0,3"/>
+						<Triangle ijk="4,3,0"/>
+						<Triangle ijk="3,4,5"/>
+						<Triangle ijk="6,5,4"/>
+						<Triangle ijk="5,6,7"/>
+						<Triangle ijk="8,7,6"/>
+						<Triangle ijk="7,8,9"/>
+						<Triangle ijk="3,10,1"/>
+						<Triangle ijk="10,3,11"/>
+						<Triangle ijk="5,11,3"/>
+						<Triangle ijk="11,5,12"/>
+						<Triangle ijk="7,12,5"/>
+						<Triangle ijk="12,7,13"/>
+						<Triangle ijk="9,13,7"/>
+						<Triangle ijk="13,9,14"/>
+						<Triangle ijk="11,15,10"/>
+						<Triangle ijk="15,11,16"/>
+						<Triangle ijk="12,16,11"/>
+						<Triangle ijk="16,12,17"/>
+						<Triangle ijk="13,17,12"/>
+						<Triangle ijk="17,13,18"/>
+						<Triangle ijk="14,18,13"/>
+						<Triangle ijk="18,14,19"/>
+						<Triangle ijk="16,20,15"/>
+						<Triangle ijk="20,16,21"/>
+						<Triangle ijk="17,21,16"/>
+						<Triangle ijk="21,17,22"/>
+						<Triangle ijk="18,22,17"/>
+						<Triangle ijk="22,18,23"/>
+						<Triangle ijk="19,23,18"/>
+						<Triangle ijk="23,19,24"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
 			<MapObject name="ExitGuards" id="5"/>
@@ -450,7 +520,7 @@
 		<Marker ver="4" type="Root">
 			<MapObject name="Root" id="5"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-309,350,0" yaw="-270.000000">
+		<Marker ver="4" type="Position" pos="-309,500,0" yaw="-450.000000">
 			<MapObject name="MarioEntryFallPos" id="4"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="-132,100,312" yaw="0.000000">
@@ -459,10 +529,10 @@
 				<Camera type="TYPE_0" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="15,110,362" posB="15,110,262" posC="25,100,322"/>
 			</CamTarget>
 		</Marker>
-		<Marker ver="4" type="Entry" pos="-200,-15,0" yaw="-90.000000">
+		<Marker ver="4" type="Entry" pos="-200,-15,0" yaw="90.000000">
 			<MapObject name="EntryMarioFall" id="2"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-200,0,0" yaw="-90.000000">
+		<Marker ver="4" type="Position" pos="-200,0,0" yaw="90.000000">
 			<MapObject name="MarioFall" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Group">

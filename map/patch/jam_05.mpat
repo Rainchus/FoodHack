@@ -19,12 +19,12 @@
     Call DisablePlayerPhysics ( .True )
     Call DisablePlayerInput ( .True )
     Call SetPlayerPos ( ~Vec3D:MarioEntryFallPos )
-    Call InterpPlayerYaw ( -90` 15` )
+    Call InterpPlayerYaw ( 90` 15` )
 	Call PlaySoundAtPlayer ( 00000161 00000000 )
-	Call SetPlayerAnimation ( 00010018 )
+	Call SetPlayerAnimation ( 0001000F )
     ExecWait $CameraBS
     ExecWait $MarioJump
-	Call SetPlayerAnimation ( 00010018 )
+	Call SetPlayerAnimation ( 0001000F )
     Call PlaySoundAtPlayer ( 000003E3 00000000 )
     Call ShakeCam ( .Cam:Default 1 5` 1` )
     Call SetCamLeadPlayer   ( .Cam:Default .False )
