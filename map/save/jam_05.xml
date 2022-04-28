@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_05" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-203.824158,66.995468,244.337448" pitch="15.280025" yaw="358.079712"/>
-		<Camera pos="-295.800049,65536.000000,0.750080"/>
+		<Camera pos="-216.568405,27.901981,67.775726" pitch="33.528919" yaw="358.400177"/>
+		<Camera pos="-256.998474,65536.000000,-0.509950"/>
 		<Camera pos="65536.000000,-8.563145,0.763288"/>
-		<Camera pos="0.000000,-93.230080,65536.000000"/>
+		<Camera pos="-206.584366,342.987244,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="9">
@@ -61,7 +61,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="8"/>
+			<MapObject name="Planar GridModel" id="8" hidden="true"/>
 			<ShapeMesh ver="3" texture="mgm_star_floortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -149,7 +149,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_e_edge" id="4"/>
+			<MapObject name="ex_e_edge" id="4" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_berosaidetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -187,7 +187,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_e_floor" id="3"/>
+			<MapObject name="ex_e_floor" id="3" hidden="true"/>
 			<ShapeMesh ver="3" texture="mgm_star_floortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -229,7 +229,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="main_floor" id="0"/>
+			<MapObject name="main_floor" id="0" hidden="true"/>
 			<ShapeMesh ver="3" texture="mgm_star_floortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -450,7 +450,7 @@
 		<Marker ver="4" type="Root">
 			<MapObject name="Root" id="5"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-309,350,0" yaw="90.000000">
+		<Marker ver="4" type="Position" pos="-309,350,0" yaw="-270.000000">
 			<MapObject name="MarioEntryFallPos" id="4"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="-132,100,312" yaw="0.000000">
@@ -459,10 +459,10 @@
 				<Camera type="TYPE_0" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="15,110,362" posB="15,110,262" posC="25,100,322"/>
 			</CamTarget>
 		</Marker>
-		<Marker ver="4" type="Entry" pos="-200,-15,0" yaw="90.000000">
+		<Marker ver="4" type="Entry" pos="-200,-15,0" yaw="-90.000000">
 			<MapObject name="EntryMarioFall" id="2"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-200,0,0" yaw="90.000000">
+		<Marker ver="4" type="Position" pos="-200,0,0" yaw="-90.000000">
 			<MapObject name="MarioFall" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Group">
