@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_05" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-311.458008,599.036804,432.405945" pitch="9.999999" yaw="0.000000"/>
+		<Camera pos="420.000000,124.036812,403.656006" pitch="10.000000" yaw="0.000000"/>
 		<Camera pos="-147.075104,65536.000000,110.726143"/>
 		<Camera pos="65536.000000,-8.563145,0.763288"/>
 		<Camera pos="-206.584366,342.987244,65536.000000"/>
@@ -347,7 +347,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_e" id="3" hidden="true"/>
+			<MapObject name="exit_trigger_e" id="3"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -368,8 +368,8 @@
 			<MapObject name="Stage" id="2"/>
 			<HitObject type="GROUP"/>
 		</Collider>
-		<Collider ver="0" flags="8000">
-			<MapObject name="main_walls" id="1" hidden="true"/>
+		<Collider ver="0" flags="0">
+			<MapObject name="main_walls" id="1"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -439,7 +439,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="main_floor" id="0" hidden="true"/>
+			<MapObject name="main_floor" id="0"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -564,6 +564,7 @@
 		<Generators>
 			<Entrance type="Walk" hasCallback="false" entry="EntryMarioFall"/>
 			<Entrance type="Walk" hasCallback="false" entry="entry_e"/>
+			<Exit type="Walk" hasCallback="false" entry="entry_e" destMap="jam_06" destEntry="EntryBottom" trigger="exit_trigger_e"/>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>
 		<Fog world="1,0,0,0,255,800,1200" entity="1,0,0,0,255,800,1200"/>
