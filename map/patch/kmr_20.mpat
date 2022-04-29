@@ -1,7 +1,7 @@
 #new:Function $GivePlayerStartingEquipment {
 	LIO t0, 8010F290
 	ORI t1, r0, 1
-	SB r0, 0001 (t0) % sets the Hammer
+	SB r0, 0001 (t0) % sets the Hammer COMMENT THIS OUT LATER!!!
 	SB t1, 000A (t0) % sets the AC
 	JR RA
 	ORI v0, r0, 2
@@ -9,7 +9,7 @@
 
 @ $Script_8024FD70
 {
-	Call $GivePlayerStartingEquipment
+	%Call $GivePlayerStartingEquipment
 	Set *GB_StoryProgress 90
 	Set *GF_Tutorial_SaveBlock 1
 	Set *GF_Tutorial_HeartBlock 1
