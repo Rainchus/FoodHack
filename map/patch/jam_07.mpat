@@ -1,0 +1,149 @@
+#define .NpcID:JrTroopa            00
+#define .NpcID:Monty1              01
+#define .NpcID:Monty2              02
+
+
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Exec  $Script_SetupMusic
+    Call  $Function_SetupFog
+    If *DefeatedJrTrooper == .False
+        Call  MakeNpcs  ( .True $NpcGroupList_JrAndHisTroopers )
+    EndIf
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+#new:NpcGroupList $NpcGroupList_JrAndHisTroopers
+{
+	00000003 $NpcGroup_JrTroopers 10040000
+	00000000 00000000 00000000
+}
+
+#new:NpcGroup $NpcGroup_JrTroopers
+{
+	.NpcID:JrTroopa   $NpcSettings_80247CE4 ~Vec3f:JrTroopa % 100 0 -256
+	00002809 $Script_Init_8024D134 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:JrTroopa
+	~AnimationTable:JrTroopa % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+    
+    .NpcID:Monty1   $NpcSettings_80247CE4 ~Vec3f:Monty1 % 100 0 -256
+	00002809 $Script_Init_8024D134 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:Monty1
+	~AnimationTable:Monty1 % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+    .NpcID:Monty2   $NpcSettings_80247CE4 ~Vec3f:Monty2 % 100 0 -256
+	00002809 $Script_Init_8024D134 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:Monty2
+	~AnimationTable:Monty2 % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+}
+
+#new:NpcSettings $NpcSettings_80247CE4
+{
+	00000000 00160018 00000000 00000000 $Script_NpcAI_80247CC4 00000000 00000000 00000000
+	00000000 00000000 00630010
+}
+
+#new:Script $Script_NpcAI_80247CC4
+{
+    0:  Call  DoBasicAI ( $AISettings_80247C94 )
+   10:  Return
+   18:  End
+}
+
+#new:AISettings $AISettings_80247C94
+{
+    1.5 % move speed
+    60` % move time
+    30` % wait time
+    0.0 % alert radius
+    0.0
+    -1`
+    0.0 % chase speed
+    0`
+    0`
+    0.0 % chase radius
+    0.0
+    1`
+}
+
+#new:Script $Script_Init_8024D134
+{
+    Call  BindNpcIdle       ( .Npc:Self $Script_Idle_8024CDAC )
+    Return
+    End
+}
+
+#new:Script $JrTrooperAppears
+{
+    Call DisablePlayerInput ( .True )
+    Call PlayerMoveTo (  180` 300` 30` )
+    Call  InterpPlayerYaw   (  323`  3` )
+    Wait  8`
+    Call  InterpPlayerYaw   (  143`  3` )
+    Wait 15`
+    Thread
+        Wait 10`
+        Call SetMusicTrack ( 00000000 .Song:JrTroopaTheme 00000000 00000008 )
+    EndThread
+    Call SetNpcJumpscale ( .NpcID:JrTroopa *Fixed[0.4] )
+    Call NpcJump1 ( .NpcID:JrTroopa ~Vec3D:JrTroopaAppears 30` )
+    ExecWait $JrTroopaTalk
+    Thread
+        Call StartBattleWith ( .Song:JrTroopaBattle )
+    EndThread
+    Call NpcMoveTo ( .NpcID:JrTroopa 180` 300` 30` )
+    Set *DefeatedJrTrooper .True
+    Call DisablePlayerInput ( .False )
+    Return
+    End
+}
+
+#new:Script $JrTroopaTalk
+{
+    Call SpeakToPlayer ( .NpcID:JrTroopa 00210016 00210003 00000000 $JrTrooperFirstString )
+    Return
+    End
+}
+
+#new:Script $Script_Idle_8024CDAC
+{
+    Call AwaitPlayerApproach ( 226` 300` 70` )
+    Exec $JrTrooperAppears
+   C4:  Return
+   CC:  End
+}
+
+#new:String $JrTrooperFirstString
+{
+[Style Right]
+[PrintRising]Mario?![/fx] What are you doing here?[br]
+I was just hanging out with[br]
+these Monty Moles![br]
+[Wait][Next]
+They helped me dig through[br]
+this gigantic cake! Well,[br]
+less digging, moreso eating[br]
+for me.[br]
+[Wait][Next]
+It was so yummy! And now[br]
+I can finally beat you and[br]
+conquer the cake from that[br]
+dumb, fat Shy Guy![br]
+[Wait][Next]
+I'll show him not to mess with[br]
+Jr. Troopa![br]
+But first I will beat [PrintRising]you, Mario![/fx][br]
+[Wait][End]
+}

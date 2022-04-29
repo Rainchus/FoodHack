@@ -578,6 +578,7 @@
 		<Map name="jam_06" nickname="Flour Dungeon Map 2"/>
 		<Map name="jam_07" nickname="FlourDungeonBadgeFight"/>
 		<Stage name="jam_bt1"/>
+		<Stage name="jam_bt2" nickname="Flour Cave BM"/>
 	</Area>
 	<Resource name="mac_tex" compressed="false"/>
 	<Resource name="tik_tex" compressed="false"/>

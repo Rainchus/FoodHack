@@ -9,3 +9,4 @@
 008 = Jam_02_hasSugar = HasSugar
 009 = Jam_02_hasStrawberry = HasStrawberry
 00A = Jam_02_hasFlour= HasFlour
+00B = Jam_07_DefeatedJrTrooper = DefeatedJrTrooper

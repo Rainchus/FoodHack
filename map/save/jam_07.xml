@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_07" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="254.794617,101.641586,621.876892" pitch="8.240001" yaw="6.400000"/>
-		<Camera pos="262.190674,65536.000000,330.990295"/>
+		<Camera pos="166.052155,101.485153,522.101746" pitch="21.200001" yaw="15.040016"/>
+		<Camera pos="-345.645172,65536.000000,20.701057"/>
 		<Camera pos="65536.000000,88.000000,150.000000"/>
 		<Camera pos="-48.000000,88.000000,65536.000000"/>
 	</Editor>
@@ -38,7 +38,7 @@
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="8">
+		<Node name="Root" id="B">
 			<Node name="Stage" id="0"/>
 			<Node name="Exits" id="2">
 				<Node name="exit_trigger_e" id="1"/>
@@ -48,6 +48,9 @@
 			<Node name="MeshCollider" id="5"/>
 			<Node name="MeshCollider" id="6"/>
 			<Node name="MeshCollider" id="7"/>
+			<Node name="Planar GridCollider" id="8"/>
+			<Node name="JrTroopaCollider" id="9"/>
+			<Node name="TrueCollider" id="A"/>
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
@@ -56,7 +59,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="8">
+		<Node name="Root" id="9">
 			<Node name="Entrances" id="0">
 				<Node name="entry_w" id="FFFFFFFF"/>
 			</Node>
@@ -67,6 +70,7 @@
 			<Node name="JrTroopaAppears" id="5"/>
 			<Node name="Monty2" id="6"/>
 			<Node name="Monty1" id="7"/>
+			<Node name="MarioMoveTo" id="8"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -1038,8 +1042,64 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0">
-			<MapObject name="Root" id="8"/>
+			<MapObject name="Root" id="B"/>
 			<HitObject type="ROOT"/>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="TrueCollider" id="A" hidden="true"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="147,0,350" uv="-4800,4800"/>
+						<Vertex xyz="410,0,251" uv="-2424,11544"/>
+						<Vertex xyz="147,0,251" uv="-2424,4800"/>
+						<Vertex xyz="410,0,251" uv="-2424,11544"/>
+						<Vertex xyz="147,0,350" uv="-4800,4800"/>
+						<Vertex xyz="410,0,350" uv="-4800,11544"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="JrTroopaCollider" id="9" hidden="true"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="147,0,350" uv="-4800,4800"/>
+						<Vertex xyz="410,0,251" uv="-2424,11544"/>
+						<Vertex xyz="147,0,251" uv="-2424,4800"/>
+						<Vertex xyz="410,0,350" uv="-4800,11544"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="1,0,3"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="Planar GridCollider" id="8" hidden="true"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="200,-100,340" uv="-512,512"/>
+						<Vertex xyz="350,-100,260" uv="512,-512"/>
+						<Vertex xyz="200,-100,260" uv="-512,-512"/>
+						<Vertex xyz="350,-100,340" uv="512,512"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="1,0,3"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
 			<MapObject name="MeshCollider" id="7" hidden="true"/>
@@ -1127,9 +1187,9 @@
 						<Vertex xyz="-18,0,323" uv="-1413,-5328" rgba="0,0,0,255"/>
 						<Vertex xyz="81,0,350" uv="-2940,-5328" rgba="0,0,0,255"/>
 						<Vertex xyz="81,333,350" uv="-2940,0"/>
-						<Vertex xyz="503,333,350" uv="-8349,0"/>
-						<Vertex xyz="503,333,350" uv="-8349,0"/>
-						<Vertex xyz="503,0,350" uv="-8349,-5328" rgba="0,0,0,255"/>
+						<Vertex xyz="410,333,350" uv="-8349,0"/>
+						<Vertex xyz="410,333,350" uv="-8349,0"/>
+						<Vertex xyz="410,0,350" uv="-8349,-5328" rgba="0,0,0,255"/>
 						<Vertex xyz="81,0,350" uv="-2940,-5328" rgba="0,0,0,255"/>
 					</VertexTable>
 					<TriangleList>
@@ -1159,17 +1219,11 @@
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
 					<VertexTable>
-						<Vertex xyz="425,333,350" uv="-7349,5328" rgba="0,0,0,255"/>
-						<Vertex xyz="425,0,251" uv="-6401,0"/>
-						<Vertex xyz="425,0,350" uv="-7349,0"/>
-						<Vertex xyz="425,0,251" uv="-6401,0"/>
-						<Vertex xyz="425,333,350" uv="-7349,5328" rgba="0,0,0,255"/>
-						<Vertex xyz="425,333,251" uv="-6401,5328" rgba="0,0,0,255"/>
-						<Vertex xyz="503,333,251" uv="-7401,5328" rgba="0,0,0,255"/>
+						<Vertex xyz="410,333,251" uv="-7401,5328" rgba="0,0,0,255"/>
 						<Vertex xyz="81,0,251" uv="-1992,0"/>
-						<Vertex xyz="503,0,251" uv="-7401,0"/>
+						<Vertex xyz="410,0,251" uv="-7401,0"/>
 						<Vertex xyz="81,0,251" uv="-1992,0"/>
-						<Vertex xyz="503,333,251" uv="-7401,5328" rgba="0,0,0,255"/>
+						<Vertex xyz="410,333,251" uv="-7401,5328" rgba="0,0,0,255"/>
 						<Vertex xyz="81,333,251" uv="-1992,5328" rgba="0,0,0,255"/>
 						<Vertex xyz="-500,0,-50" uv="8336,0"/>
 						<Vertex xyz="-219,333,-50" uv="4735,5328" rgba="0,0,0,255"/>
@@ -1231,8 +1285,6 @@
 						<Triangle ijk="39,40,41"/>
 						<Triangle ijk="42,43,44"/>
 						<Triangle ijk="45,46,47"/>
-						<Triangle ijk="48,49,50"/>
-						<Triangle ijk="51,52,53"/>
 					</TriangleList>
 				</TriangleBatch>
 			</HitMesh>
@@ -1394,11 +1446,11 @@
 						<Vertex xyz="-67,0,62" uv="2112,1248"/>
 						<Vertex xyz="-44,0,150" uv="0,1800"/>
 						<Vertex xyz="81,0,350" uv="-4800,4800"/>
-						<Vertex xyz="503,0,251" uv="-2424,11544"/>
+						<Vertex xyz="147,0,251" uv="-2424,11544"/>
 						<Vertex xyz="81,0,251" uv="-2424,4800"/>
-						<Vertex xyz="503,0,251" uv="-2424,11544"/>
+						<Vertex xyz="147,0,251" uv="-2424,11544"/>
 						<Vertex xyz="81,0,350" uv="-4800,4800"/>
-						<Vertex xyz="503,0,350" uv="-4800,11544"/>
+						<Vertex xyz="147,0,350" uv="-4800,11544"/>
 						<Vertex xyz="410,0,350" uv="-4800,4800"/>
 						<Vertex xyz="410,422,251" uv="-2424,11544"/>
 						<Vertex xyz="410,0,251" uv="-2424,4800"/>
@@ -1733,7 +1785,10 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="8"/>
+			<MapObject name="Root" id="9"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="180,0,300" yaw="-90.000000">
+			<MapObject name="MarioMoveTo" id="8"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="300,-100,276" yaw="-90.000000">
 			<MapObject name="Monty1" id="7"/>

@@ -1,6 +1,1 @@
-@ $EntryList {
-    ~Vec4f:EntryBottom
-    ~Vec4f:BadgeFightMarker
-    ~Vec4f:FreeBadgeMarker
-    ~Vec4f:FlourFieldsEntry
-}
+
