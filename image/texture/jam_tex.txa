@@ -237,3 +237,27 @@ tex: tst_kirakiratif
 	filter: no
 	combine: 8
 }
+
+tex: MonteyFloorHole
+{
+	img: MonteyFloorHole.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: no
+	combine: 8
+}
+
+tex: MonteyWallHole
+{
+	img: MonteyWallHole.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: no
+	combine: 8
+}

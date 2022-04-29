@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_06" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-497.044312,497.942169,485.678802" pitch="5.150300" yaw="0.000000"/>
+		<Camera pos="826.000000,212.824097,492.403870" pitch="5.000001" yaw="0.000000"/>
 		<Camera pos="-673.535889,65536.000000,-125.782791"/>
 		<Camera pos="65536.000000,694.892761,-89.315979"/>
 		<Camera pos="-510.138855,503.116760,65536.000000"/>
@@ -54,9 +54,9 @@
 	<MarkerTree>
 		<Node name="Root" id="4">
 			<Node name="Entrances" id="FFFFFFFF"/>
-			<Node name="Marker" id="0"/>
-			<Node name="Marker" id="1"/>
-			<Node name="Marker" id="2"/>
+			<Node name="FlourFieldsEntry" id="0"/>
+			<Node name="FreeBadgeMarker" id="1"/>
+			<Node name="BadgeFightMarker" id="2"/>
 			<Node name="EntryBottom" id="3"/>
 		</Node>
 	</MarkerTree>
@@ -1752,13 +1752,13 @@
 			<MapObject name="EntryBottom" id="3"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="887,126,-34" yaw="-90.000000">
-			<MapObject name="Marker" id="2"/>
+			<MapObject name="BadgeFightMarker" id="2"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-627,410,-137" yaw="-270.000000">
-			<MapObject name="Marker" id="1"/>
+			<MapObject name="FreeBadgeMarker" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="99,694,-185" yaw="-90.000000">
-			<MapObject name="Marker" id="0"/>
+			<MapObject name="FlourFieldsEntry" id="0"/>
 		</Marker>
 		<Marker ver="4" type="Group">
 			<MapObject name="Entrances" id="FFFFFFFF"/>
@@ -1784,7 +1784,11 @@
 			<TexPanner id="F" generate="false"/>
 		</TexPanners>
 		<Generators>
-			<Entrance type="Walk" hasCallback="false" entry="Marker"/>
+			<Entrance type="Walk" hasCallback="false" entry="EntryBottom"/>
+			<Entrance type="Walk" hasCallback="false" entry="BadgeFightMarker"/>
+			<Entrance type="Walk" hasCallback="false" entry="FreeBadgeMarker"/>
+			<Entrance type="Walk" hasCallback="false" entry="FlourFieldsEntry"/>
+			<Exit type="Walk" hasCallback="false" entry="BadgeFightMarker" destMap="jam_07" destEntry="entry_w" trigger="EntryFightBadge"/>
 			<Exit type="Walk" hasCallback="false" entry="EntryBottom" destMap="jam_05" destEntry="entry_e" trigger="EntryBottom"/>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>

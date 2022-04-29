@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_04" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="232.014557,344.505554,636.732666" pitch="18.480011" yaw="357.279938"/>
+		<Camera pos="0.000000,124.036812,432.567749" pitch="10.000000" yaw="0.000000"/>
 		<Camera pos="-71.363297,65536.000000,33.197914"/>
 		<Camera pos="65536.000000,-58.027225,12.330246"/>
 		<Camera pos="1178.312012,-3831.592773,65536.000000"/>
@@ -7803,7 +7803,7 @@
 			<HitObject type="ROOT"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="13" hidden="true"/>
+			<MapObject name="MeshCollider" id="13"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -7911,7 +7911,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="12" hidden="true"/>
+			<MapObject name="MeshCollider" id="12"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -7971,7 +7971,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="11" hidden="true"/>
+			<MapObject name="MeshCollider" id="11"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8015,7 +8015,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="FenceGateCollider" id="10" hidden="true"/>
+			<MapObject name="FenceGateCollider" id="10"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8035,7 +8035,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="F" hidden="true"/>
+			<MapObject name="MeshCollider" id="F"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8127,7 +8127,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="E" hidden="true"/>
+			<MapObject name="MeshCollider" id="E"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8163,7 +8163,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="D" hidden="true"/>
+			<MapObject name="MeshCollider" id="D"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8235,17 +8235,17 @@
 						<Vertex xyz="928,200,-311" uv="-16433,2400"/>
 						<Vertex xyz="881,200,-197" uv="-11353,2400"/>
 						<Vertex xyz="756,200,-267" uv="-16433,2400"/>
+						<Vertex xyz="640,0,-335" uv="-11353,-2400"/>
 						<Vertex xyz="756,0,-267" uv="-16433,-2400"/>
 						<Vertex xyz="640,0,-335" uv="-11353,-2400"/>
-						<Vertex xyz="640,0,-335" uv="-11353,-2400"/>
-						<Vertex xyz="640,200,-335" uv="-11353,2400"/>
 						<Vertex xyz="756,200,-267" uv="-16433,2400"/>
+						<Vertex xyz="640,200,-335" uv="-11353,2400"/>
 						<Vertex xyz="640,200,-335" uv="-16433,2400"/>
+						<Vertex xyz="574,0,-338" uv="-11353,-2400"/>
 						<Vertex xyz="640,0,-335" uv="-16433,-2400"/>
 						<Vertex xyz="574,0,-338" uv="-11353,-2400"/>
-						<Vertex xyz="574,0,-338" uv="-11353,-2400"/>
-						<Vertex xyz="574,200,-338" uv="-11353,2400"/>
 						<Vertex xyz="640,200,-335" uv="-16433,2400"/>
+						<Vertex xyz="574,200,-338" uv="-11353,2400"/>
 						<Vertex xyz="574,200,-338" uv="-16433,2400"/>
 						<Vertex xyz="567,0,-364" uv="-11353,-2400"/>
 						<Vertex xyz="574,0,-338" uv="-16433,-2400"/>
@@ -8607,7 +8607,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="7FFFFE00">
-			<MapObject name="PipeCollider" id="C" hidden="true"/>
+			<MapObject name="PipeCollider" id="C"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8731,7 +8731,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="B" hidden="true"/>
+			<MapObject name="MeshCollider" id="B"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9071,7 +9071,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono6" id="A" hidden="true"/>
+			<MapObject name="mono6" id="A"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9091,7 +9091,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono5" id="9" hidden="true"/>
+			<MapObject name="mono5" id="9"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9111,7 +9111,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono4" id="8" hidden="true"/>
+			<MapObject name="mono4" id="8"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9131,7 +9131,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono3" id="7" hidden="true"/>
+			<MapObject name="mono3" id="7"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9151,7 +9151,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono2" id="6" hidden="true"/>
+			<MapObject name="mono2" id="6"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9171,7 +9171,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono1" id="5" hidden="true"/>
+			<MapObject name="mono1" id="5"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9199,7 +9199,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_w" id="2" hidden="true"/>
+			<MapObject name="exit_trigger_w" id="2"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9217,7 +9217,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_s" id="1" hidden="true"/>
+			<MapObject name="exit_trigger_s" id="1"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">

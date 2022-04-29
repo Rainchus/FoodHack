@@ -40,7 +40,7 @@
 	EndIf
 	 Call  MakeEntity    ( .Entity:SavePoint ~Vec4d:SaveBlock 80000000 )
 	 Call  MakeEntity    ( .Entity:HealingBlock ~Vec4d:HealBlock 80000000 )
-	 Call  MakeItemEntity    ( .Item:MegaRush ~Vec3d:Hiddenbadge .ItemSpawnMode:Fixed_NeverVanish *GF_DGB13_Item_MegaRush )
+	 Call  MakeItemEntity    ( .Item:Refund ~Vec3d:Hiddenbadge .ItemSpawnMode:Fixed_NeverVanish *GF_TRD00_Chest_Refund )
     Return
     End
     

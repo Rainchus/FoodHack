@@ -1,19 +1,16 @@
-% Auto-generated script for jam_06
+% Auto-generated script for jam_07
 
 #new:Header $Header
 {
 	[MainScript] $Script_Main
 	[Background] 00000000
 	[EntryList] $EntryList
-	[EntryCount] 4
+	[EntryCount] 1
 }
 
 #new:EntryList $EntryList
 {
-	~Vec4f:FlourFieldsEntry
-	~Vec4f:FreeBadgeMarker
-	~Vec4f:BadgeFightMarker
-	~Vec4f:EntryBottom
+	~Vec4f:entry_w
 }
 
 #new:Script_Main $Script_Main
@@ -69,13 +66,9 @@
 {
 	Call  GetEntryID    ( *Var[0] )
 	Switch  *Var[0]
-		CaseOR  ==  ~Entry:EntryBottom
-		CaseOR  ==  ~Entry:BadgeFightMarker
-		CaseOR  ==  ~Entry:FreeBadgeMarker
-		CaseOR  ==  ~Entry:FlourFieldsEntry
+		Case  ==  ~Entry:entry_w
 			Set   *Var[0] $Script_CreateExitTriggers
 			Exec  EnterWalk
-		EndCaseGroup
 		Default
 			Exec  $Script_CreateExitTriggers
 	EndSwitch
@@ -83,23 +76,12 @@
 	End
 }
 
-#new:Script $Script_Exit_BadgeFightMarker
+#new:Script $Script_Exit_entry_w
 {
 	SetGroup 0000001B
-	Call     UseExitHeading ( 60` ~Entry:BadgeFightMarker )
+	Call     UseExitHeading ( 60` ~Entry:entry_w )
 	Exec     ExitWalk
-	Call  GotoMap   ( "jam_07" ~Entry:jam_07:entry_w )
-	Wait  100`
-	Return
-	End
-}
-
-#new:Script $Script_Exit_EntryBottom
-{
-	SetGroup 0000001B
-	Call     UseExitHeading ( 60` ~Entry:EntryBottom )
-	Exec     ExitWalk
-	Call  GotoMap   ( "jam_05" ~Entry:jam_05:entry_e )
+	Call  GotoMap   ( "jam_06" ~Entry:jam_06:BadgeFightMarker )
 	Wait  100`
 	Return
 	End
@@ -107,8 +89,7 @@
 
 #new:Script $Script_CreateExitTriggers
 {
-	Bind  $Script_Exit_BadgeFightMarker .Trigger:FloorAbove ~Collider:EntryFightBadge 00000001 00000000
-	Bind  $Script_Exit_EntryBottom .Trigger:FloorAbove ~Collider:EntryBottom 00000001 00000000
+	Bind  $Script_Exit_entry_w .Trigger:FloorAbove ~Collider:exit_trigger_e 00000001 00000000
 	Return
 	End
 }

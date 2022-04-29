@@ -576,6 +576,7 @@
 		<Map name="jam_04" nickname="Flour City yay"/>
 		<Map name="jam_05" nickname="Flour Dungeon Map 1"/>
 		<Map name="jam_06" nickname="Flour Dungeon Map 2"/>
+		<Map name="jam_07" nickname="FlourDungeonBadgeFight"/>
 		<Stage name="jam_bt1"/>
 	</Area>
 	<Resource name="mac_tex" compressed="false"/>
