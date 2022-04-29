@@ -58,6 +58,7 @@
 #new:Script $Script_MakeEntities
 {
 	Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring 80000000 )
+	Call MakeItemEntity ( .Item:BakingEgg ~Vec3d:egg .ItemSpawnMode:Fixed_NeverVanish *HasEgg )
 	Call  AssignScript    ( $Script_ScriptedSpring_Spring )
 	Return
 	End

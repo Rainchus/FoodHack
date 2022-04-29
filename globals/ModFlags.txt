@@ -5,3 +5,7 @@
 004 = Jam_02_Strawberry = GaveStrawberry
 005 = Jam_02_egg_Flour = GaveFlour
 006 = Jam_02_item = GivingAnItem
+007 = Jam_02_hasegg = HasEgg
+008 = Jam_02_hasSugar = HasSugar
+009 = Jam_02_hasStrawberry = HasStrawberry
+00A = Jam_02_hasFlour= HasFlour

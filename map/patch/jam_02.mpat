@@ -70,7 +70,7 @@
 
 #new:Script $Script_Idle_8024CDAC
 {
-	Call SetNpcAnimation ( .NpcID:GourmetGuy 004E0002 )
+	Call SetNpcAnimation ( .NpcID:GourmetGuy 00C10001 )
    C4:  Return
    CC:  End
 }
@@ -78,99 +78,73 @@
 #new:Script $Script_Interact_8024CE80
 {
 	If *TalkedToGourmetGuy == .False
-		Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $GourmetGuyString )
+		Call  SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 00000005 $GourmetGuyString )
 		Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
 		Set *TalkedToGourmetGuy .True
 
 	Else
-		Call FindKeyItem ( .Item:BakingFlour *Var0 )
-		Call FindKeyItem ( .Item:BakingEgg *Var1 )
-		Call FindKeyItem ( .Item:BakingStrawberry *Var2 )
-		Call FindKeyItem ( .Item:BakingSugar *Var3 )
 	
-		Set *ItemStateTest $validKeyItems1
-				If *GivingAnItem == .False
-					If *Var0 != FFFFFFFF
-						Set *Var5 .Item:BakingFlour
-						Set *GivingAnItem .True
-						ExecWait $BindScriptMenuForKeyItemsMenu
-						Switch *ItemStateTest
-							Case == FFFFFFFF
-						  		%B pressed
-						 	 	Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $Sad ) % Sadge
-							Default
-						  		Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $happy ) % Yay!
-					  			Add *ItemsDelivered 1
-					  EndSwitch
+				If *HasEgg == .True
+					If *GaveEgg == .False
+						Call FindKeyItem ( .Item:BakingEgg *Var0 )
+						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyEgg ) % Sadge
+						Call RemoveKeyItemAt ( *Var0 )
+						Set *GaveEgg .True
+						Add *ItemsDelivered 1
 					EndIf
 				EndIf
-				If *GivingAnItem == .False
-					If *Var1 != FFFFFFFF
-						Set *Var5 .Item:BakingEgg
-						Set *GivingAnItem .True
-						ExecWait $BindScriptMenuForKeyItemsMenu
-						Switch *ItemStateTest
-						Case == FFFFFFFF
-							  %B pressed
-							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $Sad ) % Sadge
-						Default
-							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $happy ) % Yay!
-							  Add *ItemsDelivered 1
-							EndSwitch
+				If *HasSugar == .True
+					If *GaveSugar == .False
+						Call FindKeyItem ( .Item:BakingSugar *Var1 )
+						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happySugar ) % Sadge
+						Call RemoveKeyItemAt ( *Var1 )
+						Set *GaveSugar .True
+						Add *ItemsDelivered 1
 					EndIf
 				EndIf
-				If *GivingAnItem == .False
-					If *Var2 != FFFFFFFF
-						Set *Var5 .Item:BakingStrawberry
-						Set *GivingAnItem .True
-						ExecWait $BindScriptMenuForKeyItemsMenu
-						Switch *ItemStateTest
-						Case == FFFFFFFF
-							  %B pressed
-							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $Sad ) % Sadge
-						Default
-							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $happy ) % Yay!
-							  Add *ItemsDelivered 1
-							EndSwitch
+				If *HasFlour == .True
+					If *GaveFlour == .False
+						Call FindKeyItem ( .Item:BakingFlour *Var2 )
+						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyFlour ) % Sadge
+						Call RemoveKeyItemAt ( *Var2 )
+						Set *GaveFlour .True
+						Add *ItemsDelivered 1
 					EndIf
 				EndIf
-				If *GivingAnItem == .False
-					If *Var3 != FFFFFFFF
-						Set *Var5 .Item:BakingSugar
-						Set *GivingAnItem .True
-						ExecWait $BindScriptMenuForKeyItemsMenu
-						Switch *ItemStateTest
-						Case == FFFFFFFF
-							  %B pressed
-							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $Sad ) % Sadge
-						Default
-							  Call  SpeakToPlayer ( .Npc:Self 009E000B 009E0001 00000000 $happy ) % Yay!
-							  Add *ItemsDelivered 1
-							EndSwitch
+				If *HasStrawberry == .True
+					If *GaveStrawberry == .False
+						Call FindKeyItem ( .Item:BakingStrawberry *Var3 )
+						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyStrawberry ) % Sadge
+						Call RemoveKeyItemAt ( *Var3 )
+						Set *GaveStrawberry .True
+						Add *ItemsDelivered 1
+					EndIf
+					If  *ItemsDelivered == 4
+						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $finalCutscene )
+						Return
 					EndIf
 				EndIf
 	EndIf
 	ExecWait $Script_Ingredientlist
-	Set *GivingAnItem .False
 	Return
 	End
 }
 #new:Script $Script_Ingredientlist
 {
-	Call SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $GourmetGuyString2 )
+	Call SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 00000005 $GourmetGuyString2 )
 	If *GaveEgg == .False
-		Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $Egg )
+		Call  SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 00000005 $Egg )
 	EndIf
 	If *GaveSugar == .False
-		Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $Sugar )
+		Call  SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 00000005 $Sugar )
 	EndIf
 	If *GaveFlour == .False
-		Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $Flour )
+		Call  SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 00000005 $Flour )
 	EndIf
 	If *GaveStrawberry == .False
-		Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $Strawberry )
+		Call  SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 00000005 $Strawberry )
 	EndIf
-	Call  SpeakToPlayer ( .NpcID:GourmetGuy 004E0005 004E0002 00000005 $GourmetGuyString3 )
+	Call  SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 00000005 $GourmetGuyString3 )
 	Return
 	End
 }
@@ -235,34 +209,55 @@ strawberry fields[Wait][End]}
 #new:String $GourmetGuyString3
 {
 	[style right]
-Get to it!
+That's it. [pause 10]Get to it!
 [Wait][End]
 }
 
-
-#new:Data $validKeyItems1 {
-.Item:BakingFlour 00000000
-.Item:BakingEgg 00000001
-.Item:BakingStrawberry 00000002
-.Item:BakingSugar 00000003
-}
-	
-	#new:String $Happy
-
+#new:String $happyEgg
 {
 	[style right]
-Yay
+A fresh egg... from a farm.[br]
+This will go good in my cake.[br]
+Keep it up, mario!
 [Wait][End]
 }
-#new:String $Sad
 
+#new:String $happyFlour
 {
 	[style right]
-Sadge
+Fresh flour... mined straight[br]
+From the flour mines below.[br]
+This will go good in my cake.[br]
+Keep it up, mario!
 [Wait][End]
 }
 
+#new:String $happySugar
+{
+	[style right]
+Sugar... ground freshly [br]
+From the outer sugarcane fields.[br]
+This will go good in my cake.[br]
+Keep it up, mario!
+[Wait][End]
+}
 
+#new:String $happyStrawberry
+{
+	[style right]
+A strawberry... freshly picked [br]
+From the strawberry fields.[br]
+This will go good in my cake.[br]
+Keep it up, mario!
+[Wait][End]
+}
+
+#new:String $finalCutscene
+{
+	[style right]
+FINAL CUTSCENE
+[Wait][End]
+}
 
 #new:Script $Script_80241450
 {

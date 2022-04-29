@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_02" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-288.288147,338.036804,-560.740906" pitch="9.999999" yaw="152.839066"/>
+		<Camera pos="-160.663177,301.732727,51.334240" pitch="25.119965" yaw="73.158058"/>
 		<Camera pos="20.498556,65536.000000,4.625292"/>
 		<Camera pos="65536.000000,192.000000,0.000000"/>
 		<Camera pos="0.000000,192.000000,65536.000000"/>
@@ -81,7 +81,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="5">
+		<Node name="Root" id="6">
 			<Node name="Entrances" id="0">
 				<Node name="entry_e" id="FFFFFFFF"/>
 			</Node>
@@ -89,6 +89,7 @@
 			<Node name="SpringPos" id="2"/>
 			<Node name="GourmetGuy" id="3"/>
 			<Node name="exit_fall" id="4"/>
+			<Node name="egg" id="5"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -7129,7 +7130,10 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="5"/>
+			<MapObject name="Root" id="6"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-100,233,0" yaw="0.000000">
+			<MapObject name="egg" id="5"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="103,-108,581" yaw="0.000000">
 			<MapObject name="exit_fall" id="4"/>
