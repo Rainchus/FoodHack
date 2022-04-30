@@ -320,7 +320,7 @@
 {
 	[Style Right]
 	We brought these lanterns with us[br]
-	but we did not bring any fuel.[pause:5].[pause:5].[pause:5][br]
+	but we did not bring any fuel[pause:5].[pause:5].[pause:5].[br]
 	So we just placed them near the[br]
 	tents as decoration.[br]
 	[Wait][Next]
@@ -362,12 +362,12 @@
 {
 	[Style Right]
 	Maybe bringing these lanterns[br]
-	wasn't such a good idea.[pause:5].[pause:5].[pause:5][br]
+	wasn't such a good idea[pause:5].[pause:5].[pause:5].[br]
 	[Wait][Next]
 	They are a waste of space[br]
 	and were a waste of time![br]
 	[Pause:5]If only that Dummy Guy[br]
-	did not forget the fuel.[pause:5].[pause:5].[pause:5][br]
+	did not forget the fuel[pause:5].[pause:5].[pause:5].[br]
 	[Wait][End]
 }
 
@@ -444,7 +444,7 @@
 	a happy little village.[br]
 	[Wait][Next]
 	We mostly get along, except[br]
-	those two Shy Guys.[pause:5].[pause:5].[pause:5][br]
+	those two Shy Guys[pause:5].[pause:5].[pause:5].[br]
 	[Pause:10]They always end up fighting[br]
 	about the same thing.[br]
 	[Wait][Next]
@@ -523,7 +523,7 @@
 	Whoa, you even considered[br]
 	fighting me?![br]
 	[Pause:10]Well, I'm sure happy you[br]
-	did not.[pause:5].[pause:5].[pause:5][br]
+	did not[pause:5].[pause:5].[pause:5].[br]
 	[Wait][End]
 }
 
@@ -532,7 +532,7 @@
 	[Style Right]
 	[Next]
 	Wise decision, this could[br]
-	have been very ugly.[pause:5].[pause:5].[pause:5][br]
+	have been very ugly[pause:5].[pause:5].[pause:5].[br]
 	[Wait][End]
 }
 
@@ -542,7 +542,7 @@
 	[Next]
 	Wait, what?![br]
 	[Pause:10]You want to fight?![br]
-	Please,[Pause:5] let's not.[pause:5].[pause:5].[pause:5][br]
+	Please,[Pause:5] let's not[pause:5].[pause:5].[pause:5].[br]
 	[Wait][Next]
 	It's not worth the effort[br]
 	what [COLOR:20]they[COLOR:0A] are gonna do[br]
@@ -557,7 +557,7 @@
 {
 	[Style Right]
 	[Next]
-	Oh well, I warned you.[pause:5].[pause:5].[pause:5][br]
+	Oh well, I warned you[pause:5].[pause:5].[pause:5].[br]
 	[PrintRising][Pause:10][Color:20]C'mere, Anti Guys![br]
 	[Wait][End]
 }

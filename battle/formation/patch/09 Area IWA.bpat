@@ -1,0 +1,12 @@
+@ $Stage_802208B0 {
+    "jam_tex"  % omo_tex
+    "jam_bt2_shape"  % omo_bt04_shape
+    "jam_bt2_hit"  % omo_bt04_hit
+    $Script_BeforeBattle_80220860
+    $Script_AfterBattle_80220894
+    00000000  % iwa_bg
+    $ForegroundModelList_802208A4
+    00000001
+    $SpecialFormation_802208E4
+    00000200
+}

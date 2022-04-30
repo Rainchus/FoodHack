@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_07" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="166.052155,101.485153,522.101746" pitch="21.200001" yaw="15.040016"/>
-		<Camera pos="-345.645172,65536.000000,20.701057"/>
+		<Camera pos="206.603500,78.061241,400.174957" pitch="26.640005" yaw="0.160035"/>
+		<Camera pos="183.618271,65536.000000,298.843903"/>
 		<Camera pos="65536.000000,88.000000,150.000000"/>
 		<Camera pos="-48.000000,88.000000,65536.000000"/>
 	</Editor>
@@ -59,7 +59,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="9">
+		<Node name="Root" id="B">
 			<Node name="Entrances" id="0">
 				<Node name="entry_w" id="FFFFFFFF"/>
 			</Node>
@@ -71,6 +71,8 @@
 			<Node name="Monty2" id="6"/>
 			<Node name="Monty1" id="7"/>
 			<Node name="MarioMoveTo" id="8"/>
+			<Node name="Monty1Marker2" id="9"/>
+			<Node name="Monty2Marker2" id="A"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -1785,9 +1787,15 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="9"/>
+			<MapObject name="Root" id="B"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="180,0,300" yaw="-90.000000">
+		<Marker ver="4" type="Position" pos="148,0,300" yaw="-30.000000">
+			<MapObject name="Monty2Marker2" id="A"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="206,0,300" yaw="-30.000000">
+			<MapObject name="Monty1Marker2" id="9"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="178,0,300" yaw="-90.000000">
 			<MapObject name="MarioMoveTo" id="8"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="300,-100,276" yaw="-90.000000">

@@ -21,7 +21,7 @@
 
 #new:NpcGroupList $NpcGroupList_JrAndHisTroopers
 {
-	00000003 $NpcGroup_JrTroopers 10040000
+	00000003 $NpcGroup_JrTroopers 09060000
 	00000000 00000000 00000000
 }
 
@@ -89,21 +89,43 @@
 {
     Call DisablePlayerInput ( .True )
     Call PlayerMoveTo (  180` 300` 30` )
+    Call SetPlayerAnimation ( 0001002A )
     Call  InterpPlayerYaw   (  323`  3` )
-    Wait  8`
+    Wait  15`
     Call  InterpPlayerYaw   (  143`  3` )
     Wait 15`
     Thread
         Wait 10`
         Call SetMusicTrack ( 00000000 .Song:JrTroopaTheme 00000000 00000008 )
     EndThread
+    Call SetPlayerAnimation ( 00010002 )
     Call SetNpcJumpscale ( .NpcID:JrTroopa *Fixed[0.4] )
     Call NpcJump1 ( .NpcID:JrTroopa ~Vec3D:JrTroopaAppears 30` )
     ExecWait $JrTroopaTalk
     Thread
+        Call SetNpcAnimation ( .NpcID:Monty1 002F0010 )
+        Call SetNpcAnimation ( .NpcID:Monty2 002F0010 )
+    EndThread
+    Call SetNpcPos ( .NpcID:Monty1 ~Vec3D:MontyMarker1 )
+    Call SetNpcPos ( .NpcID:Monty2 ~Vec3D:MontyMarker2 )
+    Wait 3`
+    Call SetNpcAnimation ( .NpcID:Monty1 002F0001 )
+    Call SetNpcAnimation ( .NpcID:Monty2 002F0001 )
+    ExecWait $MontyTalk
+    Wait 5`
+    Call SetNpcAnimation ( .NpcID:Monty1 002F0011 )
+    Call SetNpcAnimation ( .NpcID:Monty2 002F0011 )
+    Wait 5`
+    Call SetNpcPos ( .NpcID:Monty1 ~Vec3D:Monty1Marker2 )
+    Call SetNpcPos ( .NpcID:Monty2 ~Vec3D:Monty2Marker2 )
+    Call SetNpcAnimation ( .NpcID:Monty1 002F0010 )
+    Call SetNpcAnimation ( .NpcID:Monty2 002F0010 )
+    Wait 15`
+    Thread
         Call StartBattleWith ( .Song:JrTroopaBattle )
     EndThread
-    Call NpcMoveTo ( .NpcID:JrTroopa 180` 300` 30` )
+    Call SetNpcAnimation ( .NpcID:Monty1 002F001A )
+    Call SetNpcAnimation ( .NpcID:Monty2 002F001A )
     Set *DefeatedJrTrooper .True
     Call DisablePlayerInput ( .False )
     Return
@@ -123,6 +145,13 @@
     Exec $JrTrooperAppears
    C4:  Return
    CC:  End
+}
+
+#new:Script $MontyTalk
+{
+    Call SpeakToPlayer ( .NpcID:Monty1 002F0015 002F0001 00000000 $Monty1String )
+    Return
+    End
 }
 
 #new:String $JrTrooperFirstString
@@ -145,5 +174,22 @@ dumb, fat Shy Guy![br]
 I'll show him not to mess with[br]
 Jr. Troopa![br]
 But first I will beat [PrintRising]you, Mario![/fx][br]
+[Wait][Next]
+Although[pause:5].[pause:5].[pause:5].[br]
+My tummy hurts from eating[br]
+all of that cake to get[br]
+here in the first place[pause:5].[pause:5].[pause:5].[br]
+[Wait][Next]
+[PrintRising]Monty Moles! Get him![/fx][br]
+[Wait][End]
+}
+
+#new:String $Monty1String
+{
+[Style Right]
+You got it bro![pause:5][br]
+He's one of us now so[br]
+we'll [PrintRising]thrash[/fx] whoever gets[br]
+in our way![br]
 [Wait][End]
 }
