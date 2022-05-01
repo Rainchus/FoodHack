@@ -163,19 +163,24 @@
 		Set *TalkedToGourmetGuy .True
 
 	Else
-	
+		
+             
 				If *HasEgg == .True
 					If *GaveEgg == .False
 						Call FindKeyItem ( .Item:BakingEgg *Var0 )
+						Set *Var8 .Item:BakingEgg
+						ExecWait $Script_PresentItem
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyEgg ) % Sadge
 						Call RemoveKeyItemAt ( *Var0 )
 						Set *GaveEgg .True
-						Add *ItemsDelivered 1
+						Set *ItemsDelivered 4
 					EndIf
 				EndIf
 				If *HasSugar == .True
 					If *GaveSugar == .False
 						Call FindKeyItem ( .Item:BakingSugar *Var1 )
+						Set *Var8 .Item:BakingSugar
+						ExecWait $Script_PresentItem
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happySugar ) % Sadge
 						Call RemoveKeyItemAt ( *Var1 )
 						Set *GaveSugar .True
@@ -185,6 +190,8 @@
 				If *HasFlour == .True
 					If *GaveFlour == .False
 						Call FindKeyItem ( .Item:BakingFlour *Var2 )
+						Set *Var8 .Item:BakingFlour
+						ExecWait $Script_PresentItem
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyFlour ) % Sadge
 						Call RemoveKeyItemAt ( *Var2 )
 						Set *GaveFlour .True
@@ -194,18 +201,73 @@
 				If *HasStrawberry == .True
 					If *GaveStrawberry == .False
 						Call FindKeyItem ( .Item:BakingStrawberry *Var3 )
+						Set *Var8 .Item:BakingEgg
+						ExecWait $Script_PresentItem
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyStrawberry ) % Sadge
 						Call RemoveKeyItemAt ( *Var3 )
 						Set *GaveStrawberry .True
 						Add *ItemsDelivered 1
 					EndIf
-					If  *ItemsDelivered == 4
-						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $finalCutscene )
-						Return
-					EndIf
+				EndIf
+				If  *ItemsDelivered == 4
+					ExecWait $Script_Finale
+					Return
 				EndIf
 	EndIf
 	ExecWait $Script_Ingredientlist
+	Return
+	End
+}
+#new:Script $Script_Finale
+{
+	Call SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 0 $finalCutscene )
+	Call SetNpcAnimation ( .NpcID:GourmetGuy 00C10005 )
+	Thread
+	Loop 3`
+	Call PlaySoundAtNpc ( .NpcID:GourmetGuy 00002095 0 )
+	Wait 15`
+	EndLoop
+	EndThread
+	Wait 45`
+Call SetNpcAnimation ( .NpcID:GourmetGuy 00C10007 )
+Thread
+	Call     SetCamSpeed     ( .Cam:Default *Fixed[9.0] )
+	Call     GetPlayerPos  ( *Var0 *Var1 *Var2 )
+	Call     UseSettingsFrom   ( .Cam:Default *Var0 *Var1 *Var2 )
+	Call     SetPanTarget     ( .Cam:Default ~Vec3D:GourmetCamera )
+	Call     SetCamDistance    ( .Cam:Default 100` )
+	Call     PanToTarget     ( .Cam:Default .Easing:Linear 00000001 )
+	Call     WaitForCam    ( .Cam:Default *Fixed[1.0] )
+EndThread
+Thread
+	Call  PlaySoundAtNpc    ( .Npc:Self 00000381 00000000 )
+EndThread
+	Call  ShowMessageAtScreenPos ( $Oh1  160`  40` )
+	Thread
+		Call     SetCamDistance    ( .Cam:Default 50` )
+	EndThread
+	Thread
+		Call  PlaySoundAtNpc    ( .Npc:Self 00000382 00000000 )
+	EndThread
+	Call  ShowMessageAtScreenPos ( $Oh2  160`  40` )
+	Call  ResetCam ( .Cam:Default *Fixed[2.0] )
+	Call SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 0 $Oh3 )
+	Return
+	End
+
+}
+#new:Script $Script_PresentItem
+{
+	Call GetPlayerPos ( *Var4 *Var5 *Var6 )
+	Add *Var5 10`
+	Sub *Var6 5`
+	Sub *Var4 5`
+	ConstOR  *Var0 00050000
+	Call SetPlayerAnimation ( 00060005 )
+	Call  MakeItemEntity    ( *Var8 *Var4 *Var5 *Var6 .ItemSpawnMode:Decoration *Var7 )
+	Wait 15`
+	Call SetPlayerAnimation ( 00080007 )
+	Call RemoveItemEntity ( *Var7 )
 	Return
 	End
 }
@@ -335,9 +397,37 @@ Keep it up, mario!
 #new:String $finalCutscene
 {
 	[style right]
-FINAL CUTSCENE
+Oh hey, that's the final[br]
+ingredient![br][wait][next]
+Luckily I have a refined[br]
+enough pallette to mix[br]
+them in my mouth![br]
 [Wait][End]
 }
+
+#new:String $Oh1
+{
+	[style right]
+OH!
+[Wait][End]
+}
+
+#new:String $Oh2
+{
+	[style right]
+OHHHH!
+[Wait][End]
+}
+
+#new:String $Oh3
+{
+	[style right]
+Yeah this isn't actually[br]
+that good.
+[Wait][End]
+}
+
+
 
 #new:Script $Script_80241450
 {
