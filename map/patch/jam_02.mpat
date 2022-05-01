@@ -163,10 +163,13 @@
 		Set *TalkedToGourmetGuy .True
 
 	Else
+		
 	
 				If *HasEgg == .True
 					If *GaveEgg == .False
 						Call FindKeyItem ( .Item:BakingEgg *Var0 )
+						Set *Var8 .Item:BakingEgg
+						ExecWait $Script_PresentItem
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyEgg ) % Sadge
 						Call RemoveKeyItemAt ( *Var0 )
 						Set *GaveEgg .True
@@ -176,6 +179,8 @@
 				If *HasSugar == .True
 					If *GaveSugar == .False
 						Call FindKeyItem ( .Item:BakingSugar *Var1 )
+						Set *Var8 .Item:BakingSugar
+						ExecWait $Script_PresentItem
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happySugar ) % Sadge
 						Call RemoveKeyItemAt ( *Var1 )
 						Set *GaveSugar .True
@@ -185,6 +190,8 @@
 				If *HasFlour == .True
 					If *GaveFlour == .False
 						Call FindKeyItem ( .Item:BakingFlour *Var2 )
+						Set *Var8 .Item:BakingFlour
+						ExecWait $Script_PresentItem
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyFlour ) % Sadge
 						Call RemoveKeyItemAt ( *Var2 )
 						Set *GaveFlour .True
@@ -194,6 +201,8 @@
 				If *HasStrawberry == .True
 					If *GaveStrawberry == .False
 						Call FindKeyItem ( .Item:BakingStrawberry *Var3 )
+						Set *Var8 .Item:BakingEgg
+						ExecWait $Script_PresentItem
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyStrawberry ) % Sadge
 						Call RemoveKeyItemAt ( *Var3 )
 						Set *GaveStrawberry .True
@@ -206,6 +215,22 @@
 				EndIf
 	EndIf
 	ExecWait $Script_Ingredientlist
+	Return
+	End
+}
+
+#new:Script $Script_PresentItem
+{
+	Call GetPlayerPos ( *Var4 *Var5 *Var6 )
+	Add *Var5 10`
+	Sub *Var6 5`
+	Sub *Var4 5`
+	ConstOR  *Var0 00050000
+	Call SetPlayerAnimation ( 00060005 )
+	Call  MakeItemEntity    ( *Var8 *Var4 *Var5 *Var6 .ItemSpawnMode:Decoration *Var7 )
+	Wait 15`
+	Call SetPlayerAnimation ( 00080007 )
+	Call RemoveItemEntity ( *Var7 )
 	Return
 	End
 }
