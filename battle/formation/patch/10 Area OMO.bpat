@@ -47,7 +47,7 @@
     $SJIS_80230D0C 00000004 $Formation_29 $Stage_8022DE0C 00000000
     $SJIS_80230CF0 00000003 $Formation_2A $Stage_8022DE0C 00000000
     $SJIS_80230CD4 00000003 $Formation_2B $Stage_8022DE0C 00000000
-    $SJIS_80230CC8 00000001 $Formation_2C $Stage_8022DE0C 00000000
+    $SJIS_80230CC8 00000001 $Formation_2C $Stage_AntiGuy 00000000
     00000000 00000000 00000000 00000000 00000000
 }
 
@@ -82,6 +82,19 @@
     "jam_tex"  % omo_tex
     "jam_bt1_shape"  % omo_bt04_shape
     "jam_bt1_hit"  % omo_bt04_hit
+    $Script_BeforeBattle_8022DD30
+    $Script_AfterBattle_8022DDEC
+    "sra_bg"  % omo_bg
+    $ForegroundModelList_8022DDFC
+    00000004
+    $SpecialFormation_8022DE64
+    00000000
+}
+
+#new:Stage $Stage_AntiGuy {
+    "jam_tex"  % omo_tex
+    "jam_bt3_shape"  % omo_bt04_shape
+    "jam_bt3_hit"  % omo_bt04_hit
     $Script_BeforeBattle_8022DD30
     $Script_AfterBattle_8022DDEC
     "sra_bg"  % omo_bg
