@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_02" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="166.822479,371.449036,-165.891525" pitch="21.759937" yaw="253.478012"/>
-		<Camera pos="-84.485435,65536.000000,-108.037643"/>
+		<Camera pos="-74.083824,319.850677,-307.248383" pitch="21.439997" yaw="196.239807"/>
+		<Camera pos="0.000000,65536.000000,0.000000"/>
 		<Camera pos="65536.000000,192.000000,0.000000"/>
 		<Camera pos="0.000000,192.000000,65536.000000"/>
 	</Editor>
@@ -57,7 +57,7 @@
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="B">
+		<Node name="Root" id="C">
 			<Node name="Stage" id="0"/>
 			<Node name="Exits" id="1"/>
 			<Node name="ExitGuards" id="2"/>
@@ -69,6 +69,7 @@
 			<Node name="MeshCollider" id="8"/>
 			<Node name="Split Collider" id="9"/>
 			<Node name="Fall" id="A"/>
+			<Node name="Planar GridCollider" id="B"/>
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
@@ -81,7 +82,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="7">
+		<Node name="Root" id="B">
 			<Node name="Entrances" id="0">
 				<Node name="entry_e" id="FFFFFFFF"/>
 			</Node>
@@ -91,6 +92,10 @@
 			<Node name="exit_fall" id="4"/>
 			<Node name="egg" id="5"/>
 			<Node name="GourmetCamera" id="6"/>
+			<Node name="AntiGuyJump" id="7"/>
+			<Node name="CutsceneFront" id="8"/>
+			<Node name="AntiGuy" id="9"/>
+			<Node name="AntiJumpTo" id="A"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -5894,8 +5899,26 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0">
-			<MapObject name="Root" id="B"/>
+			<MapObject name="Root" id="C"/>
 			<HitObject type="ROOT"/>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="Planar GridCollider" id="B"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-12,600,12" uv="-512,512"/>
+						<Vertex xyz="12,600,-12" uv="512,-512"/>
+						<Vertex xyz="-12,600,-12" uv="-512,-512"/>
+						<Vertex xyz="12,600,12" uv="512,512"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="1,0,3"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
 			<MapObject name="Fall" id="A" hidden="true"/>
@@ -7131,7 +7154,21 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="7"/>
+			<MapObject name="Root" id="B"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-135,226,-106" yaw="0.000000">
+			<MapObject name="AntiJumpTo" id="A"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="0,600,0" yaw="0.000000">
+			<MapObject name="AntiGuy" id="9"/>
+			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="3B" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-43,243,-107" yaw="0.000000">
+			<MapObject name="CutsceneFront" id="8"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-73,290,-75" yaw="0.000000">
+			<MapObject name="AntiGuyJump" id="7"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="-44,269,-92" yaw="-24.396820">
 			<MapObject name="GourmetCamera" id="6"/>

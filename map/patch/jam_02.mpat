@@ -1,4 +1,8 @@
-#define .NpcID:GourmetGuy            00
+#define .NpcID:AntiGuy				 01
+#define .NpcID:GourmetGuy            02
+
+
+
 #new:Function $Function_80240434
 {
     0:  SAB       R0, 8010F291
@@ -89,25 +93,50 @@
 
 #new:NpcGroupList $NpcGroupList_8025136C
 {
-	00000001 $NpcGroup_8024E864 00000000
+	00000002 $NpcGroup_8024E864 102C0000
 	00000000 00000000 00000000
 }
 
 #new:NpcGroup $NpcGroup_8024E864
 {
+	.NpcID:AntiGuy   $NpcSettings_80247CE4 ~Vec3f:AntiGuy % 100 0 -256
+	00002809 $Script_Init_AntiGuy1 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:AntiGuy
+	~AnimationTable:AntiGuy % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
 	.NpcID:GourmetGuy   $NpcSettings_80247CE4 ~Vec3f:GourmetGuy % 100 0 -256
 	00002809 $Script_Init_8024D134 00000000 00000000 0000005A
 	~NoDrops
 	~Movement:GourmetGuy
 	~AnimationTable:GourmetGuy % .Sprite:Gooma
 	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+
 }
 
 
+#new:Script $Script_AntiJump
+{
+Call SetNpcAnimation ( .NpcID:AntiGuy 003B050A )
+Call PlaySoundAtPlayer ( 00000160 00000000 )
+Call SetNpcJumpscale ( .NpcID:AntiGuy *Fixed[1.5] )
+Call NpcJump1 ( .NpcID:AntiGuy ~Vec3D:AntiJumpTo 45` )
+Call SetNpcAnimation ( .NpcID:AntiGuy 003B0501 )
+Return
+End
+}
 #new:NpcSettings $NpcSettings_80247CE4
 {
 	00000000 0044003C 00000000 00000000 00000000 00000000 00000000 00000000
 	00000000 00000000 00630000
+}
+
+#new:Script $Script_Init_AntiGuy1
+{
+   28:  Return
+   30:  End
 }
 
 #new:Script $Script_NpcAI_80247CC4
@@ -150,6 +179,7 @@
 
 #new:Script $Script_Interact_8024CE80
 {
+	Call PlayerMoveTo (-43` -107` 40` )
 	If *TalkedToGourmetGuy == .False
 		Call  SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 00000005 $GourmetGuyString )
 		Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
@@ -163,8 +193,6 @@
 		Set *TalkedToGourmetGuy .True
 
 	Else
-		
-             
 				If *HasEgg == .True
 					If *GaveEgg == .False
 						Call FindKeyItem ( .Item:BakingEgg *Var0 )
@@ -251,11 +279,51 @@ EndThread
 	EndThread
 	Call  ShowMessageAtScreenPos ( $Oh2  160`  40` )
 	Call  ResetCam ( .Cam:Default *Fixed[2.0] )
+	Call SetNpcAnimation ( .NpcID:GourmetGuy 00C10001 )
 	Call SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 0 $Oh3 )
+	ExecWait $Script_AntiJump
+	Wait 45`
+	Call SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 0 $Oh4 )
+	Call GetPlayerPos(*Var0 *Var1 *Var2)
+	Call SetNpcAnimation (.NpcID:AntiGuy 003B0504)
+	Thread
+		Call NpcMoveTo (.NpcID:AntiGuy *Var0 *Var2 60` )
+	EndThread
+	Wait 30`
+	Thread
+        Wait 5`
+        Call StartBattleWith (.Song:GeneralGuyBattle)
+    EndThread
+	Call  BindNpcDefeat ( .Npc:Self $AntiDefeat )
+	Call DisablePlayerInput(.True)
 	Return
 	End
 
 }
+
+
+#new:Script $AntiDefeat
+{
+	 Call  GetBattleOutcome  ( *Var0 )
+	 Switch  *Var0
+	 	Case  ==  .Outcome:PlayerWon % 0
+			Call  SetMusicTrack ( 00000000 .Song:RecoveredStarRod 00000000 00000008 )
+			Call SetNpcAnimation (.NpcID:AntiGuy 003B0510)
+			Call SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 0 $Oh5 )
+			Call SetPlayerAnimation ( 00010032 )
+			Call  ShowMessageAtScreenPos    ( $Epliogue  160`  40` ) % You! Switch with me!
+			Call DisablePlayerInput(.True)
+			Call  ShowMessageAtScreenPos    ( $TheEnd  160`  40` ) % You! Switch with me!
+		Default 
+
+ 	 EndSwitch
+    Return
+    End
+}
+
+
+ 
+
 #new:Script $Script_PresentItem
 {
 	Call GetPlayerPos ( *Var4 *Var5 *Var6 )
@@ -423,12 +491,52 @@ OHHHH!
 {
 	[style right]
 Yeah this isn't actually[br]
-that good.
+that good.[br][wait][next]
+Sorry, Mario! You failed[br]
+me. Now I have to teach[br]
+you a lesson!
 [Wait][End]
 }
 
+#new:String $Oh4
+{
+	[style right]
+Get him!!!
+[Wait][End]
+}
 
+#new:String $Oh5
+{
+	[style right]
+NO!!![br]
+MY ANTI GUY!!![br][wait][next]
+Fine, Mario, you win.[br]
+I'll give you back the star rod.[br]
+[Wait][End]
+}
 
+#new:String $Epliogue
+{
+	[Style Narrate] So Mario once again recovered[br]
+	the star rod, this time from an [br]
+	unexpected enemy.[br]
+	[wait][next]
+	However this enemy proved to no[br]
+	match for mario's strength.[br]
+	[wait][next]
+	After recovering the star rod,[br]
+	things went back to normal,[br]
+	and mario was able to relax,[br]
+	but not for long...[br][wait][next]
+	THE END
+	[InputOff]
+	[Wait] [End]
+}
+
+#new:String $TheEnd{
+	[Style Narrate]
+	THE END[Wait] [End]
+}
 #new:Script $Script_80241450
 {
 If  *GF_TIK25_GiantChest  ==  .False
