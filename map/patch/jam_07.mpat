@@ -122,10 +122,13 @@
     Call SetNpcAnimation ( .NpcID:Monty2 002F0010 )
     Wait 15`
     Thread
+        Wait 5`
         Call StartBattleWith ( .Song:JrTroopaBattle )
     EndThread
     Call SetNpcAnimation ( .NpcID:Monty1 002F001A )
     Call SetNpcAnimation ( .NpcID:Monty2 002F001A )
+    Wait 60`
+    Exec $JrTroopaDefeat
     Set *DefeatedJrTrooper .True
     Call DisablePlayerInput ( .False )
     Return
@@ -192,4 +195,29 @@ He's one of us now so[br]
 we'll [PrintRising]thrash[/fx] whoever gets[br]
 in our way![br]
 [Wait][End]
+}
+
+#new:Script $JrTroopaDefeat
+{
+    0:  Call  GetBattleOutcome  ( *Var0 )
+   10:  Switch  *Var0
+   1C:  	Case  ==  .Outcome:PlayerWon % 0
+   E4:  		Call  PlayerFaceNpc ( .Npc:Self .False )
+   F8:  		Call  SetNpcAnimation   ( .Npc:Self 00210011 )
+  10C:  		Call  SpeakToPlayer ( .Npc:Self 00210011 00210011 00000000 000B00B5 ) % Shoooooot!! I was winning, too! I'll be back, Mari ...
+                Call EndSpeech ( .Npc:Self 00210011 00210011 00000000 )
+  18C:  		Wait  60`
+  1D0:  		Call  SpeakToPlayer ( .Npc:Self 00210011 00210011 00000000 000B00B6 ) % I mean it, I'll be back!!
+                Call EndSpeech ( .Npc:Self 00210011 00210011 00000000 )
+  20C:  		Call  SetNpcAnimation   ( .Npc:Self 00210003 )
+  23C:  		Thread
+  244:  			Call  ResetCam  ( .Cam:Default  4` )
+  258:  		EndThread
+  28C:  		Call  DisablePlayerInput    ( .False )
+  29C:  EndSwitch
+  2A4:  Return
+  2AC:  End
+        EndSwitch
+    Return
+    End
 }
