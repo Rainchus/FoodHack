@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_02" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-160.663177,301.732727,51.334240" pitch="25.119965" yaw="73.158058"/>
-		<Camera pos="20.498556,65536.000000,4.625292"/>
+		<Camera pos="166.822479,371.449036,-165.891525" pitch="21.759937" yaw="253.478012"/>
+		<Camera pos="-84.485435,65536.000000,-108.037643"/>
 		<Camera pos="65536.000000,192.000000,0.000000"/>
 		<Camera pos="0.000000,192.000000,65536.000000"/>
 	</Editor>
@@ -81,7 +81,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="6">
+		<Node name="Root" id="7">
 			<Node name="Entrances" id="0">
 				<Node name="entry_e" id="FFFFFFFF"/>
 			</Node>
@@ -90,6 +90,7 @@
 			<Node name="GourmetGuy" id="3"/>
 			<Node name="exit_fall" id="4"/>
 			<Node name="egg" id="5"/>
+			<Node name="GourmetCamera" id="6"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -7130,7 +7131,13 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="6"/>
+			<MapObject name="Root" id="7"/>
+		</Marker>
+		<Marker ver="4" type="CamTarget" pos="-44,269,-92" yaw="-24.396820">
+			<MapObject name="GourmetCamera" id="6"/>
+			<CamTarget sampleZone="false" generatePan="false" panSpeed="1.000000">
+				<Camera type="TYPE_0" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="-23,279,-46" posB="-44,279,-92" posC="-30,269,-87"/>
+			</CamTarget>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-100,233,0" yaw="0.000000">
 			<MapObject name="egg" id="5"/>
