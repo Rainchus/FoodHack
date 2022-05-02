@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_00" author="unnamed" background="sra_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-162.376129,159.979523,1080.527100" pitch="33.519993" yaw="352.040833"/>
+		<Camera pos="120.473602,89.254730,1116.522217" pitch="22.480013" yaw="345.159912"/>
 		<Camera pos="556.729492,65536.000000,374.171051"/>
 		<Camera pos="65536.000000,-141.561951,-564.893311"/>
 		<Camera pos="-279.373749,36.053917,65536.000000"/>
@@ -119,19 +119,20 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="A">
-			<Node name="Entrances" id="0">
+		<Node name="Root" id="B">
+			<Node name="Entrances" id="1">
 				<Node name="entry_e" id="FFFFFFFF"/>
+				<Node name="entry_wakeup" id="0"/>
 			</Node>
-			<Node name="Spring" id="1"/>
-			<Node name="SpringMarker" id="2"/>
-			<Node name="Entry1" id="3"/>
-			<Node name="ShyGuy1" id="4"/>
-			<Node name="ShyGuy2" id="5"/>
-			<Node name="ShyGuy3" id="6"/>
-			<Node name="ShyGuy4" id="7"/>
-			<Node name="PipeEntry" id="8"/>
-			<Node name="entry_fall" id="9"/>
+			<Node name="Spring" id="2"/>
+			<Node name="SpringMarker" id="3"/>
+			<Node name="Entry1" id="4"/>
+			<Node name="ShyGuy1" id="5"/>
+			<Node name="ShyGuy2" id="6"/>
+			<Node name="ShyGuy3" id="7"/>
+			<Node name="ShyGuy4" id="8"/>
+			<Node name="PipeEntry" id="9"/>
+			<Node name="entry_fall" id="A"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -7385,46 +7386,49 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="A"/>
+			<MapObject name="Root" id="B"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="500,600,365" yaw="0.000000">
-			<MapObject name="entry_fall" id="9"/>
+			<MapObject name="entry_fall" id="A"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-252,30,948" yaw="180.000000">
-			<MapObject name="PipeEntry" id="8"/>
+			<MapObject name="PipeEntry" id="9"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-169,416,699" yaw="-240.000000">
-			<MapObject name="ShyGuy4" id="7"/>
+			<MapObject name="ShyGuy4" id="8"/>
 			<Movement type="Patrol" data="2,FFFFFE63,1A0,281,27,1A0,2D7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FFFF8001,FFFFFF57,1A0,2BB,34,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="0" animations="1,2,3,4,0,0,E,D,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-694,416,-117" yaw="-150.000000">
-			<MapObject name="ShyGuy3" id="6"/>
+			<MapObject name="ShyGuy3" id="7"/>
 			<Movement type="Patrol" data="2,FFFFFD83,1A0,FFFFFE96,FFFFFD2D,1A0,5B,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FFFF8001,FFFFFD4A,1A0,FFFFFF8B,34,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="0" animations="1,2,3,4,0,0,E,D,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-60,416,-691" yaw="-60.000000">
-			<MapObject name="ShyGuy2" id="5"/>
+			<MapObject name="ShyGuy2" id="6"/>
 			<Movement type="Patrol" data="2,BA,1A0,FFFFFD85,FFFFFEF3,1A0,FFFFFD2F,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FFFF8001,FFFFFFC4,1A0,FFFFFD4D,34,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="0" animations="1,2,3,4,0,0,E,D,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="666,416,-189" yaw="0.000000">
-			<MapObject name="ShyGuy1" id="4"/>
+			<MapObject name="ShyGuy1" id="5"/>
 			<Movement type="Patrol" data="2,2E5,1A0,34,24C,1A0,FFFFFE7E,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FFFF8001,29A,1A0,FFFFFF43,34,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="0" animations="1,2,3,4,0,0,E,D,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="238,416,571" yaw="165.000000">
-			<MapObject name="Entry1" id="3"/>
+			<MapObject name="Entry1" id="4"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="587,416,547" yaw="0.000000">
-			<MapObject name="SpringMarker" id="2"/>
+			<MapObject name="SpringMarker" id="3"/>
 		</Marker>
 		<Marker ver="4" type="Entity" pos="723,200,343" yaw="210.000000">
-			<MapObject name="Spring" id="1"/>
+			<MapObject name="Spring" id="2"/>
 			<Entity type="802EAA30" destMarker="SpringMarker" launchT="23"/>
 		</Marker>
 		<Marker ver="4" type="Group">
-			<MapObject name="Entrances" id="0"/>
+			<MapObject name="Entrances" id="1"/>
+		</Marker>
+		<Marker ver="4" type="Entry" pos="162,0,812" yaw="0.000000">
+			<MapObject name="entry_wakeup" id="0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="0,0,950" yaw="-0.000000">
 			<MapObject name="entry_e" id="FFFFFFFF"/>
@@ -7450,6 +7454,7 @@
 			<TexPanner id="F" generate="false"/>
 		</TexPanners>
 		<Generators>
+			<Entrance type="Teleport" hasCallback="false" entry="entry_wakeup"/>
 			<Entrance type="VerticalPipe" hasCallback="false" entry="PipeEntry"/>
 			<Entrance type="Teleport" hasCallback="false" entry="entry_fall"/>
 			<Entrance type="Walk" hasCallback="false" entry="Entry1"/>

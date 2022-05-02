@@ -5,12 +5,13 @@
 	[MainScript] $Script_Main
 	[Background] 80200000
 	[EntryList] $EntryList
-	[EntryCount] 4
+	[EntryCount] 5
 }
 
 #new:EntryList $EntryList
 {
 	~Vec4f:entry_e
+	~Vec4f:entry_wakeup
 	~Vec4f:Entry1
 	~Vec4f:PipeEntry
 	~Vec4f:entry_fall

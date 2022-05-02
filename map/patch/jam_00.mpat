@@ -47,6 +47,9 @@
 		CaseOR  ==  ~Entry:entry_e
 			Set   *Var[0] $Script_CreateExitTriggers
 			Exec  EnterWalk
+                Case == ~Entry:entry_wakeup
+        Exec $Script_wakeup
+        Exec $Script_CreateExitTriggers
 		EndCaseGroup
 		Default
 			Exec  $Script_CreateExitTriggers
@@ -202,6 +205,20 @@ End
 
 #new:Script $ShadowEnable{
     Call HidePlayerShadow ( .False )
+    Return
+    End
+}
+
+#new:Script $Script_wakeup
+{
+    Call DisablePlayerInput(.True)
+	Call SetPlayerAnimation(0001000F)
+    Wait 60`
+    Call SetPlayerAnimation (00010030)
+    Wait 40`
+    Call SetPlayerAnimation (00010031)
+    Wait 40`
+    Call DisablePlayerInput ( .False )
     Return
     End
 }
