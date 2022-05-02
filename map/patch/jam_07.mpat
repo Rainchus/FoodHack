@@ -205,11 +205,10 @@ in our way![br]
    E4:  		Call  PlayerFaceNpc ( .Npc:Self .False )
    F8:  		Call  SetNpcAnimation   ( .Npc:Self 00210011 )
   10C:  		Call  SpeakToPlayer ( .Npc:Self 00210011 00210011 00000000 000B00B5 ) % Shoooooot!! I was winning, too! I'll be back, Mari ...
-                Call EndSpeech ( .Npc:Self 00210011 00210011 00000000 )
-  18C:  		Wait  60`
-  1D0:  		Call  SpeakToPlayer ( .Npc:Self 00210011 00210011 00000000 000B00B6 ) % I mean it, I'll be back!!
-                Call EndSpeech ( .Npc:Self 00210011 00210011 00000000 )
-  20C:  		Call  SetNpcAnimation   ( .Npc:Self 00210003 )
+                Call  SetNpcAnimation   ( .Npc:Self 0021000B)
+                Call SetNpcPos ( .NpcID:Monty1 410` -50` 300` )
+                Call NpcMoveTo ( .NpcID:JrTroopa  410` 300` 25` )
+                Call SetNpcPos ( .NpcID:JrTroopa 410` -50` 300` )
   23C:  		Thread
   244:  			Call  ResetCam  ( .Cam:Default  4` )
   258:  		EndThread
@@ -217,7 +216,4 @@ in our way![br]
   29C:  EndSwitch
   2A4:  Return
   2AC:  End
-        EndSwitch
-    Return
-    End
 }
