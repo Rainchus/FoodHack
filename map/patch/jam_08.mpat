@@ -1,0 +1,100 @@
+@ $Script_Main
+{
+	Set   *GB_WorldLocation  .Location:GoombaRoad
+	Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+	Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+	Call  SetCamEnabled      ( .Cam:Default .True
+	Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Set *Var0 0
+	Exec  $Script_SetupMusic
+	Exec  $Script_EnterMap
+    Exec $Script_BeatBlock
+	Return
+	End
+}
+
+#new:Script $Script_BeatBlock
+{
+    Call SetZoneEnabled ( ~Zone:ViewRight .False)
+    Call SetZoneEnabled ( ~Zone:ViewLeft .False )
+    Call SetZoneEnabled ( ~Zone:ViewBack .False )
+Wait 60`
+Loop
+    Thread
+      Loop 8`
+        
+           Call PlaySoundWithVolume ( 000001FE 70` ) (  )
+           Wait 10`
+     EndLoop
+   EndThread
+   Wait 50`
+
+    Loop 3`
+        
+        Call PlaySound (00000218) 
+        Wait 10`
+        
+    EndLoop
+    Add *Var0 1
+    If *Var0 > 3
+        Set *Var0 0
+    EndIf
+    Switch *Var0
+    Case == 0
+        Exec $Script_ViewFront
+    Case == 1
+        Exec $Script_ViewRight
+    Case == 2
+        Exec $Script_ViewBack
+    Case == 3 
+        Exec $Script_ViewLeft
+       
+    Default
+        EndSwitch
+
+EndLoop
+   Return
+   End
+    
+}
+
+#new:Script $Script_ViewFront
+{
+    Call SetZoneEnabled ( ~Zone:ViewFront .True )
+    Call SetZoneEnabled ( ~Zone:ViewRight .False)
+    Call SetZoneEnabled ( ~Zone:ViewLeft .False )
+    Call SetZoneEnabled ( ~Zone:ViewBack .False )
+    Return
+    End
+}
+
+#new:Script $Script_ViewRight
+{
+    Call SetZoneEnabled ( ~Zone:ViewFront .False )
+    Call SetZoneEnabled ( ~Zone:ViewRight .True)
+    Call SetZoneEnabled ( ~Zone:ViewLeft .False )
+    Call SetZoneEnabled ( ~Zone:ViewBack .False )
+    Return
+    End
+}
+
+#new:Script $Script_ViewLeft
+{
+    Call SetZoneEnabled ( ~Zone:ViewFront .False )
+    Call SetZoneEnabled ( ~Zone:ViewRight .False)
+    Call SetZoneEnabled ( ~Zone:ViewLeft .True )
+    Call SetZoneEnabled ( ~Zone:ViewBack .False )
+    Return
+    End
+}
+
+#new:Script $Script_ViewBack
+{
+    Call SetZoneEnabled ( ~Zone:ViewFront .False )
+    Call SetZoneEnabled ( ~Zone:ViewRight .False)
+    Call SetZoneEnabled ( ~Zone:ViewLeft .False )
+    Call SetZoneEnabled ( ~Zone:ViewBack .True )
+    Return
+    End
+}
+
