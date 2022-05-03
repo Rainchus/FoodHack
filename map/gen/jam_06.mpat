@@ -83,6 +83,17 @@
 	End
 }
 
+#new:Script $Script_Exit_FreeBadgeMarker
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:FreeBadgeMarker )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_08" ~Entry:jam_08:entry_e )
+	Wait  100`
+	Return
+	End
+}
+
 #new:Script $Script_Exit_BadgeFightMarker
 {
 	SetGroup 0000001B
@@ -107,6 +118,7 @@
 
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_FreeBadgeMarker .Trigger:FloorAbove ~Collider:EntryFreeBadge 00000001 00000000
 	Bind  $Script_Exit_BadgeFightMarker .Trigger:FloorAbove ~Collider:EntryFightBadge 00000001 00000000
 	Bind  $Script_Exit_EntryBottom .Trigger:FloorAbove ~Collider:EntryBottom 00000001 00000000
 	Return

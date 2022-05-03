@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_02" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-74.083824,319.850677,-307.248383" pitch="21.439997" yaw="196.239807"/>
+		<Camera pos="-127.175018,287.191895,-250.816254" pitch="20.479982" yaw="167.279709"/>
 		<Camera pos="0.000000,65536.000000,0.000000"/>
-		<Camera pos="65536.000000,192.000000,0.000000"/>
+		<Camera pos="65536.000000,207.059692,14.909092"/>
 		<Camera pos="0.000000,192.000000,65536.000000"/>
 	</Editor>
 	<ModelTree>
@@ -5903,7 +5903,7 @@
 			<HitObject type="ROOT"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="Planar GridCollider" id="B"/>
+			<MapObject name="Planar GridCollider" id="B" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -7156,7 +7156,7 @@
 		<Marker ver="4" type="Root">
 			<MapObject name="Root" id="B"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-135,226,-106" yaw="0.000000">
+		<Marker ver="4" type="Position" pos="-135,214,-106" yaw="0.000000">
 			<MapObject name="AntiJumpTo" id="A"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="0,600,0" yaw="0.000000">

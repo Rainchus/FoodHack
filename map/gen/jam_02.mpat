@@ -58,8 +58,20 @@
 #new:Script $Script_MakeEntities
 {
 	Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring 80000000 )
-	Call MakeItemEntity ( .Item:BakingEgg ~Vec3d:egg .ItemSpawnMode:Fixed_NeverVanish *HasEgg )
 	Call  AssignScript    ( $Script_ScriptedSpring_Spring )
+	Return
+	End
+}
+
+#new:Script $Script_SetCamera_GourmetCamera
+{
+	Call  SetCamType        ( .Cam:Default 00000000 .False )
+	Call  SetCamPitch       ( .Cam:Default *Fixed[16.000000] *Fixed[-6.000000] )
+	Call  SetCamDistance    ( .Cam:Default 450` )
+	Call  SetCamPosA        ( .Cam:Default -23` -30` )
+	Call  SetCamPosB        ( .Cam:Default -46` -44` )
+	Call  SetCamPosC        ( .Cam:Default -87` -92` )
+	Call  SetPanTarget      ( .Cam:Default ~Vec3d:GourmetCamera )
 	Return
 	End
 }

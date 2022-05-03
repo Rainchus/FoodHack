@@ -577,6 +577,7 @@
 		<Map name="jam_05" nickname="Flour Dungeon Map 1"/>
 		<Map name="jam_06" nickname="Flour Dungeon Map 2"/>
 		<Map name="jam_07" nickname="FlourDungeonBadgeFight"/>
+		<Map name="jam_08" nickname="FlourDungeonFreeBadge"/>
 		<Stage name="jam_bt1" nickname="Outside Battle Map"/>
 		<Stage name="jam_bt2" nickname="Flour Cave BM"/>
 		<Stage name="jam_bt3" nickname="Top Of Cake Battle Map"/>

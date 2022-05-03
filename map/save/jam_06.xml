@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_06" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="826.000000,212.824097,492.403870" pitch="5.000001" yaw="0.000000"/>
+		<Camera pos="-601.000000,534.036804,268.567749" pitch="9.999999" yaw="0.000000"/>
 		<Camera pos="-673.535889,65536.000000,-125.782791"/>
 		<Camera pos="65536.000000,694.892761,-89.315979"/>
 		<Camera pos="-510.138855,503.116760,65536.000000"/>
@@ -1788,6 +1788,7 @@
 			<Entrance type="Walk" hasCallback="false" entry="BadgeFightMarker"/>
 			<Entrance type="Walk" hasCallback="false" entry="FreeBadgeMarker"/>
 			<Entrance type="Walk" hasCallback="false" entry="FlourFieldsEntry"/>
+			<Exit type="Walk" hasCallback="false" entry="FreeBadgeMarker" destMap="jam_08" destEntry="entry_e" trigger="EntryFreeBadge"/>
 			<Exit type="Walk" hasCallback="false" entry="BadgeFightMarker" destMap="jam_07" destEntry="entry_w" trigger="EntryFightBadge"/>
 			<Exit type="Walk" hasCallback="false" entry="EntryBottom" destMap="jam_05" destEntry="entry_e" trigger="EntryBottom"/>
 		</Generators>
