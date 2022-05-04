@@ -91,6 +91,7 @@
     End
 }
 
+
 #new:NpcGroupList $NpcGroupList_8025136C
 {
 	00000002 $NpcGroup_8024E864 102C0000
@@ -127,6 +128,7 @@ Call SetNpcAnimation ( .NpcID:AntiGuy 003B0501 )
 Return
 End
 }
+
 #new:NpcSettings $NpcSettings_80247CE4
 {
 	00000000 0044003C 00000000 00000000 00000000 00000000 00000000 00000000
@@ -339,6 +341,7 @@ EndThread
 	Return
 	End
 }
+
 #new:Script $Script_Ingredientlist
 {
 	Call SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 00000005 $GourmetGuyString2 )
@@ -622,4 +625,12 @@ Call  $Function_802407F4 ( )
    20:  Call  PopSong ( )
    2C:  Return
    34:  End
+}
+
+@ $Script_MakeEntities {
+	Call MakeItemEntity ( .Item:BakingEgg ~Vec3d:egg .ItemSpawnMode:Fixed_NeverVanish *HasEgg )
+	Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring 80000000 )
+	Call  AssignScript    ( $Script_ScriptedSpring_Spring )
+	Return
+	End
 }

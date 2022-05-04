@@ -586,6 +586,17 @@
 	End
 }
 
+#new:Script $Script_Exit_entry_s
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_s )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_09" ~Entry:jam_09:entry_s )
+	Wait  100`
+	Return
+	End
+}
+
 #new:Script $Script_Exit_PipeEntry
 {
 	SetGroup 0000001B
@@ -618,6 +629,7 @@
 
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_entry_s .Trigger:FloorAbove ~Collider:exit_trigger_s 00000001 00000000
 	Bind  $Script_Exit_PipeEntry .Trigger:FloorTouch ~Collider:PipeCollider 00000001 00000000
 	Bind  $Script_Exit_entry_w .Trigger:FloorAbove ~Collider:exit_trigger_w 00000001 00000000
 	Return

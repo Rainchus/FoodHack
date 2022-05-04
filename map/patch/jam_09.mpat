@@ -1,0 +1,133 @@
+#define .NpcID:DupliFlourGhost            00
+
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Exec  $Script_SetupMusic
+    Call  MakeNpcs  ( .True $NpcGroupList_8025136C )
+    Call  $Function_SetupFog
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+#new:NpcGroupList $NpcGroupList_8025136C
+{
+    00000001 $NpcGroup_8024E864 00000000
+    00000000 00000000 00000000
+}
+
+#new:NpcGroup $NpcGroup_8024E864
+{
+	.NpcID:DupliFlourGhost   $NpcSettings_80247CE4 ~Vec3f:DupliFlourGhost % 100 0 -256
+	00002809 $Script_Init_8024D134 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:DupliFlourGhost
+	~AnimationTable:DupliFlourGhost % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+}
+
+#new:NpcSettings $NpcSettings_80247CE4
+{
+	00000000 00160018 00000000 00000000 $Script_NpcAI_80247CC4 00000000 00000000 00000000
+	00000000 00000000 00630010
+}
+
+#new:Script $Script_NpcAI_80247CC4
+{
+    0:  Call  DoBasicAI ( $AISettings_80247C94 )
+   10:  Return
+   18:  End
+}
+
+#new:AISettings $AISettings_80247C94
+{
+    1.5 % move speed
+    60` % move time
+    30` % wait time
+    0.0 % alert radius
+    0.0
+    -1`
+    0.0 % chase speed
+    0`
+    0`
+    0.0 % chase radius
+    0.0
+    1`
+}
+
+#new:Script $Script_Init_8024D134
+{
+    0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_8024CDAC )
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_8024CE80 )
+   28:  Return
+   30:  End
+}
+
+#new:Script $Script_Idle_8024CDAC
+{
+	Loop 
+		Call SetNpcAnimation ( .NpcID:DupliFlourGhost 004E0003 )
+		Call NpcMoveTo ( .NpcID:DupliFlourGhost -417` 187` 150` )
+		Call SetNpcAnimation ( .NpcID:DupliFlourGhost 004E0002 )
+		Thread
+			Call InterpNpcYaw ( .NpcID:DupliFlourGhost 90` 10` )
+			Wait 10`
+			Call InterpNpcYaw ( .NpcID:DupliFlourGhost -90` 10` )
+			Wait 15`
+			Call InterpNpcYaw ( .NpcID:DupliFlourGhost -90` 20` )
+			Wait 25`
+			Call InterpNpcYaw ( .NpcID:DupliFlourGhost 90` 10` )
+			Wait 10`
+			Call InterpNpcYaw ( .NpcID:DupliFlourGhost -90` 10` )
+		EndThread
+		Wait 60`
+		Call SetNpcAnimation ( .NpcID:DupliFlourGhost 004E0003 )
+		Call NpcMoveTo ( .NpcID:DupliFlourGhost 202` 375` 150` )
+		Call SetNpcAnimation ( .NpcID:DupliFlourGhost 004E0002 )
+		Thread
+			Call InterpNpcYaw ( .NpcID:DupliFlourGhost -90` 10` )
+			Wait 25`
+			Call InterpNpcYaw ( .NpcID:DupliFlourGhost 90` 10` )
+			Wait 15`
+			Call InterpNpcYaw ( .NpcID:DupliFlourGhost -90` 10` )
+		EndThread
+		Wait 40`
+	EndLoop
+   C4:  Return
+   CC:  End
+}
+
+#new:Script $Script_Interact_8024CE80
+{
+    If *HasFlour == .False
+        Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
+        Call  SpeakToPlayer ( .NpcID:DupliFlourGhost 004E0005 004E0002 00000005 $GiveFlour )
+        Call  ShowGotItem ( .Item:CakeMix .True 02623020 )
+        Call  AddKeyItem ( .Item:CakeMix )
+        Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+    Else
+        Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
+        Call  SpeakToPlayer ( .NpcID:DupliFlourGhost 004E0005 004E0002 00000005 $FlourAlreadyAquired )
+        Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+    EndIf
+	Return
+	End
+}
+
+#new:String $GiveFlour
+{
+	[Style Right]
+	Wow ur gay[br]
+	[Wait][End]
+}
+
+#new:String $FlourAlreadyAquired
+{
+	[Style Right]
+	wow ur gay[br]
+	[Wait][End]
+}

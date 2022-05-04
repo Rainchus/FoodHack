@@ -65,12 +65,46 @@
 
 #new:Script $Script_EnterMap
 {
+	Call  GetEntryID    ( *Var[0] )
+	Switch  *Var[0]
+		CaseOR  ==  ~Entry:entry_s
+		CaseOR  ==  ~Entry:entry_w
+			Set   *Var[0] $Script_CreateExitTriggers
+			Exec  EnterWalk
+		EndCaseGroup
+		Default
+			Exec  $Script_CreateExitTriggers
+	EndSwitch
+	Return
+	End
+}
+
+#new:Script $Script_Exit_entry_w
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_w )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_06" ~Entry:jam_06:FlourFieldsEntry )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_Exit_entry_s
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_s )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_04" ~Entry:jam_04:entry_s )
+	Wait  100`
 	Return
 	End
 }
 
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_entry_w .Trigger:FloorAbove ~Collider:exit_trigger_w 00000001 00000000
+	Bind  $Script_Exit_entry_s .Trigger:FloorAbove ~Collider:exit_trigger_s 00000001 00000000
 	Return
 	End
 }
