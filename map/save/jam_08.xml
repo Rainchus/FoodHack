@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_08" author="unnamed" background="omo_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="401.000000,124.036812,505.567749" pitch="10.000000" yaw="0.000000"/>
-		<Camera pos="-1190.963623,65536.000000,-61.497799"/>
+		<Camera pos="292.794830,194.030762,208.277145" pitch="44.359997" yaw="1.759805"/>
+		<Camera pos="-2280.004883,65536.000000,273.572144"/>
 		<Camera pos="65536.000000,-299.968719,478.626038"/>
 		<Camera pos="5.226500,-44.568481,65536.000000"/>
 	</Editor>
@@ -942,7 +942,7 @@
 				</DisplayList>
 			</ShapeMesh>
 			<PropertyList>
-				<Property v="5C,0,1"/>
+				<Property v="5C,0,1A"/>
 				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
@@ -2188,7 +2188,7 @@
 				</DisplayList>
 			</ShapeMesh>
 			<PropertyList>
-				<Property v="5C,0,1"/>
+				<Property v="5C,0,1A"/>
 				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
@@ -3063,7 +3063,7 @@
 			<HitObject type="ROOT"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="MeshZone" id="5"/>
+			<MapObject name="MeshZone" id="5" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3108,7 +3108,7 @@
 			<Camera type="TYPE_6" flag="true" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="177,10,73" posB="401,10,73" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="MeshZone" id="4"/>
+			<MapObject name="MeshZone" id="4" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3150,10 +3150,10 @@
 					</TriangleList>
 				</TriangleBatch>
 			</HitMesh>
-			<Camera type="TYPE_6" flag="true" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="-2736,10,275" posB="-2529,10,275" posC="10,0,10"/>
+			<Camera type="TYPE_6" flag="true" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="-2679,10,275" posB="-2529,10,275" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="ViewBack" id="3"/>
+			<MapObject name="ViewBack" id="3" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3174,7 +3174,7 @@
 			<Camera type="TYPE_0" flag="false" boomLength="350.000000" boomPitch="15.000000" viewPitch="-6.000000" posA="-1058,10,-467" posB="-1058,10,2185" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="ViewLeft" id="2"/>
+			<MapObject name="ViewLeft" id="2" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3195,7 +3195,7 @@
 			<Camera type="TYPE_0" flag="false" boomLength="350.000000" boomPitch="15.000000" viewPitch="-6.000000" posA="-2384,10,859" posB="268,10,859" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="ViewRight" id="1"/>
+			<MapObject name="ViewRight" id="1" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3216,7 +3216,7 @@
 			<Camera type="TYPE_0" flag="false" boomLength="350.000000" boomPitch="15.000000" viewPitch="-6.000000" posA="268,10,861" posB="-2384,10,860" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="ViewFront" id="0"/>
+			<MapObject name="ViewFront" id="0" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
