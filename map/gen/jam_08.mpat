@@ -5,12 +5,14 @@
 	[MainScript] $Script_Main
 	[Background] 80200000
 	[EntryList] $EntryList
-	[EntryCount] 1
+	[EntryCount] 3
 }
 
 #new:EntryList $EntryList
 {
 	~Vec4f:entry_e
+	~Vec4f:entry_fall
+	~Vec4f:fall
 }
 
 #new:Script_Main $Script_Main
@@ -48,6 +50,17 @@
 	End
 }
 
+#new:Script $Script_Exit_fall
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:fall )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_08" ~Entry:jam_08:entry_fall )
+	Wait  100`
+	Return
+	End
+}
+
 #new:Script $Script_Exit_entry_e
 {
 	SetGroup 0000001B
@@ -61,6 +74,7 @@
 
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_fall .Trigger:FloorAbove ~Collider:fallcollider 00000001 00000000
 	Bind  $Script_Exit_entry_e .Trigger:FloorAbove ~Collider:exit_trigger_e 00000001 00000000
 	Return
 	End
