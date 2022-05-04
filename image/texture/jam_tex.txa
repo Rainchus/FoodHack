@@ -261,3 +261,27 @@ tex: MonteyWallHole
 	filter: no
 	combine: 8
 }
+
+tex: skh_fence_long
+{
+	img: skh_fence_long.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: jam_wheat
+{
+	img: jam_wheat.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
