@@ -12,7 +12,6 @@
 	Return
 	End
 }
-
 #new:Script $Script_BeatBlock
 {
     Call SetZoneEnabled ( ~Zone:ViewRight .False)
@@ -24,15 +23,15 @@ Loop
       Loop 8`
         
            Call PlaySoundWithVolume ( 000001FE 70` ) (  )
-           Wait 10`
+           Wait 15`
      EndLoop
    EndThread
-   Wait 50`
+   Wait 75`
 
     Loop 3`
         
         Call PlaySound (00000218) 
-        Wait 10`
+        Wait 15`
         
     EndLoop
     Add *Var0 1
@@ -64,6 +63,9 @@ EndLoop
     Call SetZoneEnabled ( ~Zone:ViewRight .False)
     Call SetZoneEnabled ( ~Zone:ViewLeft .False )
     Call SetZoneEnabled ( ~Zone:ViewBack .False )
+    Call GetPlayerPos ( *Var1 *Var2 *Var3 )
+    Add *Var2 2`
+    Call     SetPanTarget     ( .Cam:Default *Var1 *Var2 *Var3 )
     Return
     End
 }
@@ -74,6 +76,9 @@ EndLoop
     Call SetZoneEnabled ( ~Zone:ViewRight .True)
     Call SetZoneEnabled ( ~Zone:ViewLeft .False )
     Call SetZoneEnabled ( ~Zone:ViewBack .False )
+    Call GetPlayerPos ( *Var1 *Var2 *Var3 )
+    Add *Var2 2`
+    Call     SetPanTarget     ( .Cam:Default *Var1 *Var2 *Var3 )
     Return
     End
 }
@@ -84,6 +89,9 @@ EndLoop
     Call SetZoneEnabled ( ~Zone:ViewRight .False)
     Call SetZoneEnabled ( ~Zone:ViewLeft .True )
     Call SetZoneEnabled ( ~Zone:ViewBack .False )
+    Call GetPlayerPos ( *Var1 *Var2 *Var3 )
+    Add *Var2 2`
+    Call     SetPanTarget     ( .Cam:Default *Var1 *Var2 *Var3 )
     Return
     End
 }
@@ -94,6 +102,9 @@ EndLoop
     Call SetZoneEnabled ( ~Zone:ViewRight .False)
     Call SetZoneEnabled ( ~Zone:ViewLeft .False )
     Call SetZoneEnabled ( ~Zone:ViewBack .True )
+    Call GetPlayerPos ( *Var1 *Var2 *Var3 )
+    Add *Var2 2`
+    Call     SetPanTarget     ( .Cam:Default *Var1 *Var2 *Var3 )
     Return
     End
 }
