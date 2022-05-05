@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_06" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-203.511871,803.246033,115.231354" pitch="9.999999" yaw="45.000000"/>
-		<Camera pos="-673.535889,65536.000000,-125.782791"/>
-		<Camera pos="65536.000000,694.892761,-89.315979"/>
-		<Camera pos="-510.138855,503.116760,65536.000000"/>
+		<Camera pos="-571.848877,534.790649,64.636436" pitch="25.000034" yaw="359.360321"/>
+		<Camera pos="-487.737823,65536.000000,-96.636765"/>
+		<Camera pos="65536.000000,390.099854,-115.556046"/>
+		<Camera pos="705.363831,123.804237,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="F">
@@ -52,12 +52,14 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="4">
+		<Node name="Root" id="6">
 			<Node name="Entrances" id="FFFFFFFF"/>
 			<Node name="FlourFieldsEntry" id="0"/>
 			<Node name="FreeBadgeMarker" id="1"/>
 			<Node name="BadgeFightMarker" id="2"/>
 			<Node name="EntryBottom" id="3"/>
+			<Node name="Duplighost1" id="4"/>
+			<Node name="Duplighost2" id="5"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -1746,7 +1748,17 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="4"/>
+			<MapObject name="Root" id="6"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="-594,410,-139" yaw="0.000000">
+			<MapObject name="Duplighost2" id="5"/>
+			<Movement type="Wander" data="FFFFFDAE,19A,FFFFFF75,0,0,FFFF8001,1,FFFFFDAE,19A,FFFFFF75,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="4E" palette="0" animations="2,3,4,4,0,0,A,A,0,0,0,0,0,0,0,0"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="729,122,15" yaw="0.000000">
+			<MapObject name="Duplighost1" id="4"/>
+			<Movement type="Patrol" data="2,2DD,7A,F,FFFFFE7F,C,F,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FFFF8001,2D9,7A,F,32,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="4E" palette="0" animations="2,3,4,4,0,0,A,A,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-480,3,14" yaw="-270.000000">
 			<MapObject name="EntryBottom" id="3"/>

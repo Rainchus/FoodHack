@@ -56,7 +56,7 @@
     [Index]        1Fb
     [Level]        9`b
     [MaxHP]         4`b
-    [Coins]         1`b
+    [Coins]         10`b
     [Flags]       00000000
     [StatusTable] $StatusTable_80219224
     % ai

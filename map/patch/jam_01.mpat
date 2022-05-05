@@ -1,0 +1,28 @@
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Exec  $Script_SetupMusic
+    Exec  $Script_MakeEntities
+    Call  $Function_SetupFog
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+#new:Script $Script_MakeEntities {
+    If *JamZeroOneWoodenBlockGone == .False
+        Call MakeEntity ( .Entity:Hammer1Block ~Vec4d:WoodenBlock 80000000 )
+        Call AssignScript ( $WoodenBlockGone )
+    EndIf
+    Return
+    End
+}
+
+#new:Script $WoodenBlockGone{
+    Set *JamZeroOneWoodenBlockGone .True
+    Return
+    End
+}

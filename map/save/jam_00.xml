@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_00" author="unnamed" background="sra_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="120.473602,89.254730,1116.522217" pitch="22.480013" yaw="345.159912"/>
-		<Camera pos="556.729492,65536.000000,374.171051"/>
+		<Camera pos="74.251846,379.827332,1405.192627" pitch="33.840008" yaw="358.920197"/>
+		<Camera pos="32.553352,65536.000000,980.878723"/>
 		<Camera pos="65536.000000,-141.561951,-564.893311"/>
 		<Camera pos="-279.373749,36.053917,65536.000000"/>
 	</Editor>
@@ -119,7 +119,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="B">
+		<Node name="Root" id="D">
 			<Node name="Entrances" id="1">
 				<Node name="entry_e" id="FFFFFFFF"/>
 				<Node name="entry_wakeup" id="0"/>
@@ -133,6 +133,8 @@
 			<Node name="ShyGuy4" id="8"/>
 			<Node name="PipeEntry" id="9"/>
 			<Node name="entry_fall" id="A"/>
+			<Node name="WoodenBlock" id="B"/>
+			<Node name="WoodenBlock2" id="C"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -7386,7 +7388,15 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="B"/>
+			<MapObject name="Root" id="D"/>
+		</Marker>
+		<Marker ver="4" type="Entity" pos="-24,0,1000" yaw="0.000000">
+			<MapObject name="WoodenBlock2" id="C"/>
+			<Entity type="802EA10C" flag="" collider=""/>
+		</Marker>
+		<Marker ver="4" type="Entity" pos="26,0,1000" yaw="0.000000">
+			<MapObject name="WoodenBlock" id="B"/>
+			<Entity type="802EA10C" flag="" collider=""/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="500,600,365" yaw="0.000000">
 			<MapObject name="entry_fall" id="A"/>

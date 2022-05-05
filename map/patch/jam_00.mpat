@@ -222,3 +222,22 @@ End
     Return
     End
 }
+
+#new:Script $WoodenBlockGone{
+    Set *JamZeroZeroWoodenBlockGone .True
+    Return
+    End
+}
+
+@ $Script_MakeEntities {
+    Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring 80000000 )
+    Call  AssignScript    ( $Script_ScriptedSpring_Spring )
+    If *JamZeroZeroWoodenBlockGone == .False
+        Call MakeEntity ( .Entity:Hammer1Block ~Vec4d:WoodenBlock 80000000 )
+        Call AssignScript ( $WoodenBlockGone )
+        Call MakeEntity ( .Entity:Hammer1Block ~Vec4d:WoodenBlock2 80000000 )
+        Call AssignScript ( $WoodenBlockGone )
+    EndIf
+    Return
+    End
+}

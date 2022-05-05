@@ -11,3 +11,5 @@
 00A = Jam_02_hasFlour= HasFlour
 00B = Jam_07_DefeatedJrTrooper = DefeatedJrTrooper
 00C = Jam_07_OpenedGate = OpenedGate
+00D = Jam_00_DestroyedWoodenBlock = JamZeroZeroWoodenBlockGone
+00E = Jam_01_DestroyedWoodenBlock = JamZeroOneWoodenBlockGone

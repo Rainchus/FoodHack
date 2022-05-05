@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_01" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="51.582748,124.036812,361.295288" pitch="10.000000" yaw="0.000000"/>
-		<Camera pos="537.927124,65536.000000,-397.479309"/>
+		<Camera pos="14.640252,162.345398,8.168541" pitch="22.160007" yaw="41.119957"/>
+		<Camera pos="195.326920,65536.000000,-139.655975"/>
 		<Camera pos="65536.000000,11.425783,-135.848480"/>
 		<Camera pos="175.310715,15.220403,65536.000000"/>
 	</Editor>
@@ -77,7 +77,7 @@
 				<Node name="entry_n" id="FFFFFFFF"/>
 				<Node name="entry_e" id="0"/>
 			</Node>
-			<Node name="Marker" id="2"/>
+			<Node name="WoodenBlock" id="2"/>
 			<Node name="EntryFromCave" id="3"/>
 		</Node>
 	</MarkerTree>
@@ -4936,21 +4936,20 @@
 			<MapObject name="Root" id="4"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="164,0,-126" yaw="-135.000000">
-			<MapObject name="EntryFromCave" id="3" hidden="true"/>
+			<MapObject name="EntryFromCave" id="3"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="164,0,-126" yaw="-135.000000">
-			<MapObject name="Marker" id="2" hidden="true"/>
-			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
-			<Sprite sprite="3B" palette="1" animations="1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+		<Marker ver="4" type="Entity" pos="178,0,-131" yaw="-90.000000">
+			<MapObject name="WoodenBlock" id="2"/>
+			<Entity type="802EA10C" flag="" collider=""/>
 		</Marker>
 		<Marker ver="4" type="Group">
 			<MapObject name="Entrances" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="516,0,12" yaw="255.000000">
-			<MapObject name="entry_e" id="0" hidden="true"/>
+			<MapObject name="entry_e" id="0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="0,320,-858" yaw="180.000000">
-			<MapObject name="entry_n" id="FFFFFFFF" hidden="true"/>
+			<MapObject name="entry_n" id="FFFFFFFF"/>
 		</Marker>
 	</Markers>
 	<ScriptData>

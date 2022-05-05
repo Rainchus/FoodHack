@@ -3,3 +3,30 @@
     Return
     End
 }
+
+@ $Duplighost {
+    % stats
+    [Index]        3Bb
+    [Level]        23`b
+    [MaxHP]        6`b
+    [Coins]         10`b
+    [Flags]       00000000
+    [StatusTable] $StatusTable_80219F80
+    % ai
+    [PartsCount]    1`s
+    [PartsTable]  $PartsTable_8021A02C
+    [Script]      $Script_Init_8021A078
+    % move effectiveness
+    [Escape]       50`b
+    [Item]         50`b
+    [AirLift]      80`b
+    [Hurricane]    70`b % Bow's "Spook" as well
+    [UpAndAway]    95`b
+    [PowerBounce]  90`b
+    [SpinSmash]     0`b % weight (0-4)
+    % ui positions
+    [Size]         36`b  36`b % width height
+    [HealthBar]     0`b   0`b % dx dy
+    [StatusTurn]  -10`b  20`b % dx dy
+    [StatusIcon]   10`b  20`b % dx dy
+}
