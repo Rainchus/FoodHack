@@ -476,29 +476,35 @@
 
 #new:Script $Script_Interact_GuardianGhost
 {
-	Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
-	Call  SpeakToPlayer ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 $GuardianGhostString )
-	Call  EndSpeech ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 )
-	Call  ShowChoice    ( 001E0044 ) % Don't fight Fight
-	If  *Var0  ==  00000000
-		Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightDecline1 ) % Good. You're a smart boy!
-		Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
-	Else
-		Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightRequest1 ) % You wanna fight? Are you nuts? You don't wanna mes ...
+	If *OpenedGate == .False
+		Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
+		Call  SpeakToPlayer ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 $GuardianGhostString )
 		Call  EndSpeech ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 )
-		Call  ShowChoice        ( 001E0044 ) % Don't fight Fight
-			If  *Var0  ==  00000000
-				Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightDecline2 ) % Good. You're a smart boy!
-				Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
-			Else
-			Call PlayerMoveTo ( -262` -203` 30` )
-			Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightRequest2 ) % What!! Well, all right... I do love a challenge! H ...
+		Call  ShowChoice    ( 001E0044 ) % Don't fight Fight
+		If  *Var0  ==  00000000
+			Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightDecline1 ) % Good. You're a smart boy!
 			Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
-			Wait 5`
-			Call SetMusicTrack ( 00000000 .Song:KoopaBrosTheme 00000001 00000008 )
-			ExecWait $AntiGuyAmbush
-			Wait 30`
+		Else
+			Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightRequest1 ) % You wanna fight? Are you nuts? You don't wanna mes ...
+			Call  EndSpeech ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 )
+			Call  ShowChoice        ( 001E0044 ) % Don't fight Fight
+				If  *Var0  ==  00000000
+					Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightDecline2 ) % Good. You're a smart boy!
+					Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+				Else
+				Call PlayerMoveTo ( -262` -203` 30` )
+				Call  SpeakToPlayer    ( .Npc:Self 004E0005 004E0002 00000000 $GuardianGhostStringFightRequest2 ) % What!! Well, all right... I do love a challenge! H ...
+				Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+				Wait 5`
+				Call SetMusicTrack ( 00000000 .Song:KoopaBrosTheme 00000001 00000008 )
+				ExecWait $AntiGuyAmbush
+				Wait 30`
+			EndIf
 		EndIf
+	Else
+		Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
+		Call  SpeakToPlayer ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 $GuardianGhostOpenedGateString )
+		Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
 	EndIf
 	Return
 	End
@@ -962,6 +968,103 @@
 		Call ShakeCam ( .Cam:Default 1 5` 1` )
 	EndThread
 	Call SetPlayerAnimation ( 00010018 )
+	Return
+	End
+}
+
+#new:Script $MarioEnterFromFlourFields
+{
+	Call DisablePlayerInput ( .True )
+	Call NpcFacePlayer ( .NpcID:GuardianGhost 30` )
+	Call SetNpcAnimation ( .NpcID:GuardianGhost 004E000A )
+	Wait 15`
+	Call SetNpcAnimation ( .NpcID:GuardianGhost 004E0002 )
+	Call SpeakToPlayer ( .NpcID:GuardianGhost 004E0005 004E0002 00000000 $MarioFromFlourFieldsString )
+	Call InterpNpcYaw ( .NpcID:GuardianGhost 90` 30` )
+	Call ModifyColliderFlags ( 00000000 ~Collider:FenceGateCollider 7FFFFE00 )
+	Call ModifyColliderFlags ( 00000000 ~Collider:FenceOpenCollider1 00000000 )
+	Call ModifyColliderFlags ( 00000000 ~Collider:FenceOpenCollider2 00000000 )
+	Exec $MakeGateMove
+	Call SetNpcAnimation ( .NpcID:GuardianGhost 004E0003 )
+  	Call NpcMoveTo ( .NpcID:GuardianGhost -289` -329` 30` )
+	Call SetNpcAnimation ( .NpcID:GuardianGhost 004E0002 )
+	Call DisablePlayerInput ( .False )
+  Return
+  End
+}
+
+@ $Script_EnterMap {
+	Call  GetLoadType   ( *Var[0] )
+	If  *Var[0]  ==  1
+		Exec  EnterSavePoint
+		Exec $Script_CreateExitTriggers
+		Return
+	EndIf
+	If *OpenedGate == .True
+		Exec $MakeGateMove
+				Call SetNpcPos ( .NpcID:GuardianGhost -289` 0` -329` )
+				Call ModifyColliderFlags ( 00000000 ~Collider:FenceGateCollider 7FFFFE00 )
+				Call ModifyColliderFlags ( 00000000 ~Collider:FenceOpenCollider1 00000000 )
+				Call ModifyColliderFlags ( 00000000 ~Collider:FenceOpenCollider2 00000000 )
+	EndIf
+	Call  GetEntryID    ( *Var[0] )
+	Switch  *Var[0]
+		Case  ==  ~Entry:PipeEntry
+			Set   *Var[A] $Script_CreateExitTriggers
+			Exec  $Script_EnterVerticalPipe
+		Case  ==  00000000
+			If *OpenedGate == .False
+				Exec $MarioEnterFromFlourFields
+				Set *OpenedGate .True
+			EndIf
+			Set   *Var[0] $Script_CreateExitTriggers
+			Exec  EnterWalk
+		EndCaseGroup
+		Default
+			Exec  $Script_CreateExitTriggers
+	EndSwitch
+	Return
+	End
+}
+
+#new:String $MarioFromFlourFieldsString
+{
+	[Style Right]
+	[PrintRising]M-Mario!?[/fx][Pause:15][br]
+	Noone has ever came out of[br]
+	the cave once we threw them[br]
+	down there![Pause:5][br]
+	[Wait][Next]
+	Not even that Jr Troopa guy![br]
+	He hasn't gotten out since![br]
+	[PrintRising]Ugh! [Pause:15]Yknow what?![/fx][br]
+	[Wait][Next]
+	Here, I'll open this dumb[br]
+	gate for you.[br]
+	[Wait][End]
+}
+
+#new:String $GuardianGhostOpenedGateString
+{
+	[Style Right]
+	What? Don't you already have[br]
+	what you want?[Pause:5] If not I'd[br]
+	recommend talking to the[br]
+	farmer back there.[br]
+	[Wait][End]
+}
+
+#new:Script $MakeGateMove
+{
+	CC:  Call  MakeLerp  ( 00000000 00000078 00000014 .Easing:CosInOut )
+	E8:  Label  0
+	F4:  Call  UpdateLerp ( )
+	100:  Call  RotateModel       ( ~Model:m_d1 *Var0 00000000 FFFFFFFF 00000000 )
+	120:  Call  RotateModel       ( ~Model:m_d2 *Var0 00000000 00000001 00000000 )
+	140:  Wait  1`
+	14C:  If  *Var1  ==  00000001
+	15C:  	Goto  0
+	168:  EndIf
 	Return
 	End
 }

@@ -108,6 +108,7 @@
         Call  SpeakToPlayer ( .NpcID:DupliFlourGhost 004E0005 004E0002 00000005 $GiveFlour )
         Call  ShowGotItem ( .Item:CakeMix .True 02623020 )
         Call  AddKeyItem ( .Item:CakeMix )
+        Set *HasFlour .True
         Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
     Else
         Call  AdjustCam     ( .Cam:Default *Fixed[5.0]  0` *Fixed[-275.5] *Fixed[15.5] *Fixed[-10.0] )
@@ -120,14 +121,28 @@
 
 #new:String $GiveFlour
 {
-	[Style Right]
-	Wow ur gay[br]
-	[Wait][End]
+[Style Right]
+Hello there Stranger![br]
+I see you have made your way[br]
+up the pit[pause:5].[pause:5].[pause:5].[br]
+Must have been quite the walk.[br]
+[Wait][Next]
+What? You want some[br]
+flour for this cake quest?[br]
+Sure thing buddy! Anyone[br]
+is welcome to come and grab[br]
+[Wait][Next]
+some flour from here![br]
+Don't listen to those[br]
+silly guys outside,[br]
+take all you need![br]
+[Wait][End]
 }
 
 #new:String $FlourAlreadyAquired
 {
-	[Style Right]
-	wow ur gay[br]
-	[Wait][End]
+[Style Right]
+I hope your cake quest[br]
+goes well dear stranger![br]
+[Wait][End]
 }

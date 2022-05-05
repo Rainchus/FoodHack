@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_04" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-341.629608,124.036812,175.248901" pitch="10.000000" yaw="0.000000"/>
-		<Camera pos="-383.029022,65536.000000,-334.713989"/>
-		<Camera pos="65536.000000,70.321297,-292.065247"/>
-		<Camera pos="1178.312012,-3831.592773,65536.000000"/>
+		<Camera pos="-198.693878,172.002670,-65.344849" pitch="26.160006" yaw="330.719788"/>
+		<Camera pos="-279.530762,65536.000000,-230.772903"/>
+		<Camera pos="65536.000000,-68.000000,-218.000000"/>
+		<Camera pos="-16.378754,23.487278,65536.000000"/>
 	</Editor>
 	<ModelTree>
-		<Node name="Root" id="5B">
+		<Node name="Root" id="5E">
 			<Node name="Stage" id="0"/>
 			<Node name="Exit_North" id="1"/>
 			<Node name="Exit_East" id="2"/>
@@ -80,31 +80,37 @@
 			<Node name="o42" id="43"/>
 			<Node name="o54" id="44"/>
 			<Node name="juutan" id="45"/>
-			<Node name="m_d1" id="46"/>
-			<Node name="m_d2" id="47"/>
-			<Node name="o195" id="48"/>
-			<Node name="PipeModel" id="49"/>
+			<Node name="o195" id="46"/>
+			<Node name="PipeModel" id="47"/>
+			<Node name="Planar GridModel" id="48"/>
+			<Node name="Planar GridModel" id="49"/>
 			<Node name="Planar GridModel" id="4A"/>
-			<Node name="Planar GridModel" id="4B"/>
-			<Node name="Planar GridModel" id="4C"/>
+			<Node name="Split Model" id="4B"/>
+			<Node name="Split Model" id="4C"/>
 			<Node name="Split Model" id="4D"/>
-			<Node name="Split Model" id="4E"/>
-			<Node name="Split Model" id="4F"/>
-			<Node name="m_b" id="50"/>
+			<Node name="m_b" id="4E"/>
+			<Node name="o116" id="4F"/>
+			<Node name="o116" id="50"/>
 			<Node name="o116" id="51"/>
-			<Node name="o116" id="52"/>
-			<Node name="o116" id="53"/>
+			<Node name="o382" id="52"/>
+			<Node name="o382" id="53"/>
 			<Node name="o382" id="54"/>
 			<Node name="o382" id="55"/>
 			<Node name="o382" id="56"/>
 			<Node name="o382" id="57"/>
 			<Node name="o382" id="58"/>
-			<Node name="o382" id="59"/>
-			<Node name="o382" id="5A"/>
+			<Node name="Gates *" id="5D">
+				<Node name="New Group" id="5A">
+					<Node name="m_d1" id="59"/>
+				</Node>
+				<Node name="New Group" id="5C">
+					<Node name="m_d2" id="5B"/>
+				</Node>
+			</Node>
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="15">
+		<Node name="Root" id="17">
 			<Node name="Stage" id="0"/>
 			<Node name="Exits" id="3">
 				<Node name="exit_trigger_s" id="1"/>
@@ -127,6 +133,8 @@
 			<Node name="MeshCollider" id="12"/>
 			<Node name="MeshCollider" id="13"/>
 			<Node name="MeshCollider" id="14"/>
+			<Node name="FenceOpenCollider1" id="15"/>
+			<Node name="FenceOpenCollider2" id="16"/>
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
@@ -173,13 +181,96 @@
 	</LightSets>
 	<Models>
 		<Model ver="2" type="ROOT" lightset="0">
-			<MapObject name="Root" id="5B"/>
+			<MapObject name="Root" id="5E"/>
 			<BoundingBox empty="false" min="-737,-500,-937" max="1379,363,501"/>
 			<PropertyList>
 			</PropertyList>
 		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="Gates *" id="5D"/>
+			<BoundingBox empty="false" min="-288,0,-283" max="-266,40,-223"/>
+			<TransformMatrix m="1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="New Group" id="5C"/>
+			<BoundingBox empty="false" min="-276,0,-283" max="-266,40,-252"/>
+			<TransformMatrix m="0.707107,0.000000,0.707107,-266.175758,0.000000,1.000000,0.000000,0.000000,-0.707107,0.000000,0.707107,-283.202565,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o382" id="5A"/>
+			<MapObject name="m_d2" id="5B"/>
+			<ShapeMesh ver="3" texture="kmr_in_2tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFBFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200000"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="0,0,0"/>
+							<Vertex xyz="-29,0,14" uv="-1024,0"/>
+							<Vertex xyz="-29,40,14" uv="-1024,1024"/>
+							<Vertex xyz="0,0,0"/>
+							<Vertex xyz="-29,40,14" uv="-1024,1024"/>
+							<Vertex xyz="0,40,0" uv="0,1024"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,D"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="New Group" id="5A"/>
+			<BoundingBox empty="false" min="-288,0,-251" max="-276,40,-223"/>
+			<TransformMatrix m="0.500000,0.000000,-0.866025,-288.314999,0.000000,1.000000,0.000000,0.000000,0.866025,0.000000,0.500000,-223.584303,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="m_d1" id="59"/>
+			<ShapeMesh ver="3" texture="kmr_in_2tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFBFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200000"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-18,0,-24" uv="-1024,0"/>
+							<Vertex xyz="0,0,0"/>
+							<Vertex xyz="0,40,0" uv="0,1024"/>
+							<Vertex xyz="-18,0,-24" uv="-1024,0"/>
+							<Vertex xyz="0,40,0" uv="0,1024"/>
+							<Vertex xyz="-18,39,-24" uv="-1024,1024"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,D"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="o382" id="58"/>
 			<ShapeMesh ver="3" texture="mac_mac_doortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -261,7 +352,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o382" id="59"/>
+			<MapObject name="o382" id="57"/>
 			<ShapeMesh ver="3" texture="mac_mac_doortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -343,7 +434,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o382" id="58"/>
+			<MapObject name="o382" id="56"/>
 			<ShapeMesh ver="3" texture="mac_mac_doortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -425,7 +516,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o382" id="57"/>
+			<MapObject name="o382" id="55"/>
 			<ShapeMesh ver="3" texture="mac_mac_doortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -507,7 +598,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o382" id="56"/>
+			<MapObject name="o382" id="54"/>
 			<ShapeMesh ver="3" texture="mac_mac_doortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -589,7 +680,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o382" id="55"/>
+			<MapObject name="o382" id="53"/>
 			<ShapeMesh ver="3" texture="mac_mac_doortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -671,7 +762,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o382" id="54"/>
+			<MapObject name="o382" id="52"/>
 			<ShapeMesh ver="3" texture="mac_mac_doortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -753,7 +844,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o116" id="53"/>
+			<MapObject name="o116" id="51"/>
 			<ShapeMesh ver="3" texture="">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -861,7 +952,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o116" id="52"/>
+			<MapObject name="o116" id="50"/>
 			<ShapeMesh ver="3" texture="">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -969,7 +1060,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o116" id="51"/>
+			<MapObject name="o116" id="4F"/>
 			<ShapeMesh ver="3" texture="">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1077,7 +1168,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="m_b" id="50"/>
+			<MapObject name="m_b" id="4E"/>
 			<ShapeMesh ver="3" texture="kmr_fencetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1135,7 +1226,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="4F"/>
+			<MapObject name="Split Model" id="4D"/>
 			<ShapeMesh ver="3" texture="arn_kabe10tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1219,7 +1310,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="4E"/>
+			<MapObject name="Split Model" id="4C"/>
 			<ShapeMesh ver="3" texture="arn_kabe10tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1313,7 +1404,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="4D"/>
+			<MapObject name="Split Model" id="4B"/>
 			<ShapeMesh ver="3" texture="arn_kabe10tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1465,7 +1556,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="4C"/>
+			<MapObject name="Planar GridModel" id="4A"/>
 			<ShapeMesh ver="3" texture="arn_kabe10tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1549,7 +1640,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="4B"/>
+			<MapObject name="Planar GridModel" id="49"/>
 			<ShapeMesh ver="3" texture="mgm_star_floortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1661,7 +1752,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="4A"/>
+			<MapObject name="Planar GridModel" id="48"/>
 			<ShapeMesh ver="3" texture="mgm_star_floortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1743,7 +1834,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="PipeModel" id="49"/>
+			<MapObject name="PipeModel" id="47"/>
 			<ShapeMesh ver="3" texture="jan_t_dokankun3tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1955,7 +2046,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o195" id="48"/>
+			<MapObject name="o195" id="46"/>
 			<ShapeMesh ver="3" texture="kmr_fencetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2067,62 +2158,6 @@
 							<Triangle ijk="27,28,29"/>
 							<Triangle ijk="30,31,32"/>
 							<Triangle ijk="33,34,35"/>
-						</TriangleList>
-					</TriangleBatch>
-				</DisplayList>
-			</ShapeMesh>
-			<PropertyList>
-				<Property v="5C,0,D"/>
-				<Property v="5F,0,0"/>
-			</PropertyList>
-		</Model>
-		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="m_d2" id="47"/>
-			<ShapeMesh ver="3" texture="kmr_in_2tif">
-				<DisplayList>
-					<F3DEX2 cmd="E7000000,0"/>
-					<F3DEX2 cmd="D9FDFBFF,0"/>
-					<F3DEX2 cmd="D9FFFFFF,200000"/>
-					<TriangleBatch ver="0">
-						<VertexTable>
-							<Vertex xyz="-288,0,-223"/>
-							<Vertex xyz="-277,0,-253" uv="-1024,0"/>
-							<Vertex xyz="-277,40,-253" uv="-1024,1024"/>
-							<Vertex xyz="-288,0,-223"/>
-							<Vertex xyz="-277,40,-253" uv="-1024,1024"/>
-							<Vertex xyz="-288,40,-223" uv="0,1024"/>
-						</VertexTable>
-						<TriangleList>
-							<Triangle ijk="0,1,2"/>
-							<Triangle ijk="3,4,5"/>
-						</TriangleList>
-					</TriangleBatch>
-				</DisplayList>
-			</ShapeMesh>
-			<PropertyList>
-				<Property v="5C,0,D"/>
-				<Property v="5F,0,0"/>
-			</PropertyList>
-		</Model>
-		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="m_d1" id="46"/>
-			<ShapeMesh ver="3" texture="kmr_in_2tif">
-				<DisplayList>
-					<F3DEX2 cmd="E7000000,0"/>
-					<F3DEX2 cmd="D9FDFBFF,0"/>
-					<F3DEX2 cmd="D9FFFFFF,200000"/>
-					<TriangleBatch ver="0">
-						<VertexTable>
-							<Vertex xyz="-277,0,-253" uv="-1024,0"/>
-							<Vertex xyz="-266,0,-283"/>
-							<Vertex xyz="-266,40,-283" uv="0,1024"/>
-							<Vertex xyz="-277,0,-253" uv="-1024,0"/>
-							<Vertex xyz="-266,40,-283" uv="0,1024"/>
-							<Vertex xyz="-277,40,-253" uv="-1024,1024"/>
-						</VertexTable>
-						<TriangleList>
-							<Triangle ijk="0,1,2"/>
-							<Triangle ijk="3,4,5"/>
 						</TriangleList>
 					</TriangleBatch>
 				</DisplayList>
@@ -7800,11 +7835,51 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0">
-			<MapObject name="Root" id="15"/>
+			<MapObject name="Root" id="17"/>
 			<HitObject type="ROOT"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="14"/>
+			<MapObject name="FenceOpenCollider2" id="16" hidden="true"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-288,0,-223"/>
+						<Vertex xyz="-270,0,-199" uv="-1024,0"/>
+						<Vertex xyz="-270,200,-199" uv="-1024,1024"/>
+						<Vertex xyz="-288,0,-223"/>
+						<Vertex xyz="-270,200,-199" uv="-1024,1024"/>
+						<Vertex xyz="-288,200,-223" uv="0,1024"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2" doubleSided="true"/>
+						<Triangle ijk="3,4,5" doubleSided="true"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="FenceOpenCollider1" id="15" hidden="true"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-266,0,-283"/>
+						<Vertex xyz="-237,0,-297" uv="-1024,0"/>
+						<Vertex xyz="-237,200,-297" uv="-1024,1024"/>
+						<Vertex xyz="-266,0,-283"/>
+						<Vertex xyz="-237,200,-297" uv="-1024,1024"/>
+						<Vertex xyz="-266,200,-283" uv="0,1024"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2" doubleSided="true"/>
+						<Triangle ijk="3,4,5" doubleSided="true"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="MeshCollider" id="14" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -7856,7 +7931,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="13"/>
+			<MapObject name="MeshCollider" id="13" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -7964,7 +8039,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="12"/>
+			<MapObject name="MeshCollider" id="12" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8024,7 +8099,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="11"/>
+			<MapObject name="MeshCollider" id="11" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8052,7 +8127,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="FenceGateCollider" id="10"/>
+			<MapObject name="FenceGateCollider" id="10" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8072,7 +8147,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="F"/>
+			<MapObject name="MeshCollider" id="F" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8164,7 +8239,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="E"/>
+			<MapObject name="MeshCollider" id="E" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8200,7 +8275,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="D"/>
+			<MapObject name="MeshCollider" id="D" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8644,7 +8719,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="7FFFFE00">
-			<MapObject name="PipeCollider" id="C"/>
+			<MapObject name="PipeCollider" id="C" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -8768,7 +8843,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="B"/>
+			<MapObject name="MeshCollider" id="B" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9108,7 +9183,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono6" id="A"/>
+			<MapObject name="mono6" id="A" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9128,7 +9203,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono5" id="9"/>
+			<MapObject name="mono5" id="9" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9148,7 +9223,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono4" id="8"/>
+			<MapObject name="mono4" id="8" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9168,7 +9243,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono3" id="7"/>
+			<MapObject name="mono3" id="7" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9188,7 +9263,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono2" id="6"/>
+			<MapObject name="mono2" id="6" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9208,7 +9283,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="mono1" id="5"/>
+			<MapObject name="mono1" id="5" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9236,7 +9311,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_w" id="2"/>
+			<MapObject name="exit_trigger_w" id="2" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9254,7 +9329,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_s" id="1"/>
+			<MapObject name="exit_trigger_s" id="1" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -9338,103 +9413,103 @@
 			<MapObject name="Root" id="1A"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="100,-200,0" yaw="0.000000">
-			<MapObject name="MarioYeetToHole" id="19"/>
+			<MapObject name="MarioYeetToHole" id="19" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="-100,100,300" yaw="0.000000">
-			<MapObject name="CutsceneCamMarker" id="18"/>
+			<MapObject name="CutsceneCamMarker" id="18" hidden="true"/>
 			<CamTarget sampleZone="false" generatePan="false" panSpeed="1.000000">
 				<Camera type="TYPE_0" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="97,110,335" posB="97,110,235" posC="107,100,295"/>
 			</CamTarget>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-262,32,-203" yaw="-90.000000">
-			<MapObject name="AntiJumpPos" id="17"/>
+			<MapObject name="AntiJumpPos" id="17" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="849,0,-354" yaw="90.000000">
-			<MapObject name="AntiGuy2CE" id="16"/>
+			<MapObject name="AntiGuy2CE" id="16" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-220,0,-235" yaw="-90.000000">
-			<MapObject name="AntiJumpTo3" id="15"/>
+			<MapObject name="AntiJumpTo3" id="15" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-292,0,-166" yaw="90.000000">
-			<MapObject name="AntiJumpTo2" id="14"/>
+			<MapObject name="AntiJumpTo2" id="14" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-230,0,-178" yaw="-90.000000">
-			<MapObject name="AntiJumpTo1" id="13"/>
+			<MapObject name="AntiJumpTo1" id="13" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="703,0,-106" yaw="-90.000000">
-			<MapObject name="AntiGuy1Pos2" id="12"/>
+			<MapObject name="AntiGuy1Pos2" id="12" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="961,0,28" yaw="-90.000000">
-			<MapObject name="AntiGuy1Pos1" id="11"/>
+			<MapObject name="AntiGuy1Pos1" id="11" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="612,50,-373" yaw="150.000000">
-			<MapObject name="AntiGuy3" id="10"/>
+			<MapObject name="AntiGuy3" id="10" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="961,0,28" yaw="90.000000">
-			<MapObject name="AntiGuy2" id="F"/>
+			<MapObject name="AntiGuy2" id="F" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="860,0,220" yaw="-90.000000">
-			<MapObject name="AntiGuy1" id="E"/>
+			<MapObject name="AntiGuy1" id="E" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-297,0,-252" yaw="270.000000">
-			<MapObject name="GuardianGhost" id="D"/>
+			<MapObject name="GuardianGhost" id="D" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="4E" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-309,0,363" yaw="150.000000">
-			<MapObject name="TentGhost2" id="C"/>
+			<MapObject name="TentGhost2" id="C" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="4E" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="778,0,234" yaw="-135.000000">
-			<MapObject name="TentGuy2" id="B"/>
+			<MapObject name="TentGuy2" id="B" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="1" animations="1,2,3,4,0,0,C,C,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-3,0,-444" yaw="0.000000">
-			<MapObject name="Hiddenbadge" id="A"/>
+			<MapObject name="Hiddenbadge" id="A" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="205,33,469" yaw="0.000000">
-			<MapObject name="CameraMarker" id="9"/>
+			<MapObject name="CameraMarker" id="9" hidden="true"/>
 			<CamTarget sampleZone="false" generatePan="false" panSpeed="1.000000">
 				<Camera type="TYPE_0" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="207,43,427" posB="207,43,327" posC="47,33,180"/>
 			</CamTarget>
 		</Marker>
 		<Marker ver="4" type="Entity" pos="200,0,300" yaw="0.000000">
-			<MapObject name="BlueSwitch" id="8"/>
+			<MapObject name="BlueSwitch" id="8" hidden="true"/>
 			<Entity type="802E9BD4" hasSpawnFlag="false" spawnFlag="" callback="false" areaFlag="0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="204,30,403" yaw="180.000000">
-			<MapObject name="PipeEntry" id="7"/>
+			<MapObject name="PipeEntry" id="7" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Entity" pos="304,60,403" yaw="180.000000">
-			<MapObject name="HealBlock" id="6"/>
+			<MapObject name="HealBlock" id="6" hidden="true"/>
 			<Entity type="802EA7E0"/>
 		</Marker>
 		<Marker ver="4" type="Entity" pos="104,60,403" yaw="180.000000">
-			<MapObject name="SaveBlock" id="5"/>
+			<MapObject name="SaveBlock" id="5" hidden="true"/>
 			<Entity type="802E9A18"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="790,0,-312" yaw="0.000000">
-			<MapObject name="TentGuy" id="4"/>
+			<MapObject name="TentGuy" id="4" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="1" animations="1,2,3,4,0,0,C,C,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="848,0,-287" yaw="0.000000">
-			<MapObject name="TentGhost" id="3"/>
+			<MapObject name="TentGhost" id="3" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="4E" palette="0" animations="2,3,4,4,0,0,A,A,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="131,0,-424" yaw="-225.000000">
-			<MapObject name="ShopGhost" id="2"/>
+			<MapObject name="ShopGhost" id="2" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="4E" palette="0" animations="2,3,4,4,0,0,A,A,0,0,0,0,0,0,0,0"/>
 		</Marker>
@@ -9442,10 +9517,10 @@
 			<MapObject name="Entrances" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-475,0,0" yaw="90.000000">
-			<MapObject name="entry_w" id="0"/>
+			<MapObject name="entry_w" id="0" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-354,0,-274" yaw="135.500000">
-			<MapObject name="entry_s" id="FFFFFFFF"/>
+			<MapObject name="entry_s" id="FFFFFFFF" hidden="true"/>
 		</Marker>
 	</Markers>
 	<ScriptData>
