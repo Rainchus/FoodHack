@@ -219,8 +219,8 @@ End
 				EndIf
 				If *HasFlour == .True
 					If *GaveFlour == .False
-						Call FindKeyItem ( .Item:BakingFlour *Var2 )
-						Set *Var8 .Item:BakingFlour
+						Call FindKeyItem ( .Item:CakeMix *Var2 )
+						Set *Var8 .Item:CakeMix
 						ExecWait $Script_PresentItem
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyFlour ) % Sadge
 						Call RemoveKeyItemAt ( *Var2 )
@@ -231,7 +231,7 @@ End
 				If *HasStrawberry == .True
 					If *GaveStrawberry == .False
 						Call FindKeyItem ( .Item:BakingStrawberry *Var3 )
-						Set *Var8 .Item:BakingEgg
+						Set *Var8 .Item:BakingStrawberry
 						ExecWait $Script_PresentItem
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyStrawberry ) % Sadge
 						Call RemoveKeyItemAt ( *Var3 )

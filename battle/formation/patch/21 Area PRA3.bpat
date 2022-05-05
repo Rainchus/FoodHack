@@ -1,0 +1,5 @@
+@ $Script_TakeTurn_80226CC0 {
+    ExecWait  $Script_LungeAttack
+    Return
+    End
+}
