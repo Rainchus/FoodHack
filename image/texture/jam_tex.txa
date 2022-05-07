@@ -285,3 +285,27 @@ tex: jam_wheat
 	filter: yes
 	combine: 8
 }
+
+tex: kmr_green_ctif
+{
+	img: kmr_green_ctif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: no
+	combine: 8
+}
+
+tex: kmr_gree_edge1tif
+{
+	img: kmr_gree_edge1tif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
