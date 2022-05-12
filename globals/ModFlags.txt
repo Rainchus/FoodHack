@@ -13,3 +13,4 @@
 00C = Jam_07_OpenedGate = OpenedGate
 00D = Jam_00_DestroyedWoodenBlock = JamZeroZeroWoodenBlockGone
 00E = Jam_01_DestroyedWoodenBlock = JamZeroOneWoodenBlockGone
+00F = Jam_10_MoneyMoney = JamTenMoneyMoney
