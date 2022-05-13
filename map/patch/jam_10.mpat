@@ -36,13 +36,13 @@
 
 #new:NpcGroupList $NpcGroupList_test
 {
-00000001 $NpcGroup_ShyGuy    10010000 % AABBCCCC <--- formation
-00000001 $NpcGroup_ShyGuy2    10000000 % AABBCCCC <--- formation
-00000001 $NpcGroup_ShyGuy3    10010000 % AABBCCCC <--- formation
-00000001 $NpcGroup_ShyGuy4    10010000 % AABBCCCC <--- formation
-00000001 $NpcGroup_ShyGuy5    10010000 % AABBCCCC <--- formation
-00000001 $NpcGroup_ShyGuy6    10010000 % AABBCCCC <--- formation
-00000001 $NpcGroup_ShyGuy7    10010000 % AABBCCCC <--- formation
+00000001 $NpcGroup_ShyGuy    10020000 % AABBCCCC <--- formation
+00000001 $NpcGroup_ShyGuy2    10020000 % AABBCCCC <--- formation
+00000001 $NpcGroup_ShyGuy3    10030000 % AABBCCCC <--- formation
+00000001 $NpcGroup_ShyGuy4    10020000 % AABBCCCC <--- formation
+00000001 $NpcGroup_ShyGuy5    10020000 % AABBCCCC <--- formation
+00000001 $NpcGroup_ShyGuy6    10030000 % AABBCCCC <--- formation
+00000001 $NpcGroup_ShyGuy7    10020000 % AABBCCCC <--- formation
 % AA = FormationTableIndex
 % BB = FormationIndex
 % CCCC = BattleStageIndex
