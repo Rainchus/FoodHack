@@ -14,3 +14,4 @@
 00D = Jam_00_DestroyedWoodenBlock = JamZeroZeroWoodenBlockGone
 00E = Jam_01_DestroyedWoodenBlock = JamZeroOneWoodenBlockGone
 00F = Jam_10_MoneyMoney = JamTenMoneyMoney
+010 = Jam_12_DodgeMaster = JamTwelveDodgeMaster

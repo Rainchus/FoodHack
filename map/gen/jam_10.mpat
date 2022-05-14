@@ -53,6 +53,28 @@
 	End
 }
 
+#new:Script $Script_Exit_entry_n
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_n )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_12" ~Entry:jam_12:entry_n )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_Exit_entry_w
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_w )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_11" ~Entry:jam_11:entry_e )
+	Wait  100`
+	Return
+	End
+}
+
 #new:Script $Script_Exit_entry_s
 {
 	SetGroup 0000001B
@@ -66,6 +88,8 @@
 
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_entry_n .Trigger:FloorAbove ~Collider:ToSugarcaneOutskirtsCollider 00000001 00000000
+	Bind  $Script_Exit_entry_w .Trigger:FloorAbove ~Collider:ToStrawberryLocation 00000001 00000000
 	Bind  $Script_Exit_entry_s .Trigger:FloorAbove ~Collider:ToCakeCollider 00000001 00000000
 	Return
 	End

@@ -1,0 +1,128 @@
+% Auto-generated script for jam_12
+
+#new:Header $Header
+{
+	[MainScript] $Script_Main
+	[Background] 80200000
+	[EntryList] $EntryList
+	[EntryCount] 3
+}
+
+#new:EntryList $EntryList
+{
+	~Vec4f:entry_n
+	~Vec4f:entry_e
+	~Vec4f:entry_w
+}
+
+#new:Script $Script_ScriptedSpring_FollowCam
+{
+	Loop
+		Call  GetPlayerPos  ( *Var[0] *Var[1] *Var[2] )
+		Call  SetCamTarget  ( .Cam:Default *Var[0] *Var[1] *Var[2] )
+		Wait  1`
+	EndLoop
+	Return
+	End
+}
+#new:Script $Script_ScriptedSpring_Spring1
+{
+	Call  DisablePlayerInput    ( .True )
+	Call  DisablePlayerPhysics  ( .True )
+	Call  SetPlayerActionState  ( .ActionState:Launch )
+	Wait  1`
+	Exec  $Script_ScriptedSpring_FollowCam *Var[A]
+	Call  SetPlayerJumpscale    ( *Fixed[0.7] )
+	Call  PlayerJump            ( ~Vec3d:SpringPos 50` )
+	Kill  *Var[A]
+	Call  SetPlayerActionState  ( .ActionState:Idle )
+	Call  DisablePlayerPhysics  ( .False )
+	Call  DisablePlayerInput    ( .False )
+	Return
+	End
+}
+
+#new:Script $Script_ScriptedSpring_Spring2
+{
+	Call  DisablePlayerInput    ( .True )
+	Call  DisablePlayerPhysics  ( .True )
+	Call  SetPlayerActionState  ( .ActionState:Launch )
+	Wait  1`
+	Exec  $Script_ScriptedSpring_FollowCam *Var[A]
+	Call  SetPlayerJumpscale    ( *Fixed[0.7] )
+	Call  PlayerJump            ( ~Vec3d:SpringPos 70` )
+	Kill  *Var[A]
+	Call  SetPlayerActionState  ( .ActionState:Idle )
+	Call  DisablePlayerPhysics  ( .False )
+	Call  DisablePlayerInput    ( .False )
+	Return
+	End
+}
+
+#new:Script_Main $Script_Main
+{
+	Set   *GB_WorldLocation  .Location:GoombaRoad
+	Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+	Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+	Call  SetCamEnabled      ( .Cam:Default .True
+	Call  SetCamLeadPlayer   ( .Cam:Default .False )
+	Exec  $Script_MakeEntities
+	Exec  $Script_SetupMusic
+	Exec  $Script_EnterMap
+	Return
+	End
+}
+
+#new:Script $Script_MakeEntities
+{
+	Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring1 80000000 )
+	Call  AssignScript    ( $Script_ScriptedSpring_Spring1 )
+	Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring2 80000000 )
+	Call  AssignScript    ( $Script_ScriptedSpring_Spring2 )
+	Return
+	End
+}
+
+#new:Script $Script_SetupMusic
+{
+	Call  FadeOutMusic  ( 00000000 500` ) % usually between 500-1000
+	Call  ClearAmbientSounds ( 250` )
+	Return
+	End
+}
+
+#new:Script $Script_EnterMap
+{
+	Call  GetEntryID    ( *Var[0] )
+	Switch  *Var[0]
+		CaseOR  ==  ~Entry:entry_e
+		CaseOR  ==  ~Entry:entry_w
+		CaseOR  ==  ~Entry:entry_n
+			Set   *Var[0] $Script_CreateExitTriggers
+			Exec  EnterWalk
+		EndCaseGroup
+		Default
+			Exec  $Script_CreateExitTriggers
+	EndSwitch
+	Return
+	End
+}
+
+#new:Script $Script_Exit_entry_n
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_n )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_10" ~Entry:jam_10:entry_n )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_CreateExitTriggers
+{
+	Bind  $Script_Exit_entry_n .Trigger:FloorAbove ~Collider:exit_trigger_n 00000001 00000000
+	Return
+	End
+}
+

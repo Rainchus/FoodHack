@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_10" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-39.378166,190.102264,755.374634" pitch="23.919991" yaw="334.522797"/>
+		<Camera pos="26.639572,124.036812,-1332.301514" pitch="9.999999" yaw="-178.854507"/>
 		<Camera pos="-155.957977,65536.000000,116.836914"/>
 		<Camera pos="65536.000000,44.000000,-49.000000"/>
 		<Camera pos="-49.000000,44.000000,65536.000000"/>
@@ -6036,6 +6036,24 @@
 						<Vertex xyz="-831,0,-553" uv="3539,-4998"/>
 						<Vertex xyz="-879,0,-173" uv="1107,-5305"/>
 						<Vertex xyz="-747,0,-498" uv="3187,-4460"/>
+						<Vertex xyz="50,0,-1078" uv="-799,8224" rgba="150,150,150,255"/>
+						<Vertex xyz="-50,0,-1078" uv="0,8224" rgba="150,150,150,255"/>
+						<Vertex xyz="-50,0,-978" uv="0,7424" rgba="150,150,150,255"/>
+						<Vertex xyz="50,0,-1078" uv="-799,8224" rgba="150,150,150,255"/>
+						<Vertex xyz="-50,0,-978" uv="0,7424" rgba="150,150,150,255"/>
+						<Vertex xyz="50,0,-978" uv="-799,7424" rgba="150,150,150,255"/>
+						<Vertex xyz="-1078,0,-50" uv="8224,0" rgba="150,150,150,255"/>
+						<Vertex xyz="-1078,0,50" uv="8224,-800" rgba="150,150,150,255"/>
+						<Vertex xyz="-978,0,50" uv="7424,-800" rgba="150,150,150,255"/>
+						<Vertex xyz="-1078,0,-50" uv="8224,0" rgba="150,150,150,255"/>
+						<Vertex xyz="-978,0,50" uv="7424,-800" rgba="150,150,150,255"/>
+						<Vertex xyz="-978,0,-50" uv="7424,0" rgba="150,150,150,255"/>
+						<Vertex xyz="50,0,586" uv="-800,-5088" rgba="150,150,150,255"/>
+						<Vertex xyz="-50,0,486" uv="0,-4288" rgba="150,150,150,255"/>
+						<Vertex xyz="-50,0,586" uv="0,-5088" rgba="150,150,150,255"/>
+						<Vertex xyz="50,0,586" uv="-800,-5088" rgba="150,150,150,255"/>
+						<Vertex xyz="50,0,486" uv="-800,-4288" rgba="150,150,150,255"/>
+						<Vertex xyz="-50,0,486" uv="0,-4288" rgba="150,150,150,255"/>
 					</VertexTable>
 					<TriangleList>
 						<Triangle ijk="0,1,2"/>
@@ -6166,6 +6184,12 @@
 						<Triangle ijk="375,376,377"/>
 						<Triangle ijk="378,379,380"/>
 						<Triangle ijk="381,382,383"/>
+						<Triangle ijk="384,385,386"/>
+						<Triangle ijk="387,388,389"/>
+						<Triangle ijk="390,391,392"/>
+						<Triangle ijk="393,394,395"/>
+						<Triangle ijk="396,397,398"/>
+						<Triangle ijk="399,400,401"/>
 					</TriangleList>
 				</TriangleBatch>
 			</HitMesh>
@@ -6250,6 +6274,8 @@
 			<Entrance type="Walk" hasCallback="false" entry="entry_s"/>
 			<Entrance type="Walk" hasCallback="false" entry="entry_n"/>
 			<Entrance type="Walk" hasCallback="false" entry="entry_w"/>
+			<Exit type="Walk" hasCallback="false" entry="entry_n" destMap="jam_12" destEntry="entry_n" trigger="ToSugarcaneOutskirtsCollider"/>
+			<Exit type="Walk" hasCallback="false" entry="entry_w" destMap="jam_11" destEntry="entry_e" trigger="ToStrawberryLocation"/>
 			<Exit type="Walk" hasCallback="false" entry="entry_s" destMap="jam_00" destEntry="entry_e" trigger="ToCakeCollider"/>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>

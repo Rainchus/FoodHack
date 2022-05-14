@@ -1,0 +1,21 @@
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Exec  $Script_MakeEntities
+    Exec  $Script_SetupMusic
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+@ $Script_MakeEntities {
+    Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring1 80000000 )
+    Call  AssignScript    ( $Script_ScriptedSpring_Spring1 )
+    Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring2 80000000 )
+    Call  AssignScript    ( $Script_ScriptedSpring_Spring2 )
+	Call  MakeItemEntity    ( .Item:DodgeMaster ~Vec3d:BadgeMarker .ItemSpawnMode:Fixed_NeverVanish *JamTwelveDodgeMaster )
+    Return
+    End
+}
