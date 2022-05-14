@@ -33,7 +33,7 @@
 	Wait  1`
 	Exec  $Script_ScriptedSpring_FollowCam *Var[A]
 	Call  SetPlayerJumpscale    ( *Fixed[0.7] )
-	Call  PlayerJump            ( ~Vec3d:SpringPos 50` )
+	Call  PlayerJump            ( ~Vec3d:SpringPos 45` )
 	Kill  *Var[A]
 	Call  SetPlayerActionState  ( .ActionState:Idle )
 	Call  DisablePlayerPhysics  ( .False )
@@ -50,7 +50,7 @@
 	Wait  1`
 	Exec  $Script_ScriptedSpring_FollowCam *Var[A]
 	Call  SetPlayerJumpscale    ( *Fixed[0.7] )
-	Call  PlayerJump            ( ~Vec3d:SpringPos 70` )
+	Call  PlayerJump            ( ~Vec3d:SpringPos 55` )
 	Kill  *Var[A]
 	Call  SetPlayerActionState  ( .ActionState:Idle )
 	Call  DisablePlayerPhysics  ( .False )
@@ -85,7 +85,7 @@
 
 #new:Script $Script_SetupMusic
 {
-	Call  FadeOutMusic  ( 00000000 500` ) % usually between 500-1000
+	Call  SetMusicTrack ( 00000000 .Song:FlowerFieldsSunny 00000000 00000008 )
 	Call  ClearAmbientSounds ( 250` )
 	Return
 	End
