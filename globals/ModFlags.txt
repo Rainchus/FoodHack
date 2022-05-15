@@ -6,7 +6,7 @@
 005 = Jam_02_egg_Flour = GaveFlour
 006 = Jam_02_item = GivingAnItem
 007 = Jam_02_hasegg = HasEgg
-008 = Jam_02_hasSugar = HasSugar
+008 = Jam_13_hasSugar = HasSugar
 009 = Jam_11_hasStrawberry = HasStrawberry
 00A = Jam_09_hasFlour= HasFlour
 00B = Jam_07_DefeatedJrTrooper = DefeatedJrTrooper

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_12" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="691.825317,314.072510,652.523010" pitch="36.880005" yaw="356.800323"/>
+		<Camera pos="-740.000000,324.036804,747.442017" pitch="10.000000" yaw="0.000000"/>
 		<Camera pos="-6.871815,65536.000000,-10.518276"/>
 		<Camera pos="65536.000000,72.394341,34.152000"/>
 		<Camera pos="579.642212,-38.030090,65536.000000"/>
@@ -2578,6 +2578,7 @@
 			<Entrance type="Walk" hasCallback="false" entry="entry_e"/>
 			<Entrance type="Walk" hasCallback="false" entry="entry_w"/>
 			<Entrance type="Walk" hasCallback="false" entry="entry_n"/>
+			<Exit type="Walk" hasCallback="false" entry="entry_w" destMap="jam_13" destEntry="entry_e" trigger="exit_trigger_w"/>
 			<Exit type="Walk" hasCallback="false" entry="entry_n" destMap="jam_10" destEntry="entry_n" trigger="exit_trigger_n"/>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>
