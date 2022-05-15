@@ -10,6 +10,7 @@
     Return
     End
 }
+
 @ $Script_MakeEntities {
     Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring1 80000000 )
     Call  AssignScript    ( $Script_ScriptedSpring_Spring1 )

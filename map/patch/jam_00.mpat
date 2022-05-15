@@ -189,7 +189,7 @@ End
 100.0 % alert radius
 0.0
 1`
-2.0 % chase speed
+3.25 % chase speed
 180` % max turn rate (0 = enemy rushes at position where the player was detected and keeps going)
 3`
 150.0 % chase radius

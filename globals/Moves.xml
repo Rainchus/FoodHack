@@ -92,7 +92,7 @@
 	<Move index="059" nameMsg="26-092" desc1Msg="23-092" desc2Msg="25-092" flags="00000002" category="00" inputPopup="FF" fp="00" bp="00" name="AttackFXF" ability="AttackFX"/>
 	<Move index="05A" nameMsg="26-078" desc1Msg="23-078" desc2Msg="25-078" flags="00000002" category="00" inputPopup="FF" fp="00" bp="03" name="HPDrain" ability="HPDrain"/>
 	<Move index="05B" nameMsg="26-072" desc1Msg="23-072" desc2Msg="25-072" flags="00000002" category="00" inputPopup="FF" fp="00" bp="03" name="FPPlus" ability="FPPlus"/>
-	<Move index="05C" nameMsg="26-09A" desc1Msg="23-09A" desc2Msg="25-09A" flags="00000002" category="00" inputPopup="FF" fp="00" bp="07" name="MoneyMoney" ability="MoneyMoney"/>
+	<Move index="05C" nameMsg="26-09A" desc1Msg="23-09A" desc2Msg="25-09A" flags="00000002" category="00" inputPopup="FF" fp="00" bp="00" name="MoneyMoney" ability="MoneyMoney"/>
 	<Move index="05D" nameMsg="26-098" desc1Msg="23-098" desc2Msg="25-098" flags="00000002" category="00" inputPopup="FF" fp="00" bp="02" name="ChillOutBadge" ability="ChillOut"/>
 	<Move index="05E" nameMsg="26-079" desc1Msg="23-079" desc2Msg="25-079" flags="00000002" category="00" inputPopup="FF" fp="00" bp="03" name="HappyHeart" ability="HappyHeart"/>
 	<Move index="05F" nameMsg="26-086" desc1Msg="23-086" desc2Msg="25-086" flags="00000002" category="00" inputPopup="FF" fp="00" bp="01" name="MegaRush" ability="MegaRush"/>
