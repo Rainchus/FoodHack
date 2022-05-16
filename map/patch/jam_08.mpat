@@ -12,6 +12,15 @@
 	Return
 	End
 }
+
+@ $Script_SetupMusic
+{
+	Call  FadeOutMusic  ( 00000000 500` ) % usually between 500-1000
+	Call  ClearAmbientSounds ( 250` )
+	Call  SetMusicTrack     ( 00000000 .Song:BoosMansion 00000000 00000008 )
+	Return
+	End
+}
 #new:Script $Script_BeatBlock
 {
     Call SetZoneEnabled ( ~Zone:ViewRight .False)
