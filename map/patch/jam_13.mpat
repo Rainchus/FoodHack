@@ -10,6 +10,7 @@
     Return
     End
 }
+
 #new:Script $Script_MakeEntities 
 {
 	Call  MakeItemEntity    ( .Item:BakingSugar ~Vec3d:Sugar .ItemSpawnMode:Fixed_NeverVanish *HasSugar )
