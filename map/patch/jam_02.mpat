@@ -203,7 +203,7 @@ End
 						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyEgg ) % Sadge
 						Call RemoveKeyItemAt ( *Var0 )
 						Set *GaveEgg .True
-						Set *ItemsDelivered 4
+						Add *ItemsDelivered 1
 					EndIf
 				EndIf
 				If *HasSugar == .True
@@ -239,7 +239,7 @@ End
 						Add *ItemsDelivered 1
 					EndIf
 				EndIf
-				If  *ItemsDelivered == 4
+				If  *ItemsDelivered > 3
 					ExecWait $Script_Finale
 					Return
 				EndIf
