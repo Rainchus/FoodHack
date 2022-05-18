@@ -12,12 +12,16 @@
 	$ShyGuy_GRN 00000002 00000009 00000000 00000000 00000000 00000000
 }
 
+@ $Formation_04 {
+    $ShyGuy_GRN 00000001 0000000A 00000000 00000000 00000000 00000000
+}
+
 @ $FormationTable {
     $SJIS_8023107C 00000002 $Formation_00 $Stage_8022DE0C 00000000
     $SJIS_80231074 00000001 $Formation_01 $Stage_8022DE0C 00000000
     $SJIS_80231068 00000001 $Formation_02 $Stage_GreenGuys 00000000
     $SJIS_8023105C 00000002 $Formation_03 $Stage_GreenGuys 00000000
-    $SJIS_80231054 00000002 $Formation_04 $Stage_8022DE0C 00000000
+    $SJIS_80231054 00000001 $Formation_04 $Stage_TransitionMap 00000000
     $SJIS_80231048 00000002 $Formation_05 $Stage_8022DE0C 00000000
     $SJIS_80231034 00000003 $Formation_06 $Stage_8022DE0C 00000000
     $SJIS_80231018 00000003 $Formation_07 $Stage_8022DE0C 00000000
@@ -106,6 +110,20 @@
     "jam_tex"  % omo_tex
     "jam_bt5_shape"  % omo_bt04_shape
     "jam_bt5_hit"  % omo_bt04_hit
+    $Script_BeforeBattle_8022DD30
+    $Script_AfterBattle_8022DDEC
+    "kmr_bg"  % omo_bg
+    $ForegroundModelList_8022DDFC
+    00000004
+    $SpecialFormation_8022DE64
+    00000000  
+}
+
+#new:Stage $Stage_TransitionMap
+{
+    "jam_tex"  % omo_tex
+    "jam_bt6_shape"  % omo_bt04_shape
+    "jam_bt6_hit"  % omo_bt04_hit
     $Script_BeforeBattle_8022DD30
     $Script_AfterBattle_8022DDEC
     "kmr_bg"  % omo_bg
@@ -665,4 +683,8 @@
     Call  UseIdleAnimation  ( .Actor:Self .True )
     Return
     End
+}
+
+@ $ForegroundModelList_8022DDFC {
+    00000000
 }

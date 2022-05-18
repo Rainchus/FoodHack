@@ -23,7 +23,7 @@
 
 #new:NpcGroupList $NpcGroupList_test
 {
-00000001 $NpcGroup_ShyGuy    10020000 % AABBCCCC <--- formation
+00000001 $NpcGroup_ShyGuy    10040000 % AABBCCCC <--- formation
 % AA = FormationTableIndex
 % BB = FormationIndex
 % CCCC = BattleStageIndex
