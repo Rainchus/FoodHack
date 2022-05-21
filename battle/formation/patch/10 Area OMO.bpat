@@ -100,7 +100,7 @@
     $Script_AfterBattle_8022DDEC
     "sra_bg"  % omo_bg
     $ForegroundModelList_8022DDFC
-    00000004
+    00000000
     $SpecialFormation_8022DE64
     00000000
 }
@@ -114,7 +114,7 @@
     $Script_AfterBattle_8022DDEC
     "kmr_bg"  % omo_bg
     $ForegroundModelList_8022DDFC
-    00000004
+    00000000
     $SpecialFormation_8022DE64
     00000000  
 }
@@ -128,7 +128,7 @@
     $Script_AfterBattle_8022DDEC
     "kmr_bg"  % omo_bg
     $ForegroundModelList_8022DDFC
-    00000004
+    00000000
     $SpecialFormation_8022DE64
     00000000  
 }
@@ -141,7 +141,7 @@
     $Script_AfterBattle_8022DDEC
     "sra_bg"  % omo_bg
     $ForegroundModelList_8022DDFC
-    00000004
+    00000000
     $SpecialFormation_8022DE64
     00000000
 }

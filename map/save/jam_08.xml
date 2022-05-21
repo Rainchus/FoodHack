@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_08" author="unnamed" background="omo_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-1297.949097,680.498169,264.809692" pitch="47.080006" yaw="29.344868"/>
-		<Camera pos="-2801.746338,65536.000000,294.942139"/>
+		<Camera pos="-2600.632080,124.036812,707.567749" pitch="10.000000" yaw="0.000000"/>
+		<Camera pos="-2528.200195,65536.000000,199.315933"/>
 		<Camera pos="65536.000000,-39.111969,82.395844"/>
 		<Camera pos="-432.933167,2460.033691,65536.000000"/>
 	</Editor>
@@ -58,12 +58,14 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="3">
+		<Node name="Root" id="5">
 			<Node name="Entrances" id="2">
 				<Node name="entry_e" id="FFFFFFFF"/>
 				<Node name="entry_fall" id="0"/>
 				<Node name="fall" id="1"/>
 			</Node>
+			<Node name="TripleJump" id="3"/>
+			<Node name="LifeShrum" id="4"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -2310,7 +2312,7 @@
 			<HitObject type="ROOT"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="A"/>
+			<MapObject name="MeshCollider" id="A" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2410,7 +2412,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="9"/>
+			<MapObject name="MeshCollider" id="9" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3062,7 +3064,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="8"/>
+			<MapObject name="MeshCollider" id="8" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3154,7 +3156,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="fallcollider" id="7"/>
+			<MapObject name="fallcollider" id="7" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3172,7 +3174,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="6"/>
+			<MapObject name="MeshCollider" id="6" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3216,7 +3218,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="5"/>
+			<MapObject name="MeshCollider" id="5" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3852,7 +3854,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="4"/>
+			<MapObject name="MeshCollider" id="4" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3904,7 +3906,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_e" id="1"/>
+			<MapObject name="exit_trigger_e" id="1" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3932,7 +3934,7 @@
 			<HitObject type="ROOT"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="ViewFront" id="6"/>
+			<MapObject name="ViewFront" id="6" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3953,7 +3955,7 @@
 			<Camera type="TYPE_4" flag="false" boomLength="500.000000" boomPitch="15.000000" viewPitch="-6.000000" posA="-840,-62,-2085" posB="-848,-62,-47" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="MeshZone" id="5"/>
+			<MapObject name="MeshZone" id="5" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -3998,7 +4000,7 @@
 			<Camera type="TYPE_6" flag="true" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="177,10,73" posB="401,10,73" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="MeshZone" id="4"/>
+			<MapObject name="MeshZone" id="4" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -4043,7 +4045,7 @@
 			<Camera type="TYPE_6" flag="true" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="-2679,10,275" posB="-2529,10,275" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="ViewBack" id="3"/>
+			<MapObject name="ViewBack" id="3" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -4064,7 +4066,7 @@
 			<Camera type="TYPE_0" flag="false" boomLength="350.000000" boomPitch="15.000000" viewPitch="-6.000000" posA="-1058,10,-467" posB="-1058,10,2185" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="ViewLeft" id="2"/>
+			<MapObject name="ViewLeft" id="2" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -4085,7 +4087,7 @@
 			<Camera type="TYPE_0" flag="false" boomLength="350.000000" boomPitch="15.000000" viewPitch="-6.000000" posA="-2384,10,859" posB="268,10,859" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="ViewRight" id="1"/>
+			<MapObject name="ViewRight" id="1" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -4106,7 +4108,7 @@
 			<Camera type="TYPE_0" flag="false" boomLength="350.000000" boomPitch="15.000000" viewPitch="-6.000000" posA="268,10,861" posB="-2384,10,860" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="ViewFront" id="0"/>
+			<MapObject name="ViewFront" id="0" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -4127,19 +4129,26 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="3"/>
+			<MapObject name="Root" id="5"/>
+		</Marker>
+		<Marker ver="4" type="Entity" pos="-2600,60,200" yaw="180.000000">
+			<MapObject name="LifeShrum" id="4"/>
+			<Entity type="802EA564" flag="" callback="true" item="Mushroom"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-2700,0,200" yaw="180.000000">
+			<MapObject name="TripleJump" id="3"/>
 		</Marker>
 		<Marker ver="4" type="Group">
 			<MapObject name="Entrances" id="2"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-965,-345,201" yaw="0.000000">
-			<MapObject name="fall" id="1"/>
+			<MapObject name="fall" id="1" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="374,115,10" yaw="0.000000">
-			<MapObject name="entry_fall" id="0"/>
+			<MapObject name="entry_fall" id="0" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="475,0,0" yaw="270.000000">
-			<MapObject name="entry_e" id="FFFFFFFF"/>
+			<MapObject name="entry_e" id="FFFFFFFF" hidden="true"/>
 		</Marker>
 	</Markers>
 	<ScriptData>

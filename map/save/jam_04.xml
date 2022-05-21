@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_04" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-198.693878,172.002670,-65.344849" pitch="26.160006" yaw="330.719788"/>
+		<Camera pos="145.941010,170.791824,642.242859" pitch="17.840004" yaw="339.519745"/>
 		<Camera pos="-279.530762,65536.000000,-230.772903"/>
 		<Camera pos="65536.000000,-68.000000,-218.000000"/>
 		<Camera pos="-16.378754,23.487278,65536.000000"/>
@@ -9413,103 +9413,103 @@
 			<MapObject name="Root" id="1A"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="100,-200,0" yaw="0.000000">
-			<MapObject name="MarioYeetToHole" id="19" hidden="true"/>
+			<MapObject name="MarioYeetToHole" id="19"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="-100,100,300" yaw="0.000000">
-			<MapObject name="CutsceneCamMarker" id="18" hidden="true"/>
+			<MapObject name="CutsceneCamMarker" id="18"/>
 			<CamTarget sampleZone="false" generatePan="false" panSpeed="1.000000">
 				<Camera type="TYPE_0" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="97,110,335" posB="97,110,235" posC="107,100,295"/>
 			</CamTarget>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-262,32,-203" yaw="-90.000000">
-			<MapObject name="AntiJumpPos" id="17" hidden="true"/>
+			<MapObject name="AntiJumpPos" id="17"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="849,0,-354" yaw="90.000000">
-			<MapObject name="AntiGuy2CE" id="16" hidden="true"/>
+			<MapObject name="AntiGuy2CE" id="16"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-220,0,-235" yaw="-90.000000">
-			<MapObject name="AntiJumpTo3" id="15" hidden="true"/>
+			<MapObject name="AntiJumpTo3" id="15"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-292,0,-166" yaw="90.000000">
-			<MapObject name="AntiJumpTo2" id="14" hidden="true"/>
+			<MapObject name="AntiJumpTo2" id="14"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-230,0,-178" yaw="-90.000000">
-			<MapObject name="AntiJumpTo1" id="13" hidden="true"/>
+			<MapObject name="AntiJumpTo1" id="13"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="703,0,-106" yaw="-90.000000">
-			<MapObject name="AntiGuy1Pos2" id="12" hidden="true"/>
+			<MapObject name="AntiGuy1Pos2" id="12"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="961,0,28" yaw="-90.000000">
-			<MapObject name="AntiGuy1Pos1" id="11" hidden="true"/>
+			<MapObject name="AntiGuy1Pos1" id="11"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="612,50,-373" yaw="150.000000">
-			<MapObject name="AntiGuy3" id="10" hidden="true"/>
+			<MapObject name="AntiGuy3" id="10"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="961,0,28" yaw="90.000000">
-			<MapObject name="AntiGuy2" id="F" hidden="true"/>
+			<MapObject name="AntiGuy2" id="F"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="860,0,220" yaw="-90.000000">
-			<MapObject name="AntiGuy1" id="E" hidden="true"/>
+			<MapObject name="AntiGuy1" id="E"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="5" animations="1,2,3,4,0,0,C,14,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-297,0,-252" yaw="270.000000">
-			<MapObject name="GuardianGhost" id="D" hidden="true"/>
+			<MapObject name="GuardianGhost" id="D"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="4E" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-309,0,363" yaw="150.000000">
-			<MapObject name="TentGhost2" id="C" hidden="true"/>
+			<MapObject name="TentGhost2" id="C"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="4E" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="778,0,234" yaw="-135.000000">
-			<MapObject name="TentGuy2" id="B" hidden="true"/>
+			<MapObject name="TentGuy2" id="B"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="1" animations="1,2,3,4,0,0,C,C,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-3,0,-444" yaw="0.000000">
-			<MapObject name="Hiddenbadge" id="A" hidden="true"/>
+			<MapObject name="Hiddenbadge" id="A"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="205,33,469" yaw="0.000000">
-			<MapObject name="CameraMarker" id="9" hidden="true"/>
+			<MapObject name="CameraMarker" id="9"/>
 			<CamTarget sampleZone="false" generatePan="false" panSpeed="1.000000">
 				<Camera type="TYPE_0" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="207,43,427" posB="207,43,327" posC="47,33,180"/>
 			</CamTarget>
 		</Marker>
 		<Marker ver="4" type="Entity" pos="200,0,300" yaw="0.000000">
-			<MapObject name="BlueSwitch" id="8" hidden="true"/>
+			<MapObject name="BlueSwitch" id="8"/>
 			<Entity type="802E9BD4" hasSpawnFlag="false" spawnFlag="" callback="false" areaFlag="0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="204,30,403" yaw="180.000000">
-			<MapObject name="PipeEntry" id="7" hidden="true"/>
+			<MapObject name="PipeEntry" id="7"/>
 		</Marker>
 		<Marker ver="4" type="Entity" pos="304,60,403" yaw="180.000000">
-			<MapObject name="HealBlock" id="6" hidden="true"/>
+			<MapObject name="HealBlock" id="6"/>
 			<Entity type="802EA7E0"/>
 		</Marker>
 		<Marker ver="4" type="Entity" pos="104,60,403" yaw="180.000000">
-			<MapObject name="SaveBlock" id="5" hidden="true"/>
+			<MapObject name="SaveBlock" id="5"/>
 			<Entity type="802E9A18"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="790,0,-312" yaw="0.000000">
-			<MapObject name="TentGuy" id="4" hidden="true"/>
+			<MapObject name="TentGuy" id="4"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="3B" palette="1" animations="1,2,3,4,0,0,C,C,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="848,0,-287" yaw="0.000000">
-			<MapObject name="TentGhost" id="3" hidden="true"/>
+			<MapObject name="TentGhost" id="3"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="4E" palette="0" animations="2,3,4,4,0,0,A,A,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="131,0,-424" yaw="-225.000000">
-			<MapObject name="ShopGhost" id="2" hidden="true"/>
+			<MapObject name="ShopGhost" id="2"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="4E" palette="0" animations="2,3,4,4,0,0,A,A,0,0,0,0,0,0,0,0"/>
 		</Marker>
@@ -9517,10 +9517,10 @@
 			<MapObject name="Entrances" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-475,0,0" yaw="90.000000">
-			<MapObject name="entry_w" id="0" hidden="true"/>
+			<MapObject name="entry_w" id="0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-354,0,-274" yaw="135.500000">
-			<MapObject name="entry_s" id="FFFFFFFF" hidden="true"/>
+			<MapObject name="entry_s" id="FFFFFFFF"/>
 		</Marker>
 	</Markers>
 	<ScriptData>
