@@ -10,6 +10,7 @@
 @ $Script_8024FD70
 {
 	Call $GivePlayerStartingEquipment
+    Call AddBadge (12D 0)
 	Set *GB_StoryProgress 90
 	Set *GF_Tutorial_SaveBlock 1
 	Set *GF_Tutorial_HeartBlock 1

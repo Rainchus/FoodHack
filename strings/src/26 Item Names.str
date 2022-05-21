@@ -1343,3 +1343,14 @@
 	Star Piece[End]
 }
 
+#string:26:10D
+{
+	Double Pain[End]
+}
+
+#string:26:10E
+{
+	Doubles the damage Mario takes.[End]
+}
+
+
