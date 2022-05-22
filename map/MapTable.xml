@@ -583,7 +583,8 @@
 		<Map name="jam_11" nickname="strawberry obtained"/>
 		<Map name="jam_12" nickname="Sugarcane Outskirts"/>
 		<Map name="jam_13" nickname="Sugar Location"/>
-		<Map name="jam_14" nickname="transition to barn"/>
+		<Map name="jam_14" nickname="transition to bake sale"/>
+		<Map name="jam_15" nickname="bake sale :O"/>
 		<Stage name="jam_bt1" nickname="Outside Cake  Battle Map"/>
 		<Stage name="jam_bt2" nickname="Jr. Troopa Battle Map"/>
 		<Stage name="jam_bt3" nickname="Top Of Cake Battle Map"/>

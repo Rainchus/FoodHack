@@ -215,9 +215,15 @@ End
 	Call SetPlayerAnimation(0001000F)
     Wait 60`
     Call SetPlayerAnimation (00010030)
-    Wait 40`
+    Wait 30`
+    Thread
+        Call  PlaySoundAtPlayer ( 00000172 00000000 )
+        Wait 10`
+        Call  PlaySoundAtPlayer ( 00000172 00000000 )
+    EndThread
     Call SetPlayerAnimation (00010031)
     Wait 40`
+    Call ShowMessageAtScreenPos ( $WakeUpString 160` 40` )
     Call DisablePlayerInput ( .False )
     Return
     End
@@ -240,4 +246,17 @@ End
     EndIf
     Return
     End
+}
+
+#new:String $WakeUpString
+{
+[Style Inspect]
+Waking up in this mysterious[br]
+land of food, Mario noticed[br]
+a strange badge in his pocket.[br]
+[Wait][Next]
+[br]
+[CenterX 159]Paper Mario: Cake Chaos[Pause:15][br]
+[CenterX 145]- A mod by Den & Fewffwa -[br]
+[Wait][End]
 }
