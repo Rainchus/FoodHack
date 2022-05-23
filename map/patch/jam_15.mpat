@@ -1,0 +1,215 @@
+#define .NpcID:ShyGuy1           00
+#define .NpcID:ShyGuy2				01
+#define .NpcID:Duplighost			02
+#define .NpcID:TayceT				03
+#define .NpcID:MarketKeeper				04
+
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True )
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Call  MakeShop      ( $ShopItemPositions_Market $ShopInventory_Market 0 00000000 )
+    Call  MakeShopOwner ( $ShopOwnerNPC_Duplighost )
+    Call  MakeNpcs  ( .True $NpcGroupList_8025136C )
+    Exec  $Script_SetupMusic
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+#new:ShopInventory $ShopInventory_Market
+{
+	.Item:FireFlower    20` 00230000 % Lightning that strikes an enemy. Attack Power: 5
+	.Item:StinkyHerb    15` 00230024 % A dusty old Hammer. Throw it to damage an enemy.
+	.Item:KoopaLeaf    30` 0023001C % Sweet honey syrup. Restores 5 FP.
+	.Item:Mushroom    15` 0023008A % A very dry Mushroom. Restores 1 HP.
+	.Item:SuperShroom     50` 0023000A % Pasta from Dry Dry Outpost. Restores 3 HP and 2 FP ...
+	.Item:UltraShroom      40` 0023000B % A regular Mushroom. Restores 5 HP.
+	.Item:BakingEgg    15` 002300DA % A very dry Mushroom. Restores 1 HP.
+	.Item:BakingEgg     30` 002300DA % Pasta from Dry Dry Outpost. Restores 3 HP and 2 FP ...
+	.Item:BakingEgg     50` 002300DA % A regular Mushroom. Restores 5 HP.
+    .Item:MapleSyrup    20` 00230017 % Lightning that strikes an enemy. Attack Power: 5
+	.Item:HoneySyrup    15` 00230016 % A dusty old Hammer. Throw it to damage an enemy.
+	.Item:Apple    30` 0023001A % Sweet honey syrup. Restores 5 FP.
+	00000000 00000000 00000000
+}
+
+#new:ShopItemPositions $ShopItemPositions_Market
+{
+	~Short:Model:mono1 ~Short:Collider:mono1
+	~Short:Model:mono2 ~Short:Collider:mono2
+    ~Short:Model:mono3 ~Short:Collider:mono3
+	~Short:Model:mono4 ~Short:Collider:mono4
+    ~Short:Model:mono5 ~Short:Collider:mono5
+	~Short:Model:mono6 ~Short:Collider:mono6
+	~Short:Model:mono7 ~Short:Collider:mono7
+    ~Short:Model:mono8 ~Short:Collider:mono8
+	~Short:Model:mono9 ~Short:Collider:mono9
+	~Short:Model:mono10 ~Short:Collider:mono10
+    ~Short:Model:mono11 ~Short:Collider:mono11
+	~Short:Model:mono12 ~Short:Collider:mono12
+}
+
+#new:ShopOwnerNPC $ShopOwnerNPC_MarketKeeper
+{
+	00000004 004E0002 004E0005 00000000 00000000 00000000 $IntTable_8024B4A0
+}
+
+#new:IntTable $IntTable_8024B4A0
+{
+	00270049 0027004A 0027004B 0027004C 0027004D 0027004E 0027004F 00270050
+	00270051 00270052 00270053 00270054 00270055 00270056 00270057 00270058
+	00270059 0027005A 0027005B 0027005C 0027005D 0027005E 0027005F
+}
+
+#new:NpcGroupList $NpcGroupList_8025136C
+{
+    00000005 $NpcGroup_8024E864 00000000
+	00000000 00000000 00000000
+}
+
+
+
+
+
+
+#new:NpcGroup $NpcGroup_8024E864
+{
+    .NpcID:ShyGuy1    $NpcSettings_80247CE4 ~Vec3f:ShyGuy1 % 100 0 -256
+	00002809 $Script_Init_Npc 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:ShyGuy1
+	~AnimationTable:ShyGuy1 % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+    .NpcID:ShyGuy2    $NpcSettings_80247CE4 ~Vec3f:ShyGuy2 % 100 0 -256
+	00002809 $Script_Init_Npc 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:ShyGuy2
+	~AnimationTable:ShyGuy2 % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+    .NpcID:Duplighost    $NpcSettings_80247CE4 ~Vec3f:Duplighost % 100 0 -256
+	00002809 $Script_Init_Npc 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:Duplighost
+	~AnimationTable:Duplighost % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+    .NpcID:TayceT   $NpcSettings_80247CE4 ~Vec3f:TayceT % 100 0 -256
+	00002809 $Script_Init_Npc 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:TayceT
+	~AnimationTable:TayceT % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+
+    .NpcID:MarketKeeper  $NpcSettings_80247CE4 ~Vec3f:MarketKeeper % 100 0 -256
+	00002809 $Script_Init_Npc 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:Duplighost
+	~AnimationTable:Duplighost % .Sprite:Gooma
+	00000000 00000000 00000000 001A0064 % She's my grandma, Gooma. I hope she lives forever! ...
+}
+
+#new:NpcSettings $NpcSettings_80247CE4
+{
+	00000000 00160018 00000000 00000000 0 00000000 00000000 00000000
+	00000000 00000000 00630010
+}
+
+#new:Script $Script_Init_Npc
+{
+    0:  Call  BindNpcIdle       ( .Npc:Self $Script_Idle_Npc )
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_Npc )
+   28:  Return
+   30:  End
+}
+
+#new:Script $Script_Idle_Npc
+{
+    Call GetSelfNpcID ( *Var4 )
+    Switch *Var4
+    Case == .NpcID:Duplighost
+    Set *Var5 004E0002
+    Case == .NpcID:ShyGuy1
+    Set *Var5 003B0201
+    Case == .NpcID:ShyGuy2
+    Set *Var5 003B0001
+    Case == .NpcID:TayceT
+    Set *Var5 00AA0001
+    Case == .NpcID:MarketKeeper
+    Set *Var5 004E0002
+    EndSwitch
+	Call SetNpcAnimation ( .Npc:Self *Var5 )
+   C4:  Return
+   CC:  End
+}
+
+
+#new:Script $Script_Interact_Npc
+{
+    Call GetSelfNpcID ( *Var0 )
+    Switch *Var0
+    Case == .NpcID:Duplighost
+        Set *Var1 $DuplighostString
+        Set *Var2 004E0005
+        Set *Var3 004E0002
+    Case == .NpcID:ShyGuy1
+        Set *Var1 $ShyGuy1String
+        Set *Var2 003B0211
+        Set *Var3 003B0201
+    Case == .NpcID:ShyGuy2
+        Set *Var2 003B0011
+        Set *Var3 003B0001
+        Set *Var1 $ShyGuy2String
+    Case == .NpcID:TayceT
+        Set *Var1 $TayceTString
+        Set *Var2 00AA0001
+        Set *Var3 00AA0004
+    Case == .NpcID:MarketKeeper
+        Set *Var1 $KeeperString
+        Set *Var2 004E0005
+        Set *Var3 004E0002
+    EndSwitch
+	Call  SpeakToPlayer ( *Var0 *Var2 *Var3 00000005 *Var1 )
+	Return
+	End
+}
+
+#new:String $DuplighostString
+{
+    [style:right] Duplighost
+    [wait] [end]
+}
+
+#new:String $ShyGuy1String
+{
+    [style:right] Shy Guy 1
+    [wait] [end]
+}
+
+#new:String $ShyGuy2String
+{
+    [style:right] Shy Guy 2
+    [wait] [end]
+}
+
+#new:String $TayceTString
+{
+    [style:right] Tayce T
+    [wait] [end]
+}
+
+#new:String $KeeperString
+{
+    [style:right] Keeper
+    [wait] [end]
+}
+
+
+#new:ShopOwnerNPC $ShopOwnerNPC_Duplighost
+{
+	00000004 004E0002 004E0005 00000000 00000000 00000000 $IntTable_8024B4A0
+}
