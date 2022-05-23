@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_14" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="109.398514,135.731628,237.026337" pitch="25.519999" yaw="353.120026"/>
+		<Camera pos="461.648346,88.938690,54.027458" pitch="44.079979" yaw="353.600037"/>
 		<Camera pos="-351.328308,65536.000000,-97.404068"/>
 		<Camera pos="65536.000000,80.017693,-14.329014"/>
 		<Camera pos="-151.106857,14.467383,65536.000000"/>
@@ -78,7 +78,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="11"/>
+			<MapObject name="Planar GridModel" id="11" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_in_2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -148,7 +148,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="10"/>
+			<MapObject name="Planar GridModel" id="10" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_fencetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -176,7 +176,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="F"/>
+			<MapObject name="Planar GridModel" id="F" hidden="true"/>
 			<ShapeMesh ver="3" texture="skh_fence_long">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -204,7 +204,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="E"/>
+			<MapObject name="Planar GridModel" id="E" hidden="true"/>
 			<ShapeMesh ver="3" texture="skh_fence_long">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -232,7 +232,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="D"/>
+			<MapObject name="Planar GridModel" id="D" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_fencetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -266,7 +266,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="main floor" id="B"/>
+			<MapObject name="main floor" id="B" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_gree_edge1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -294,7 +294,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="main floor" id="A"/>
+			<MapObject name="main floor" id="A" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_gree_edge1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -322,7 +322,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="main floor" id="9"/>
+			<MapObject name="main floor" id="9" hidden="true"/>
 			<ShapeMesh ver="3" texture="mgm_star_floortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -350,7 +350,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="main floor" id="8"/>
+			<MapObject name="main floor" id="8" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_green_ctif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -378,7 +378,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_w_edge" id="7"/>
+			<MapObject name="ex_w_edge" id="7" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_berosaidetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -416,7 +416,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_w_floor" id="6"/>
+			<MapObject name="ex_w_floor" id="6" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_green_ctif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -458,7 +458,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_e_edge" id="3"/>
+			<MapObject name="ex_e_edge" id="3" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_berosaidetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -496,7 +496,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_e_floor" id="2"/>
+			<MapObject name="ex_e_floor" id="2" hidden="true"/>
 			<ShapeMesh ver="3" texture="kmr_green_ctif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -544,7 +544,7 @@
 			<HitObject type="ROOT"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="E" hidden="true"/>
+			<MapObject name="MeshCollider" id="E"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -596,7 +596,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="D" hidden="true"/>
+			<MapObject name="MeshCollider" id="D"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -648,7 +648,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="C" hidden="true"/>
+			<MapObject name="MeshCollider" id="C"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -668,7 +668,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="B" hidden="true"/>
+			<MapObject name="MeshCollider" id="B"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -688,7 +688,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="A" hidden="true"/>
+			<MapObject name="MeshCollider" id="A"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -748,7 +748,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="9" hidden="true"/>
+			<MapObject name="MeshCollider" id="9"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -772,7 +772,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="18000">
-			<MapObject name="npc_barrier_s" id="7" hidden="true"/>
+			<MapObject name="npc_barrier_s" id="7"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -784,7 +784,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="18000">
-			<MapObject name="npc_barrier_n" id="6" hidden="true"/>
+			<MapObject name="npc_barrier_n" id="6"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -800,7 +800,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_w" id="4" hidden="true"/>
+			<MapObject name="exit_trigger_w" id="4"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -818,7 +818,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_s" id="3" hidden="true"/>
+			<MapObject name="exit_trigger_s" id="3"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -830,7 +830,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_e" id="2" hidden="true"/>
+			<MapObject name="exit_trigger_e" id="2"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -848,7 +848,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_n" id="1" hidden="true"/>
+			<MapObject name="exit_trigger_n" id="1"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -870,7 +870,7 @@
 			<HitObject type="ROOT"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="MeshZone" id="0" hidden="true"/>
+			<MapObject name="MeshZone" id="0"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -952,6 +952,7 @@
 		<Generators>
 			<Entrance type="Walk" hasCallback="false" entry="entry_w"/>
 			<Entrance type="Walk" hasCallback="false" entry="entry_e"/>
+			<Exit type="Walk" hasCallback="false" entry="entry_e" destMap="jam_15" destEntry="entry_w" trigger="exit_trigger_e"/>
 			<Exit type="Walk" hasCallback="false" entry="entry_w" destMap="jam_12" destEntry="entry_e" trigger="exit_trigger_w"/>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>

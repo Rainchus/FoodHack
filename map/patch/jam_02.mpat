@@ -195,17 +195,17 @@ End
 		Set *TalkedToGourmetGuy .True
 
 	Else
-				If *HasEgg == .True
 					If *GaveEgg == .False
-						Call FindKeyItem ( .Item:BakingEgg *Var0 )
-						Set *Var8 .Item:BakingEgg
-						ExecWait $Script_PresentItem
-						Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyEgg ) % Sadge
-						Call RemoveKeyItemAt ( *Var0 )
-						Set *GaveEgg .True
-						Add *ItemsDelivered 1
+						Call FindItem ( .Item:BakingEgg *Var0 )
+							If *Var0 != FFFFFFFF
+								Set *Var8 .Item:BakingEgg
+								ExecWait $Script_PresentItem
+								Call  SpeakToPlayer ( .Npc:Self 00C10004 00C10001 00000000 $happyEgg ) % Sadge
+								Call RemoveItemAt ( *Var0 )
+								Set *GaveEgg .True
+								Add *ItemsDelivered 1
+							EndIf
 					EndIf
-				EndIf
 				If *HasSugar == .True
 					If *GaveSugar == .False
 						Call FindKeyItem ( .Item:BakingSugar *Var1 )

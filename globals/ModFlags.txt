@@ -15,3 +15,4 @@
 00E = Jam_01_DestroyedWoodenBlock = JamZeroOneWoodenBlockGone
 00F = Jam_10_MoneyMoney = JamTenMoneyMoney
 010 = Jam_12_DodgeMaster = JamTwelveDodgeMaster
+011 = Jam_14_Eggtemp = EggTempFlag

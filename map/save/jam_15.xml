@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_15" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-219.814392,110.024857,129.624130" pitch="38.759998" yaw="354.400085"/>
+		<Camera pos="-552.190186,88.016472,106.124527" pitch="25.160000" yaw="8.960003"/>
 		<Camera pos="-162.187103,65536.000000,89.115974"/>
 		<Camera pos="65536.000000,-22.466129,10.396469"/>
 		<Camera pos="-426.484528,-51.632549,65536.000000"/>
@@ -2409,7 +2409,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="5" hidden="true"/>
+			<MapObject name="MeshCollider" id="5"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2461,7 +2461,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="4" hidden="true"/>
+			<MapObject name="MeshCollider" id="4"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2505,7 +2505,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="exit_trigger_w" id="1" hidden="true"/>
+			<MapObject name="exit_trigger_w" id="1"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2589,6 +2589,8 @@
 			<TexPanner id="F" generate="false"/>
 		</TexPanners>
 		<Generators>
+			<Entrance type="Walk" hasCallback="false" entry="entry_w"/>
+			<Exit type="Walk" hasCallback="false" entry="entry_w" destMap="jam_14" destEntry="entry_e" trigger="exit_trigger_w"/>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>
 		<Fog world="0,10,10,10,255,950,1000" entity="0,10,10,10,255,950,1000"/>

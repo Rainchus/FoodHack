@@ -40,8 +40,20 @@
 	End
 }
 
+#new:Script $Script_Exit_entry_w
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_w )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_14" ~Entry:jam_14:entry_e )
+	Wait  100`
+	Return
+	End
+}
+
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_entry_w .Trigger:FloorAbove ~Collider:exit_trigger_w 00000001 00000000
 	Return
 	End
 }
