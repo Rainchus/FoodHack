@@ -100,14 +100,14 @@
     EndThread
     Call SetPlayerAnimation ( 00010002 )
     Call SetNpcJumpscale ( .NpcID:JrTroopa *Fixed[0.4] )
-    Call NpcJump1 ( .NpcID:JrTroopa ~Vec3D:JrTroopaAppears 30` )
+    Call NpcJump1 ( .NpcID:JrTroopa ~Vec3F:JrTroopaAppears 30` )
     ExecWait $JrTroopaTalk
     Thread
         Call SetNpcAnimation ( .NpcID:Monty1 002F0010 )
         Call SetNpcAnimation ( .NpcID:Monty2 002F0010 )
     EndThread
-    Call SetNpcPos ( .NpcID:Monty1 ~Vec3D:MontyMarker1 )
-    Call SetNpcPos ( .NpcID:Monty2 ~Vec3D:MontyMarker2 )
+    Call SetNpcPos ( .NpcID:Monty1 ~Vec3F:MontyMarker1 )
+    Call SetNpcPos ( .NpcID:Monty2 ~Vec3F:MontyMarker2 )
     Wait 3`
     Call SetNpcAnimation ( .NpcID:Monty1 002F0001 )
     Call SetNpcAnimation ( .NpcID:Monty2 002F0001 )
@@ -116,8 +116,8 @@
     Call SetNpcAnimation ( .NpcID:Monty1 002F0011 )
     Call SetNpcAnimation ( .NpcID:Monty2 002F0011 )
     Wait 5`
-    Call SetNpcPos ( .NpcID:Monty1 ~Vec3D:Monty1Marker2 )
-    Call SetNpcPos ( .NpcID:Monty2 ~Vec3D:Monty2Marker2 )
+    Call SetNpcPos ( .NpcID:Monty1 ~Vec3F:Monty1Marker2 )
+    Call SetNpcPos ( .NpcID:Monty2 ~Vec3F:Monty2Marker2 )
     Call SetNpcAnimation ( .NpcID:Monty1 002F0010 )
     Call SetNpcAnimation ( .NpcID:Monty2 002F0010 )
     Wait 15`
