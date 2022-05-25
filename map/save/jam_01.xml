@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_01" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="14.640252,162.345398,8.168541" pitch="22.160007" yaw="41.119957"/>
-		<Camera pos="195.326920,65536.000000,-139.655975"/>
+		<Camera pos="301.154266,377.036804,340.790131" pitch="9.999999" yaw="0.000000"/>
+		<Camera pos="240.209137,65536.000000,-116.284676"/>
 		<Camera pos="65536.000000,11.425783,-135.848480"/>
 		<Camera pos="175.310715,15.220403,65536.000000"/>
 	</Editor>
@@ -72,13 +72,15 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="4">
+		<Node name="Root" id="6">
 			<Node name="Entrances" id="1">
 				<Node name="entry_n" id="FFFFFFFF"/>
 				<Node name="entry_e" id="0"/>
 			</Node>
 			<Node name="WoodenBlock" id="2"/>
 			<Node name="EntryFromCave" id="3"/>
+			<Node name="Money2" id="4"/>
+			<Node name="Money1" id="5"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -1437,7 +1439,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="D"/>
+			<MapObject name="Split Model" id="D" hidden="true"/>
 			<ShapeMesh ver="3" texture="mgm_star_floortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4933,7 +4935,15 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="4"/>
+			<MapObject name="Root" id="6"/>
+		</Marker>
+		<Marker ver="4" type="Entity" pos="197,313,-187" yaw="0.000000">
+			<MapObject name="Money1" id="5"/>
+			<Entity type="802EA0E8" hasFlag="false" flag=""/>
+		</Marker>
+		<Marker ver="4" type="Entity" pos="400,313,-117" yaw="0.000000">
+			<MapObject name="Money2" id="4"/>
+			<Entity type="802EA0E8" hasFlag="false" flag=""/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="164,0,-126" yaw="-135.000000">
 			<MapObject name="EntryFromCave" id="3"/>

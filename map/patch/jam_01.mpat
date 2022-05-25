@@ -17,6 +17,8 @@
         Call MakeEntity ( .Entity:Hammer1Block ~Vec4d:WoodenBlock 80000000 )
         Call AssignScript ( $WoodenBlockGone )
     EndIf
+	Call  MakeEntity    ( .Entity:MultiCoinBrick ~Vec4d:Money1 80000000 )
+	Call  MakeEntity    ( .Entity:MultiCoinBrick ~Vec4d:Money2 80000000 )
     Return
     End
 }

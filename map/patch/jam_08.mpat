@@ -8,7 +8,8 @@
     Set *Var0 0
 	Exec  $Script_SetupMusic
 	Exec  $Script_EnterMap
-    Exec $Script_BeatBlock
+    Exec  $Script_BeatBlock
+    Exec  $Script_MakeEntities
 	Return
 	End
 }
@@ -118,3 +119,10 @@ EndLoop
     End
 }
 
+#new:Script $Script_MakeEntities
+{
+	Call  MakeItemEntity    ( .Item:LifeShroom ~Vec3d:LifeShrum .ItemSpawnMode:Fixed_NeverVanish *LifeShrum )
+    Call  MakeItemEntity    ( .Item:FPPlusA ~Vec3d:FPPlus .ItemSpawnMode:Fixed_NeverVanish *GF_MIM09_BadgeBlock_FPPlusA )
+    Return
+    End
+}

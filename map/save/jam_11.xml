@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_11" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="157.228928,124.036812,513.234680" pitch="10.000000" yaw="0.000000"/>
-		<Camera pos="229.619003,65536.000000,-103.424141"/>
+		<Camera pos="105.618828,124.036804,326.342834" pitch="10.000000" yaw="0.000000"/>
+		<Camera pos="48.715542,65536.000000,-155.884705"/>
 		<Camera pos="65536.000000,25.103325,11.206539"/>
-		<Camera pos="0.000000,-50.000000,65536.000000"/>
+		<Camera pos="-25.625601,-11.590883,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="11">
@@ -54,11 +54,12 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="2">
+		<Node name="Root" id="3">
 			<Node name="Entrances" id="0">
 				<Node name="entry_e" id="FFFFFFFF"/>
 			</Node>
 			<Node name="Strawberry" id="1"/>
+			<Node name="HPPlus" id="2"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -2304,7 +2305,10 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="2"/>
+			<MapObject name="Root" id="3"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="135,0,-299" yaw="0.000000">
+			<MapObject name="HPPlus" id="2"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="177,36,39" yaw="0.000000">
 			<MapObject name="Strawberry" id="1"/>

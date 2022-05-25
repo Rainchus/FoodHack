@@ -10,11 +10,26 @@
 @ $Script_8024FD70
 {
 	Call $GivePlayerStartingEquipment
-    Call AddBadge (12D 0)
+	Exec $GiveBadges
 	Set *GB_StoryProgress 90
 	Set *GF_Tutorial_SaveBlock 1
 	Set *GF_Tutorial_HeartBlock 1
+	Set *GF_Tutorial_Badges 1
+	Set *GF_Tutorial_GotItem 1
 	Call  GotoMap ( "jam_00" 1 )
   Return
   End
+}
+
+#new:Script $GiveBadges
+{
+    Call AddBadge (12D 0) %Double Pain
+	Call AddBadge ( 0F3 1 ) %All AttackFX Badges
+	Call AddBadge ( 145 2 )
+	Call AddBadge ( 146 3 )
+	Call AddBadge ( 147 4 )
+	Call AddBadge ( 148 5 )
+	Call AddBadge ( 149 6 )
+	Return
+	End
 }

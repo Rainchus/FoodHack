@@ -14,6 +14,7 @@
 #new:Script $Script_MakeEntities
 {
 	Call  MakeItemEntity    ( .Item:BakingStrawberry ~Vec3d:Strawberry .ItemSpawnMode:Fixed_NeverVanish *HasStrawberry )
+    Call  MakeItemEntity    ( .Item:HPPlusA ~Vec3d:HPPlus .ItemSpawnMode:Fixed_NeverVanish *GF_MIM08_BadgeBlock_HPPlusA )
     Return
     End
 }

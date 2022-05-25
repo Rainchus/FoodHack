@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_08" author="unnamed" background="omo_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-2600.632080,124.036812,707.567749" pitch="10.000000" yaw="0.000000"/>
+		<Camera pos="-2641.637451,124.036812,707.567749" pitch="10.000000" yaw="0.000000"/>
 		<Camera pos="-2528.200195,65536.000000,199.315933"/>
 		<Camera pos="65536.000000,-39.111969,82.395844"/>
 		<Camera pos="-432.933167,2460.033691,65536.000000"/>
@@ -64,7 +64,7 @@
 				<Node name="entry_fall" id="0"/>
 				<Node name="fall" id="1"/>
 			</Node>
-			<Node name="TripleJump" id="3"/>
+			<Node name="FPPlus" id="3"/>
 			<Node name="LifeShrum" id="4"/>
 		</Node>
 	</MarkerTree>
@@ -4131,24 +4131,23 @@
 		<Marker ver="4" type="Root">
 			<MapObject name="Root" id="5"/>
 		</Marker>
-		<Marker ver="4" type="Entity" pos="-2600,60,200" yaw="180.000000">
+		<Marker ver="4" type="Position" pos="-2600,0,200" yaw="180.000000">
 			<MapObject name="LifeShrum" id="4"/>
-			<Entity type="802EA564" flag="" callback="true" item="Mushroom"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-2700,0,200" yaw="180.000000">
-			<MapObject name="TripleJump" id="3"/>
+			<MapObject name="FPPlus" id="3"/>
 		</Marker>
 		<Marker ver="4" type="Group">
 			<MapObject name="Entrances" id="2"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-965,-345,201" yaw="0.000000">
-			<MapObject name="fall" id="1" hidden="true"/>
+			<MapObject name="fall" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="374,115,10" yaw="0.000000">
-			<MapObject name="entry_fall" id="0" hidden="true"/>
+			<MapObject name="entry_fall" id="0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="475,0,0" yaw="270.000000">
-			<MapObject name="entry_e" id="FFFFFFFF" hidden="true"/>
+			<MapObject name="entry_e" id="FFFFFFFF"/>
 		</Marker>
 	</Markers>
 	<ScriptData>

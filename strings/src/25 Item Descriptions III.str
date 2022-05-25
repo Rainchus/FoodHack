@@ -1731,3 +1731,10 @@
 	A collector's item, perhaps?[End]
 }
 
+#message:25:10E
+{
+	Doubles all damage Mario takes.[BR]
+	Only enable if you want a more[BR]
+	challenging version of this[BR]
+	romhack.[End]
+}
