@@ -10,6 +10,7 @@
 @ $Script_8024FD70
 {
 	Call $GivePlayerStartingEquipment
+	Call $Function_SetBP
 	Exec $GiveBadges
 	Set *GB_StoryProgress 90
 	Set *GF_Tutorial_SaveBlock 1
@@ -19,7 +20,13 @@
   Return
   End
 }
-
+#new:Function $Function_SetBP{
+	LIO t0, 8010F290
+	ORI t1, r0, 1E
+	SB t1, 0008 (t0)
+	JR RA
+	ORI v0, r0, 2
+  }
 #new:Script $GiveBadges
 {
     Call AddBadge (12D 0) %Double Pain
