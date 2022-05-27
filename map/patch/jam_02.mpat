@@ -181,10 +181,11 @@ End
 
 #new:Script $Script_Interact_8024CE80
 {
+	Call SetZoneEnabled ( ~zone:NormalCam .False)
 	Call PlayerMoveTo (-43` -107` 40` )
 	If *TalkedToGourmetGuy == .False
 		Call  SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 00000005 $GourmetGuyString )
-		Call  ResetCam  ( .Cam:Default *Fixed[4.0] )
+		Call SetZoneEnabled ( ~zone:NormalCam .True ) 
 		24:  Set   *MapFlag[12]  .False
 		34:  Exec  $Script_80242A58
 		40:  Call  $Function_80240434 ( )
@@ -245,6 +246,7 @@ End
 				EndIf
 	EndIf
 	ExecWait $Script_Ingredientlist
+	Call SetZoneEnabled ( ~zone:NormalCam .True ) 
 	Return
 	End
 }
