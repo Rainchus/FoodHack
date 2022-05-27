@@ -1,0 +1,96 @@
+% Auto-generated script for jam_16
+
+#new:Header $Header
+{
+	[MainScript] $Script_Main
+	[Background] 00000000
+	[EntryList] $EntryList
+	[EntryCount] 1
+}
+
+#new:EntryList $EntryList
+{
+	~Vec4f:entry_w
+}
+
+#new:Script_Main $Script_Main
+{
+	Set   *GB_WorldLocation  .Location:GoombaRoad
+	Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+	Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+	Call  SetCamEnabled      ( .Cam:Default .True
+	Call  SetCamLeadPlayer   ( .Cam:Default .False )
+	Exec  $Script_SetupMusic
+	Call  $Function_SetupFog
+	Exec  $Script_EnterMap
+	Return
+	End
+}
+
+#new:Script $Script_SetupMusic
+{
+	Call  SetMusicTrack ( 00000000 .Song:PeachSneaking 00000000 00000008 )
+	Call  ClearAmbientSounds ( 250` )
+	Return
+	End
+}
+
+#new:Function $Function_SetupFog
+{
+	PUSH RA
+	JAL       8011BB50
+	NOP
+	ADDIU     A0, R0, 320
+	JAL       8011BB74
+	ADDIU     A1, R0, 4B0
+	ADDIU     A0, R0, 0
+	ADDIU     A1, R0, 0
+	ADDIU     A2, R0, 0
+	JAL       8011BB88
+	ADDIU     A3, R0, FF
+	JAL       80122FEC
+	NOP
+	ADDIU     A0, R0, 320
+	JAL       80123010
+	ADDIU     A1, R0, 4B0
+	ADDIU     A0, R0, 0
+	ADDIU     A1, R0, 0
+	ADDIU     A2, R0, 0
+	JAL       80123028
+	ADDIU     A3, R0, FF
+	ADDIU     V0, R0, 2
+	JPOP RA
+}
+
+#new:Script $Script_EnterMap
+{
+	Call  GetEntryID    ( *Var[0] )
+	Switch  *Var[0]
+		Case  ==  ~Entry:entry_w
+			Set   *Var[0] $Script_CreateExitTriggers
+			Exec  EnterWalk
+		Default
+			Exec  $Script_CreateExitTriggers
+	EndSwitch
+	Return
+	End
+}
+
+#new:Script $Script_Exit_entry_w
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_w )
+	Exec     ExitWalk
+	Call  GotoMap   ( "jam_07" ~Entry:jam_07:entry_e )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_CreateExitTriggers
+{
+	Bind  $Script_Exit_entry_w .Trigger:FloorAbove ~Collider:exit_trigger_w 00000001 00000000
+	Return
+	End
+}
+

@@ -11,7 +11,6 @@
     Call  SetCamLeadPlayer   ( .Cam:Default .False )
     Exec  $Script_SetupMusic
     Call  $Function_SetupFog
-    Exec  $Script_MakeEntities
     If *DefeatedJrTrooper == .False
         Call  MakeNpcs  ( .True $NpcGroupList_JrAndHisTroopers )
     EndIf
@@ -217,11 +216,4 @@ in our way![br]
   29C:  EndSwitch
   2A4:  Return
   2AC:  End
-}
-
-#new:Script $Script_MakeEntities
-{
-    Call  MakeItemEntity    ( .Item:DDownJump ~Vec3d:Badgeeee .ItemSpawnMode:Fixed_NeverVanish *GF_DGB11_Item_DDownJump )
-    Return
-    End
 }

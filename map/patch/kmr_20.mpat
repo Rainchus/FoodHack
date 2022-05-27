@@ -14,8 +14,7 @@
 	Set *GB_StoryProgress 90
 	Set *GF_Tutorial_SaveBlock 1
 	Set *GF_Tutorial_HeartBlock 1
-	Set *GF_Tutorial_Badges 1
-	Set *GF_Tutorial_GotItem 1
+	%Set *GF_Tutorial_GotItem 1
 	Call  GotoMap ( "jam_00" 1 )
   Return
   End
