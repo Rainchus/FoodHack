@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_09" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-89.669647,116.468567,811.678650" pitch="9.000000" yaw="0.000000"/>
+		<Camera pos="73.356743,53.781483,570.081665" pitch="26.279993" yaw="24.479984"/>
 		<Camera pos="191.456009,65536.000000,-28.453161"/>
 		<Camera pos="65536.000000,-122.812775,-71.208420"/>
 		<Camera pos="321.000000,-68.000000,65536.000000"/>
