@@ -23,7 +23,7 @@
 	<Move index="014" nameMsg="2A-013" desc1Msg="23-06B" desc2Msg="25-06B" flags="00008020" category="01" inputPopup="01" fp="04" bp="02" name="PowerQuake"/>
 	<Move index="015" nameMsg="2A-00A" desc1Msg="23-062" desc2Msg="25-062" flags="00013005" category="01" inputPopup="01" fp="02" bp="01" name="PowerSmash"/>
 	<Move index="016" nameMsg="00-000" desc1Msg="00-000" desc2Msg="00-000" flags="00013005" category="01" inputPopup="01" fp="04" bp="02" name="SuperSmash"/>
-	<Move index="017" nameMsg="2A-00B" desc1Msg="23-063" desc2Msg="25-063" flags="00013005" category="01" inputPopup="01" fp="06" bp="03" name="MegaSmash"/>
+	<Move index="017" nameMsg="2A-00B" desc1Msg="23-063" desc2Msg="25-063" flags="00013005" category="01" inputPopup="01" fp="03" bp="03" name="MegaSmash"/>
 	<Move index="018" nameMsg="2A-00F" desc1Msg="23-067" desc2Msg="25-067" flags="00013005" category="01" inputPopup="01" fp="02" bp="01" name="ShrinkSmash"/>
 	<Move index="019" nameMsg="00-000" desc1Msg="00-000" desc2Msg="00-000" flags="00013005" category="01" inputPopup="01" fp="06" bp="03" name="ShellCrack"/>
 	<Move index="01A" nameMsg="1D-039" desc1Msg="23-0A0" desc2Msg="23-0A0" flags="00054881" category="02" inputPopup="00" fp="00" bp="00" name="Jump1"/>
