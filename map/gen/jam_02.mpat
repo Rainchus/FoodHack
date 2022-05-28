@@ -57,6 +57,8 @@
 
 #new:Script $Script_MakeEntities
 {
+	Call  MakeEntity    ( .Entity:SavePoint ~Vec4d:SaveBlock 80000000 )
+	Call  MakeEntity    ( .Entity:HealingBlock ~Vec4d:HPBlock 80000000 )
 	Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring 80000000 )
 	Call  AssignScript    ( $Script_ScriptedSpring_Spring )
 	Return
@@ -86,6 +88,12 @@
 
 #new:Script $Script_EnterMap
 {
+	Call  GetLoadType   ( *Var[0] )
+	If  *Var[0]  ==  1
+		Exec  EnterSavePoint
+		Exec $Script_CreateExitTriggers
+		Return
+	EndIf
 	Call  GetEntryID    ( *Var[0] )
 	Switch  *Var[0]
 		Case  ==  ~Entry:entry_e

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_02" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-316.138184,338.036804,-621.733154" pitch="9.999999" yaw="153.047623"/>
-		<Camera pos="0.534965,65536.000000,6.897912"/>
-		<Camera pos="65536.000000,554.013855,-16.251225"/>
+		<Camera pos="-169.805557,345.256073,-285.044678" pitch="17.919994" yaw="144.407883"/>
+		<Camera pos="-17.555941,65536.000000,126.574432"/>
+		<Camera pos="65536.000000,488.322937,-10.477618"/>
 		<Camera pos="-54.816845,9.861406,65536.000000"/>
 	</Editor>
 	<ModelTree>
@@ -101,7 +101,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="B">
+		<Node name="Root" id="C">
 			<Node name="Entrances" id="0">
 				<Node name="entry_e" id="FFFFFFFF"/>
 			</Node>
@@ -109,12 +109,13 @@
 			<Node name="SpringPos" id="2"/>
 			<Node name="GourmetGuy" id="3"/>
 			<Node name="exit_fall" id="4"/>
-			<Node name="egg" id="5"/>
+			<Node name="SaveBlock" id="5"/>
 			<Node name="GourmetCamera" id="6"/>
 			<Node name="AntiGuyJump" id="7"/>
 			<Node name="CutsceneFront" id="8"/>
 			<Node name="AntiGuy" id="9"/>
 			<Node name="AntiJumpTo" id="A"/>
+			<Node name="HPBlock" id="B"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -8009,7 +8010,11 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="B"/>
+			<MapObject name="Root" id="C"/>
+		</Marker>
+		<Marker ver="4" type="Entity" pos="-117,274,-130" yaw="-45.000000">
+			<MapObject name="HPBlock" id="B"/>
+			<Entity type="802EA7E0"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-135,214,-106" yaw="0.000000">
 			<MapObject name="AntiJumpTo" id="A"/>
@@ -8031,8 +8036,9 @@
 				<Camera type="TYPE_0" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="-23,279,-46" posB="-44,279,-92" posC="-30,269,-87"/>
 			</CamTarget>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-100,233,0" yaw="0.000000">
-			<MapObject name="egg" id="5"/>
+		<Marker ver="4" type="Entity" pos="-70,274,-163" yaw="-60.000000">
+			<MapObject name="SaveBlock" id="5"/>
+			<Entity type="802E9A18"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="103,-108,581" yaw="0.000000">
 			<MapObject name="exit_fall" id="4"/>

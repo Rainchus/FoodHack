@@ -300,7 +300,7 @@ EndThread
 	Wait 30`
 	Thread
         Wait 5`
-        Call StartBattleWith (.Song:GeneralGuyBattle)
+        Call StartBossBattle (.Song:GeneralGuyBattle)
     EndThread
 	Call  BindNpcDefeat ( .Npc:Self $AntiDefeat )
 	Call DisablePlayerInput(.True)
@@ -634,6 +634,8 @@ Call  $Function_802407F4 ( )
 }
 
 @ $Script_MakeEntities {
+	Call  MakeEntity    ( .Entity:SavePoint ~Vec4d:SaveBlock 80000000 )
+	Call  MakeEntity    ( .Entity:HealingBlock ~Vec4d:HPBlock 80000000 )
 	Call  MakeEntity    ( .Entity:ScriptSpring ~Vec4d:Spring 80000000 )
 	Call  AssignScript    ( $Script_ScriptedSpring_Spring )
 	Return
