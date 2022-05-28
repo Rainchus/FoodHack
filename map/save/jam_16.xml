@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_16" author="unnamed" textures="jam_tex">
 	<Editor>
-		<Camera pos="-372.133331,124.036812,439.429718" pitch="10.000000" yaw="0.000000"/>
+		<Camera pos="-280.106384,154.413300,75.854103" pitch="59.599995" yaw="0.640004"/>
 		<Camera pos="-370.168488,65536.000000,33.281662"/>
 		<Camera pos="65536.000000,106.855736,28.298786"/>
 		<Camera pos="-174.297562,150.773483,65536.000000"/>
@@ -55,11 +55,12 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="2">
+		<Node name="Root" id="3">
 			<Node name="Entrances" id="0">
 				<Node name="entry_w" id="FFFFFFFF"/>
 			</Node>
 			<Node name="DDownJump" id="1"/>
+			<Node name="QuakeHammer" id="2"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -1678,9 +1679,12 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="2"/>
+			<MapObject name="Root" id="3"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-246,68,-7" yaw="-90.000000">
+		<Marker ver="4" type="Position" pos="-218,68,-11" yaw="-90.000000">
+			<MapObject name="QuakeHammer" id="2"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-289,68,12" yaw="-90.000000">
 			<MapObject name="DDownJump" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Group">

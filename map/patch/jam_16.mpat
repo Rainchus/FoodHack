@@ -15,6 +15,7 @@
 #new:Script $Script_MakeEntities
 {
     Call  MakeItemEntity    ( .Item:DDownJump ~Vec3d:DDownJump .ItemSpawnMode:Fixed_NeverVanish *GF_DGB11_Item_DDownJump )
+    Call  MakeItemEntity    ( .Item:QuakeHammer ~Vec3d:QuakerHammer .ItemSpawnMode:Fixed_NeverVanish *GF_IWA01_Item_QuakeHammer )
     Return
     End
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_00" author="unnamed" background="sra_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="474.963745,569.909058,1145.676392" pitch="13.999999" yaw="-22.519375"/>
+		<Camera pos="-63.035347,355.147858,1117.905640" pitch="45.040035" yaw="306.920227"/>
 		<Camera pos="-398.093750,65536.000000,983.903259"/>
 		<Camera pos="65536.000000,70.123672,940.330017"/>
 		<Camera pos="-279.373749,36.053917,65536.000000"/>
@@ -171,7 +171,7 @@
 				</DisplayList>
 			</ShapeMesh>
 			<PropertyList>
-				<Property v="5C,0,1"/>
+				<Property v="5C,0,D"/>
 				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
