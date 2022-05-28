@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_02" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-169.805557,345.256073,-285.044678" pitch="17.919994" yaw="144.407883"/>
+		<Camera pos="-4.934965,380.762634,-212.250641" pitch="40.160007" yaw="187.287827"/>
 		<Camera pos="-17.555941,65536.000000,126.574432"/>
 		<Camera pos="65536.000000,488.322937,-10.477618"/>
 		<Camera pos="-54.816845,9.861406,65536.000000"/>
@@ -8036,7 +8036,7 @@
 				<Camera type="TYPE_0" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="-23,279,-46" posB="-44,279,-92" posC="-30,269,-87"/>
 			</CamTarget>
 		</Marker>
-		<Marker ver="4" type="Entity" pos="-70,274,-163" yaw="-60.000000">
+		<Marker ver="4" type="Entity" pos="15,274,-147" yaw="-60.000000">
 			<MapObject name="SaveBlock" id="5"/>
 			<Entity type="802E9A18"/>
 		</Marker>
