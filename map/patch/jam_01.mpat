@@ -18,7 +18,9 @@
         Call AssignScript ( $WoodenBlockGone )
     EndIf
 	Call  MakeEntity    ( .Entity:MultiCoinBrick ~Vec4d:Money1 80000000 )
+    Call  AssignBlockFlag   ( *GF_TIK03_ItemBlock_CoinA )
 	Call  MakeEntity    ( .Entity:MultiCoinBrick ~Vec4d:Money2 80000000 )
+    Call  AssignBlockFlag   ( *GF_TIK03_ItemBlock_CoinB )
     Return
     End
 }
