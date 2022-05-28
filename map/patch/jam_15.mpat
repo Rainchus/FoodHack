@@ -182,21 +182,30 @@
 #new:String $DuplighostString
 {
 [style:right]
-Duplighost
+I'm the one with the juicy[br]
+stuff! Syrups n' Fruit dats[br]
+what I'll go by when I make[br]
+it in the big city![br]
 [wait] [end]
 }
 
 #new:String $ShyGuy1String
 {
 [style:right]
-Shy Guy 1
+I'm Greenie Guy, but not[br]
+in a very defensive way, haha![br]
+I just sell plants and herbs,[br]
+not any more or less.[br]
 [wait] [end]
 }
 
 #new:String $ShyGuy2String
 {
 [style:right]
-Shy Guy 2
+Heya Mario![br]
+I have collected all the[br]
+mushrooms around and they can[br]
+be yours for a small fee![br]
 [wait] [end]
 }
 
@@ -210,7 +219,14 @@ Tayce T
 #new:String $KeeperString
 {
 [style:right]
-Keeper
+Hello Mario, I am the keeper[br]
+of this humble farmers market.[br]
+I basically do all the selling.[br]
+[Wait][Next]
+I know it sounds weird but just[br]
+know that whenever you buy[br]
+anything, I do the talking.[br]
+That is all you need to know.[br]
 [wait] [end]
 }
 

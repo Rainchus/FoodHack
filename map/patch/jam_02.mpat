@@ -321,7 +321,6 @@ EndThread
 			Call SetPlayerAnimation ( 00010032 )
 			Call  ShowMessageAtScreenPos    ( $Epliogue  160`  40` ) % You! Switch with me!
 			Call DisablePlayerInput(.True)
-			Call  ShowMessageAtScreenPos    ( $TheEnd  160`  40` ) % You! Switch with me!
 		Default 
 
  	 EndSwitch
@@ -380,11 +379,11 @@ EndThread
 	cake and thus perfect to me![br]
 	[Wait][Next]
 	It's too big to eat though...[br]
-	mario, get me the ingredients[br]
+	Mario, get me the ingredients[br]
 	for a better cake![br]
 	[Wait][Next]
 	If you do, I might give[br]
-	you back the star rod![br]
+	you back the Star Rod![br]
 	[Wait][Next]
 	Here's also something to[br]
 	help you along your journey.
@@ -393,7 +392,7 @@ EndThread
 
 #new:String $GourmetGuyString2
 {
-	[style right]
+[style right]
 Okay, so I need the following[br]
 ingredients to bake my cake:[br]
 [Wait][End]
@@ -401,63 +400,67 @@ ingredients to bake my cake:[br]
 
 #new:String $Flour
 {
-	[style right]
-Flour from the flour mines
+[style right]
+Flour from the Flour Caves.
 [Wait][End]
 }
-#new:String $Egg
 
+#new:String $Egg
 {
-	[style right]
-A fresh egg from a farm
+[style right]
+A fresh egg from a farm.
 [Wait][End]
 }
+
 #new:String $Strawberry
 {[style right]
 A strawberry from the[br]
-strawberry fields south[br]
-of here[Wait][End]}
-#new:String $Sugar{
+Strawberry Fields to the[br]
+south from here.[Wait][End]
+}
+
+#new:String $Sugar
+{
 {[style right]
-Some sugar from the sugarcane[br]
-fields on the outskirts of[br]
-strawberry fields[Wait][End]}
+Some sugar from the Sugarcane[br]
+Outskirts to the north of[br]
+the Strawberry Fields.[Wait][End]}
 }
 
 
 #new:String $GourmetGuyString3
 {
-	[style right]
+[style right]
 That's it. [pause 10]Get to it!
 [Wait][End]
 }
 
 #new:String $happyEgg
 {
-	[style right]
+[style right]
 A fresh egg... from a farm.[br]
 This will go good in my cake.[br]
-Keep it up, mario!
+Keep it up, Mario!
 [Wait][End]
 }
 
 #new:String $happyFlour
 {
-	[style right]
+[style right]
 Fresh flour... mined straight[br]
-From the flour mines below.[br]
+from the flour mines below.[br]
 This will go good in my cake.[br]
-Keep it up, mario!
+Keep it up, Mario!
 [Wait][End]
 }
 
 #new:String $happySugar
 {
-	[style right]
-Sugar... ground freshly [br]
-From the outer sugarcane fields.[br]
+[style right]
+Sugar... freshly from[br]
+the Sugarcane Outskirts.[br]
 This will go good in my cake.[br]
-Keep it up, mario!
+Keep it up, Mario!
 [Wait][End]
 }
 
@@ -465,15 +468,15 @@ Keep it up, mario!
 {
 	[style right]
 A strawberry... freshly picked [br]
-From the strawberry fields.[br]
+from the Strawberry Fields.[br]
 This will go good in my cake.[br]
-Keep it up, mario!
+Keep it up, Mario!
 [Wait][End]
 }
 
 #new:String $finalCutscene
 {
-	[style right]
+[style right]
 Oh hey, that's the final[br]
 ingredient![br][wait][next]
 Luckily I have a refined[br]
@@ -498,9 +501,10 @@ OHHHH!
 
 #new:String $Oh3
 {
-	[style right]
+[style right]
 Yeah this isn't actually[br]
-that good.[br][wait][next]
+that good.[br]
+[wait][next]
 Sorry, Mario! You failed[br]
 me. Now I have to teach[br]
 you a lesson!
@@ -509,16 +513,17 @@ you a lesson!
 
 #new:String $Oh4
 {
-	[style right]
+[style right]
 Get him!!!
 [Wait][End]
 }
 
 #new:String $Oh5
 {
-	[style right]
+[style right]
 NO!!![br]
-MY ANTI GUY!!![br][wait][next]
+MY ANTI GUY!!![br]
+[wait][next]
 Fine, Mario, you win.[br]
 I'll give you back the star rod.[br]
 [Wait][End]
@@ -526,26 +531,24 @@ I'll give you back the star rod.[br]
 
 #new:String $Epliogue
 {
-	[Style Narrate] So Mario once again recovered[br]
-	the star rod, this time from an [br]
-	unexpected enemy.[br]
-	[wait][next]
-	However this enemy proved to no[br]
-	match for mario's strength.[br]
-	[wait][next]
-	After recovering the star rod,[br]
-	things went back to normal,[br]
-	and mario was able to relax,[br]
-	but not for long...[br][wait][next]
-	THE END
-	[InputOff]
-	[Wait] [End]
+[Style Narrate]So Mario once again recovered[br]
+the Star Rod, this time from an [br]
+unexpected enemy.[br]
+[wait][next]
+However this enemy proved to no[br]
+match for Mario's strength.[br]
+[wait][next]
+After recovering the star rod,[br]
+things went back to normal,[br]
+and Mario was able to relax,[br]
+but not for long...[br]
+[wait][next]
+[br]
+[CenterX 200]THE END[br]
+[InputOff]
+[Wait] [End]
 }
 
-#new:String $TheEnd{
-	[Style Narrate]
-	THE END[Wait] [End]
-}
 #new:Script $Script_80241450
 {
 If  *GF_TIK25_GiantChest  ==  .False
