@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_15" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="377.292908,124.036812,636.502441" pitch="10.000000" yaw="0.000000"/>
-		<Camera pos="-496.313812,65536.000000,-209.405106"/>
+		<Camera pos="-110.009323,124.036812,736.994263" pitch="10.000000" yaw="0.000000"/>
+		<Camera pos="-123.086792,65536.000000,131.701599"/>
 		<Camera pos="65536.000000,135.040817,-44.976395"/>
 		<Camera pos="-426.484528,-6.607395,65536.000000"/>
 	</Editor>
@@ -87,7 +87,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="6">
+		<Node name="Root" id="7">
 			<Node name="Entrances" id="0">
 				<Node name="entry_w" id="FFFFFFFF"/>
 			</Node>
@@ -96,6 +96,7 @@
 			<Node name="Duplighost" id="3"/>
 			<Node name="TayceT" id="4"/>
 			<Node name="MarketKeeper" id="5"/>
+			<Node name="HPPlus" id="6"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -129,9 +130,9 @@
 							<Vertex xyz="-22,0,-259" uv="1388,-1600"/>
 							<Vertex xyz="269,0,-148" uv="-3594,-1600"/>
 							<Vertex xyz="269,0,-148" uv="-3594,-1600"/>
-							<Vertex xyz="500,200,95" uv="-8424,1600"/>
+							<Vertex xyz="500,200,95" uv="-8424,1600" rgba="-1,-1,-1,-1"/>
 							<Vertex xyz="269,200,-148" uv="-3594,1600"/>
-							<Vertex xyz="500,200,95" uv="-8424,1600"/>
+							<Vertex xyz="500,200,95" uv="-8424,1600" rgba="-1,-1,-1,-1"/>
 							<Vertex xyz="269,0,-148" uv="-3594,-1600"/>
 							<Vertex xyz="500,0,95" uv="-8424,-1600"/>
 						</VertexTable>
@@ -560,24 +561,24 @@
 					<F3DEX2 cmd="D9FFFFFF,200400"/>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="-314,71,-7" uv="-1649,486" rgba="204,0,0,255"/>
-							<Vertex xyz="-299,109,-36" uv="91,486" rgba="164,0,0,255"/>
-							<Vertex xyz="-314,91,-79" uv="91,2226" rgba="164,0,0,255"/>
-							<Vertex xyz="-299,109,-36" uv="91,486" rgba="164,0,0,255"/>
-							<Vertex xyz="-170,109,-36" uv="1830,486" rgba="164,0,0,255"/>
-							<Vertex xyz="-314,91,-79" uv="91,2226" rgba="164,0,0,255"/>
-							<Vertex xyz="-314,91,-79" uv="91,2226" rgba="164,0,0,255"/>
-							<Vertex xyz="-170,109,-36" uv="1830,486" rgba="164,0,0,255"/>
-							<Vertex xyz="-153,91,-79" uv="1830,2226" rgba="164,0,0,255"/>
-							<Vertex xyz="-170,109,-36" uv="1830,486" rgba="164,0,0,255"/>
-							<Vertex xyz="-153,71,-7" uv="3572,486" rgba="204,0,0,255"/>
-							<Vertex xyz="-153,91,-79" uv="1830,2226" rgba="164,0,0,255"/>
-							<Vertex xyz="-314,71,-7" uv="-954,-2995" rgba="204,0,0,255"/>
-							<Vertex xyz="-153,71,-7" uv="6357,-2995" rgba="204,0,0,255"/>
-							<Vertex xyz="-299,109,-36" uv="-114,-1253" rgba="164,0,0,255"/>
-							<Vertex xyz="-299,109,-36" uv="-114,-1253" rgba="164,0,0,255"/>
-							<Vertex xyz="-153,71,-7" uv="6357,-2995" rgba="204,0,0,255"/>
-							<Vertex xyz="-170,109,-36" uv="5514,-1254" rgba="164,0,0,255"/>
+							<Vertex xyz="-314,71,-7" uv="-1649,486" rgba="49,110,57,-1"/>
+							<Vertex xyz="-299,109,-36" uv="91,486" rgba="49,110,57,-1"/>
+							<Vertex xyz="-314,91,-79" uv="91,2226" rgba="23,76,29,-1"/>
+							<Vertex xyz="-299,109,-36" uv="91,486" rgba="49,110,57,-1"/>
+							<Vertex xyz="-170,109,-36" uv="1830,486" rgba="49,110,57,-1"/>
+							<Vertex xyz="-314,91,-79" uv="91,2226" rgba="23,76,29,-1"/>
+							<Vertex xyz="-314,91,-79" uv="91,2226" rgba="23,76,29,-1"/>
+							<Vertex xyz="-170,109,-36" uv="1830,486" rgba="49,110,57,-1"/>
+							<Vertex xyz="-153,91,-79" uv="1830,2226" rgba="23,76,29,-1"/>
+							<Vertex xyz="-170,109,-36" uv="1830,486" rgba="49,110,57,-1"/>
+							<Vertex xyz="-153,71,-7" uv="3572,486" rgba="49,110,57,-1"/>
+							<Vertex xyz="-153,91,-79" uv="1830,2226" rgba="23,76,29,-1"/>
+							<Vertex xyz="-314,71,-7" uv="-954,-2995" rgba="49,110,57,-1"/>
+							<Vertex xyz="-153,71,-7" uv="6357,-2995" rgba="49,110,57,-1"/>
+							<Vertex xyz="-299,109,-36" uv="-114,-1253" rgba="49,110,57,-1"/>
+							<Vertex xyz="-299,109,-36" uv="-114,-1253" rgba="49,110,57,-1"/>
+							<Vertex xyz="-153,71,-7" uv="6357,-2995" rgba="49,110,57,-1"/>
+							<Vertex xyz="-170,109,-36" uv="5514,-1254" rgba="49,110,57,-1"/>
 						</VertexTable>
 						<TriangleList>
 							<Triangle ijk="0,1,2"/>
@@ -604,16 +605,16 @@
 					<F3DEX2 cmd="D9FFFFFF,200400"/>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="92,71,66" uv="1485,-4387" rgba="49,110,57,255"/>
-							<Vertex xyz="107,109,37" uv="1487,-2647" rgba="23,76,29,255"/>
-							<Vertex xyz="92,91,-6" uv="-253,-2647" rgba="23,76,29,255"/>
-							<Vertex xyz="236,109,37" uv="1487,-906" rgba="23,76,29,255"/>
-							<Vertex xyz="253,91,-6" uv="-253,-904" rgba="23,76,29,255"/>
-							<Vertex xyz="253,71,66" uv="1487,834" rgba="49,110,57,255"/>
-							<Vertex xyz="92,71,66" uv="4966,-3692" rgba="49,110,57,255"/>
-							<Vertex xyz="253,71,66" uv="4966,3619" rgba="49,110,57,255"/>
-							<Vertex xyz="107,109,37" uv="3227,-2852" rgba="23,76,29,255"/>
-							<Vertex xyz="236,109,37" uv="3226,2776" rgba="23,76,29,255"/>
+							<Vertex xyz="92,71,66" uv="1485,-4387" rgba="-52,0,0,-1"/>
+							<Vertex xyz="107,109,37" uv="1487,-2647" rgba="-52,0,0,-1"/>
+							<Vertex xyz="92,91,-6" uv="-253,-2647" rgba="-92,0,0,-1"/>
+							<Vertex xyz="236,109,37" uv="1487,-906" rgba="-52,0,0,-1"/>
+							<Vertex xyz="253,91,-6" uv="-253,-904" rgba="-92,0,0,-1"/>
+							<Vertex xyz="253,71,66" uv="1487,834" rgba="-52,0,0,-1"/>
+							<Vertex xyz="92,71,66" uv="4966,-3692" rgba="-52,0,0,-1"/>
+							<Vertex xyz="253,71,66" uv="4966,3619" rgba="-52,0,0,-1"/>
+							<Vertex xyz="107,109,37" uv="3227,-2852" rgba="-52,0,0,-1"/>
+							<Vertex xyz="236,109,37" uv="3226,2776" rgba="-52,0,0,-1"/>
 						</VertexTable>
 						<TriangleList>
 							<Triangle ijk="0,1,2"/>
@@ -3149,7 +3150,10 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="6"/>
+			<MapObject name="Root" id="7"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-153,0,147" yaw="180.000000">
+			<MapObject name="HPPlus" id="6"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-5,0,131" yaw="0.000000">
 			<MapObject name="MarketKeeper" id="5"/>
