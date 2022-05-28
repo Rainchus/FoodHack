@@ -253,6 +253,10 @@ End
 #new:Script $Script_Finale
 {
 	Call SpeakToPlayer ( .NpcID:GourmetGuy 00C10004 00C10001 0 $finalCutscene )
+	Call SetZoneEnabled ( ~zone:NormalCam .True ) 
+	Call GetPlayerPos ( *Var1 *Var2 *Var3 )
+    Add *Var2 2`
+    Call     SetPanTarget     ( .Cam:Default *Var1 *Var2 *Var3 )
 	Call SetNpcAnimation ( .NpcID:GourmetGuy 00C10005 )
 	Thread
 	Loop 3`
