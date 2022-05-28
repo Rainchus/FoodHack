@@ -26,9 +26,9 @@
 	.Item:KoopaLeaf    30` 0023001C % Sweet honey syrup. Restores 5 FP.
 	.Item:Mushroom    15` 0023008A % A very dry Mushroom. Restores 1 HP.
 	.Item:SuperShroom     50` 0023000A % Pasta from Dry Dry Outpost. Restores 3 HP and 2 FP ...
-	.Item:UltraShroom      40` 0023000B % A regular Mushroom. Restores 5 HP.
+	.Item:UltraShroom      100` 0023000B % A regular Mushroom. Restores 5 HP.
 	.Item:BakingEgg    15` 002300DA % A very dry Mushroom. Restores 1 HP.
-	.Item:Artifact     30` 002300DA % Pasta from Dry Dry Outpost. Restores 3 HP and 2 FP ...
+	.Item:BakingEgg     30` 002300DA % Pasta from Dry Dry Outpost. Restores 3 HP and 2 FP ...
 	.Item:BakingEgg     50` 002300DA % A regular Mushroom. Restores 5 HP.
     .Item:MapleSyrup    20` 00230017 % Lightning that strikes an enemy. Attack Power: 5
 	.Item:HoneySyrup    15` 00230016 % A dusty old Hammer. Throw it to damage an enemy.
@@ -180,31 +180,31 @@
 
 #new:String $DuplighostString
 {
-    [style:right] Duplighost
+    [style:right]Duplighost
     [wait] [end]
 }
 
 #new:String $ShyGuy1String
 {
-    [style:right] Shy Guy 1
+    [style:right]Shy Guy 1
     [wait] [end]
 }
 
 #new:String $ShyGuy2String
 {
-    [style:right] Shy Guy 2
+    [style:right]Shy Guy 2
     [wait] [end]
 }
 
 #new:String $TayceTString
 {
-    [style:right] Tayce T
+    [style:right]Tayce T
     [wait] [end]
 }
 
 #new:String $KeeperString
 {
-    [style:right] Keeper
+    [style:right]Keeper
     [wait] [end]
 }
 
