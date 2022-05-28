@@ -13,6 +13,7 @@
     Call  MakeShop      ( $ShopItemPositions_Market $ShopInventory_Market 0 00000000 )
     Call  MakeShopOwner ( $ShopOwnerNPC_Duplighost )
     Call  MakeNpcs  ( .True $NpcGroupList_8025136C )
+    Exec  $MakeEntities
     Exec  $Script_SetupMusic
     Exec  $Script_EnterMap
     Return
@@ -221,7 +222,7 @@ Keeper
 
 #new:Script $MakeEntities
 {
-    Call  MakeItemEntity    ( .Item:HPPlusA ~Vec3d:HPPlus .ItemSpawnMode:Fixed_NeverVanish *GF_NOK03_Item_HPPlusB )
+    Call  MakeItemEntity    ( .Item:HPPlusB ~Vec3d:HPPlus .ItemSpawnMode:Fixed_NeverVanish *GF_NOK03_Item_HPPlusB )
     Return
     End
 }
