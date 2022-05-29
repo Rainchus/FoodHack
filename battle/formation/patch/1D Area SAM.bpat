@@ -8,7 +8,7 @@
     % stats
     [Index]        3Bb
     [Level]        23`b
-    [MaxHP]        6`b
+    [MaxHP]        7`b
     [Coins]         10`b
     [Flags]       00000000
     [StatusTable] $StatusTable_8021AF00

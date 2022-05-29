@@ -37,3 +37,87 @@
     [StatusTurn]  -10`b  20`b % dx dy
     [StatusIcon]   10`b  20`b % dx dy
 }
+
+@ $Script_TakeTurn_8021AFAC {
+    Call  UseIdleAnimation  ( .Actor:Self .False )
+    Call  EnableIdleScript  ( .Actor:Self 00000000 )
+    Call  SetTargetActor    ( .Actor:Self .Actor:Player )
+    Call  SetGoalToTarget   ( .Actor:Self )
+    Call  GetBattlePhase    ( *Var0 )
+    If  *Var0  ==  00000001
+        Call  UseBattleCamPreset    ( 00000002 )
+        Call  MoveBattleCamOver     (  1` )
+    EndIf
+    ChildThread
+        Call  PlaySoundAtActor  ( .Actor:Self .Sound:MoleDig )
+        Wait  20`
+        Call  PlaySoundAtActor  ( .Actor:Self .Sound:MoleSurface )
+    EndChildThread
+    Call  SetAnimation      ( .Actor:Self 00000001 002F0004 )
+    Wait  37`
+    Call  GetActorPos       ( .Actor:Self *Var0 *Var1 *Var2 )
+    Add   *Var1  00000014
+    Call  SetPartPos        ( .Actor:Self 00000003 *Var0 *Var1 *Var2 )
+    Wait  1`
+    Call  SetPartFlagBits   ( .Actor:Self 00000003 00000001 .False )
+    Call  GetStatusFlags    ( .Actor:Self *Var0 )
+    If  *Var0  &  ~Flags:StatusFlags:Shrink % 80000
+        Call  SetPartScale  ( .Actor:Self 00000003 *Fixed[0.4] *Fixed[0.4] *Fixed[0.4] )
+    Else
+        Call  SetPartScale  ( .Actor:Self 00000003 *Fixed[1.0] *Fixed[1.0] *Fixed[1.0] )
+    EndIf
+    Call  PlaySoundAtPart   ( .Actor:Self 00000003 .Sound:MoleThrow )
+    Call  SetPartSounds     ( .Actor:Self 00000003 .ActorSound:Fly 00000000 00000000 )
+    Call  EnemyTestTarget   ( .Actor:Self *Var0 ~Flags:DamageType:NoContact 00000000 00000002 00000020 )
+    Switch  *Var0
+        CaseOR  ==  .HitResult:Miss % 6
+        CaseOR  ==  .HitResult:Lucky % 5
+            Set   *VarA  *Var0
+            Call  SetTargetActor    ( .Actor:Self .Actor:Player )
+            Call  SetGoalToTarget   ( .Actor:Self )
+            Call  GetGoalPos        ( .Actor:Self *Var0 *Var1 *Var2 )
+            Sub   *Var0  00000064
+            Set   *Var1  FFFFFFFB
+            Call  SetPartMoveSpeed  ( .Actor:Self 00000003 *Fixed[12.0] )
+            Call  SetPartJumpGravity    ( .Actor:Self 00000003 *Fixed[0.1] )
+            Call  SetAnimation      ( .Actor:Self 00000003 002F000F )
+            Call  FlyPartTo ( .Actor:Self 00000003 *Var0 *Var1 *Var2  0`  30` .Easing:Linear )
+            Call  SetPartFlagBits   ( .Actor:Self 00000003 00000001 .True )
+            If  *VarA  ==  .HitResult:Lucky % 5
+                Call  EnemyTestTarget   ( .Actor:Self *Var0 ~Flags:DamageType:TriggerLucky 00000000 00000000 00000000 )
+            EndIf
+            Call  YieldTurn ( )
+            Call  EnableIdleScript  ( .Actor:Self 00000001 )
+            Call  UseIdleAnimation  ( .Actor:Self .True )
+            Return
+        EndCaseGroup
+    EndSwitch
+    Call  SetTargetActor    ( .Actor:Self .Actor:Player )
+    Call  SetGoalToTarget   ( .Actor:Self )
+    Call  GetGoalPos        ( .Actor:Self *Var0 *Var1 *Var2 )
+    Call  SetPartMoveSpeed  ( .Actor:Self 00000003 *Fixed[12.0] )
+    Call  SetPartJumpGravity    ( .Actor:Self 00000003 *Fixed[0.1] )
+    Call  SetAnimation      ( .Actor:Self 00000003 002F000F )
+    Call  FlyPartTo ( .Actor:Self 00000003 *Var0 *Var1 *Var2  0`  20` .Easing:Linear )
+    Wait  2`
+    Call  EnemyDamageTarget ( .Actor:Self *Var0 ~Flags:DamageType:NoContact 00000000 00000000 00000003 00000020 )
+    Switch  *Var0
+        CaseOR  ==  .HitResult:Hit % 0
+        CaseOR  ==  .HitResult:QuakeImmune % 2
+            Call  GetActorPos       ( .Actor:Player *Var0 *Var1 *Var2 )
+            Sub   *Var0  00000037
+            Set   *Var1  00000000
+            Call  SetPartMoveSpeed  ( .Actor:Self 00000003 *Fixed[6.0] )
+            Call  SetPartJumpGravity    ( .Actor:Self 00000003 *Fixed[0.1] )
+            Call  FlyPartTo ( .Actor:Self 00000003 *Var0 *Var1 *Var2  0`  25` .Easing:Linear )
+            Call  SetPartMoveSpeed  ( .Actor:Self 00000003 *Fixed[4.0] )
+            Sub   *Var0  00000014
+            Call  FlyPartTo ( .Actor:Self 00000003 *Var0 *Var1 *Var2  0`  21` .Easing:Linear )
+            Call  SetPartFlagBits   ( .Actor:Self 00000003 00000001 .True )
+        EndCaseGroup
+    EndSwitch
+    Call  EnableIdleScript  ( .Actor:Self 00000001 )
+    Call  UseIdleAnimation  ( .Actor:Self .True )
+    Return
+    End
+}
