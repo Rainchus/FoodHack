@@ -212,7 +212,10 @@ be yours for a small fee![br]
 #new:String $TayceTString
 {
 [style:right]
-Tayce T
+Hello Mario, as you can see[br]
+I offer freshly laid eggs[br]
+from my chickens back in[br]
+Toad Town.[br]
 [wait] [end]
 }
 
