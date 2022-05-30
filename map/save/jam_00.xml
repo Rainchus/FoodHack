@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_00" author="unnamed" background="sra_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-63.035347,355.147858,1117.905640" pitch="45.040035" yaw="306.920227"/>
-		<Camera pos="-398.093750,65536.000000,983.903259"/>
+		<Camera pos="279.000000,124.036812,1386.567749" pitch="10.000000" yaw="0.000000"/>
+		<Camera pos="332.254364,65536.000000,801.241272"/>
 		<Camera pos="65536.000000,70.123672,940.330017"/>
 		<Camera pos="-279.373749,36.053917,65536.000000"/>
 	</Editor>
 	<ModelTree>
-		<Node name="Root" id="37">
+		<Node name="Root" id="39">
 			<Node name="Stage" id="2">
 				<Node name="main_floor" id="0"/>
 				<Node name="main_edges" id="1"/>
@@ -65,6 +65,8 @@
 			<Node name="HemisphereModel" id="34"/>
 			<Node name="PipeModel" id="35"/>
 			<Node name="Split Model" id="36"/>
+			<Node name="Split Model" id="37"/>
+			<Node name="Split Model" id="38"/>
 		</Node>
 	</ModelTree>
 	<ColliderTree>
@@ -144,9 +146,65 @@
 	</LightSets>
 	<Models>
 		<Model ver="2" type="ROOT" lightset="0">
-			<MapObject name="Root" id="37"/>
+			<MapObject name="Root" id="39"/>
 			<BoundingBox empty="false" min="-1200,-200,-1200" max="1200,669,1200"/>
 			<PropertyList>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Split Model" id="38"/>
+			<ShapeMesh ver="3" texture="kmr_fencetif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="414,0,1000" uv="0,-512"/>
+							<Vertex xyz="325,0,785" uv="-6144,-512"/>
+							<Vertex xyz="414,58,1000" uv="0,1024"/>
+							<Vertex xyz="325,0,785" uv="-6144,-512"/>
+							<Vertex xyz="325,58,785" uv="-6144,1024"/>
+							<Vertex xyz="414,58,1000" uv="0,1024"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,D"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Split Model" id="37"/>
+			<ShapeMesh ver="3" texture="kmr_fencetif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="414,0,1000" uv="0,-512"/>
+							<Vertex xyz="414,58,1000" uv="0,1024"/>
+							<Vertex xyz="325,0,785" uv="-6144,-512"/>
+							<Vertex xyz="325,0,785" uv="-6144,-512"/>
+							<Vertex xyz="414,58,1000" uv="0,1024"/>
+							<Vertex xyz="325,58,785" uv="-6144,1024"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,D"/>
+				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
