@@ -14,7 +14,7 @@
 
 #new:Script $Script_MakeEntities {
     If *JamZeroOneWoodenBlockGone == .False
-        Call MakeEntity ( .Entity:Hammer1Block ~Vec4d:WoodenBlock 80000000 )
+        Call MakeEntity ( .Entity:Hammer1BlockWide ~Vec4d:WoodenBlock 80000000 )
         Call AssignScript ( $WoodenBlockGone )
     EndIf
 	Call  MakeEntity    ( .Entity:MultiCoinBrick ~Vec4d:Money1 80000000 )
