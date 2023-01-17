@@ -1,3 +1,5 @@
+#define .NpcID:ShyGuy     00
+
 @ $Script_Main {
     Set   *GB_WorldLocation  .Location:GoombaRoad
     Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
@@ -7,6 +9,7 @@
     Exec  $Script_SetupMusic
     Exec  $Script_MakeEntities
     Call  $Function_SetupFog
+    Call    MakeNpcs ( 0 $NpcGroupList_test )
     Exec  $Script_EnterMap
     Return
     End
@@ -36,4 +39,53 @@
     Call  ClearAmbientSounds ( 250` )
     Return
     End
+}
+
+#new:NpcGroupList $NpcGroupList_test
+{
+00000001 $NpcGroup_ShyGuy    10050000 % AABBCCCC <--- formation
+% AA = FormationTableIndex
+% BB = FormationIndex
+% CCCC = BattleStageIndex
+00000000 00000000 00000000 
+}
+
+#new:NpcGroup $NpcGroup_ShyGuy
+{
+    .NpcID:ShyGuy $NpcSettings_Enemy1 ~Vec3f:ShyGuy % -280 0 -110
+	00000400 00000000 00000000 00000000 0000005A 
+	~NoItems
+	~HP:Standard:2 ~FP:Standard:2 ~CoinBonus:0:1
+	~Movement:ShyGuy
+	~AnimationTable:ShyGuy % .Sprite:Pokey
+	00000000 00000000 00000000 00000000 % no tattle string
+}
+
+#new:NpcSettings $NpcSettings_Enemy1
+{
+    00000000 00170016 00000000 00000000 $Script_NpcAI_80242680 80077F70 00000000 8007809C
+	00000000 00000000 000F0000
+}
+
+#new:Script $Script_NpcAI_80242680
+{
+    0:  Call  DoBasicAI ( $AISettings_80242650 )
+   10:  Return
+   18:  End
+}
+    
+#new:AISettings $AISettings_80242650
+{
+    2.5 % move speed
+    30` % move time
+    60` % wait time
+  100.0 % alert radius
+   30.0
+    4`
+    5.0 % chase speed
+    8`
+    1`
+  140.0 % chase radius
+   30.0
+    1`
 }

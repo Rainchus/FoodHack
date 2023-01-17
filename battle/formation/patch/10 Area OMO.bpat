@@ -20,8 +20,12 @@
 
 @ $Formation_04 {
 	$ShyGuy_GRN 00000001 0000000A 00000000 00000000 00000000 00000000
-	$ShyGuy_RED 00000002 00000009 00000000 00000000 00000000 00000000
-    $ShyGuy_GRN 00000003 00000008 00000000 00000000 00000000 00000000
+    $Fuzzy 00000002 00000009 00000000 00000000 00000000 00000000
+    $ShyGuy_RED 00000003 00000008 00000000 00000000 00000000 00000000
+}
+
+@ $Formation_05 {
+    $ShyGuy_BLU 00000002 00000008 00000000 00000000 00000000 00000000
 }
 
 @ $FormationTable {
@@ -30,7 +34,7 @@
     $SJIS_80231068 00000001 $Formation_02 $Stage_GreenGuys 00000000
     $SJIS_8023105C 00000002 $Formation_03 $Stage_GreenGuys 00000000
     $SJIS_80231054 00000003 $Formation_04 $Stage_TransitionMap 00000000
-    $SJIS_80231048 00000002 $Formation_05 $Stage_8022DE0C 00000000
+    $SJIS_80231048 00000001 $Formation_05 $Stage_bt7 00000000
     $SJIS_80231034 00000003 $Formation_06 $Stage_8022DE0C 00000000
     $SJIS_80231018 00000003 $Formation_07 $Stage_8022DE0C 00000000
     $SJIS_80230FFC 00000003 $Formation_08 $Stage_8022DE0C 00000000
@@ -76,7 +80,7 @@
 @ $ShyGuy_RED {
     % stats
     [Index]        1Fb
-    [Level]        9`b
+    [Level]        14`b
     [MaxHP]         4`b
     [Coins]         10`b
     [Flags]       00000000
@@ -139,6 +143,20 @@
     00000000
     $SpecialFormation_8022DE64
     00000000  
+}
+
+#new:Stage $Stage_bt7
+{
+    "jam_tex"  % omo_tex
+    "jam_bt7_shape"  % omo_bt04_shape
+    "jam_bt7_hit"  % omo_bt04_hit
+    $Script_BeforeBattle_8022DD30
+    $Script_AfterBattle_8022DDEC
+    00000000
+    00000000
+    00000000
+    00000000
+    00000000
 }
 
 #new:Stage $Stage_AntiGuy {
@@ -1507,4 +1525,31 @@
    A8:  LI        V0, 2
    AC:  JR        RA
    B0:  ADDIU     SP, SP, 28
+}
+
+@ $ShyGuy_BLU {
+    % stats
+    [Index]        1Fb
+    [Level]        14`b
+    [MaxHP]         4`b
+    [Coins]         10`b
+    [Flags]       00000000
+    [StatusTable] $StatusTable_8021AD24
+    % ai
+    [PartsCount]    1`s
+    [PartsTable]  $PartsTable_8021ADD0
+    [Script]      $Script_Init_8021AE68
+    % move effectiveness
+    [Escape]       60`b
+    [Item]         80`b
+    [AirLift]      85`b
+    [Hurricane]    80`b % Bow's "Spook" as well
+    [UpAndAway]    95`b
+    [PowerBounce] 100`b
+    [SpinSmash]     0`b % weight (0-4)
+    % ui positions
+    [Size]         28`b  24`b % width height
+    [HealthBar]     0`b   0`b % dx dy
+    [StatusTurn]  -10`b  20`b % dx dy
+    [StatusIcon]   10`b  20`b % dx dy
 }

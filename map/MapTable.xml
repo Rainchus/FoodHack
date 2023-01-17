@@ -592,6 +592,7 @@
 		<Stage name="jam_bt4" nickname="Escape Map Battle Map"/>
 		<Stage name="jam_bt5" nickname="Strawberry Fields Cake"/>
 		<Stage name="jam_bt6" nickname="Barn Transition Map"/>
+		<Stage name="jam_bt7" nickname="jam_01 battle map"/>
 	</Area>
 	<Resource name="mac_tex" compressed="false"/>
 	<Resource name="tik_tex" compressed="false"/>
