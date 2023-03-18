@@ -1,0 +1,77 @@
+%NOTE: The spin smash extra damage works by checking if s32 battleStatus->currentAttackElement (ram address 0x800DC1F8) is 0x28000000
+%which are the flags (DAMAGE_TYPE_NO_OTHER_DAMAGE_POPUPS | DAMAGE_TYPE_IGNORE_DEFENSE)
+%If another attack uses only these flags, the extra damge for spin smash will occur
+
+/%
+
+patches:
+    adds double pain
+    adds the ability to change the damage spin smash enemies do to enemies they hit for each upgrade
+    adds the ability to toggle double pain being factored into the spin smash damage calculation
+
+%/
+
+#define .normalHammerExtraDamage 0
+#define .superHammerExtraDamage 1
+#define .ultraHammerExtraDamage 2
+
+#define .extraDamageBadgeID 126 %currently ID of mega smash
+#define .doublePainID 12D
+#define .doubleSpinSmashDamageWithDoublePain .False
+
+#export:Function $isBadgeEquipped{
+    .Init
+    LIO t2, 8010F498
+    ADDIU t3, t2, 78 %end of list
+    .loop
+    LH t1, 0 (t2)
+    BEQL a0, t1, .end
+    ADDIU v0, r0, 1 %return true
+    BNE t2, t3, .loop
+    ADDIU t2, t2, 2
+    ADDIU v0, r0, 0 %return false
+    .end
+    JR RA
+    NOP
+}
+
+@Hook:Battle 80277B40 {
+    %s0 holds current damage
+    %check if double pain is equipped and if so, double damage
+    JAL $isBadgeEquipped
+    ORI a0, r0, .doublePainID
+    BEQ v0, r0, .spinSmashCheck
+    NOP
+    ORI t0, r0, .doubleSpinSmashDamageWithDoublePain
+    BEQ t0, r0, .skipDoubleSpinSmashDamage
+    NOP
+    SLL s0, s0, 1 %double damage
+    .skipdoubleSpinSmashDamage
+    .spinSmashCheck
+    %now check if we are currently doing a spin smash attack where an enemy collides into another
+    LABU t0, 800DC1F8
+    ORI t1, r0, 28 %DAMAGE_TYPE_NO_OTHER_DAMAGE_POPUPS and DAMAGE_TYPE_IGNORE_DEFENSE flags from decomp. When a spin smash enemy hits another, these flags are set
+    BNE t0, t1, .exit
+    NOP
+    JAL $isBadgeEquipped
+    ORI a0, r0, .extraDamageBadgeID
+    BEQ v0, r0, .notEquipped
+    NOP
+    LI t0, 8010F290
+    LBU t1, 0001 (t0)
+    BEQL t1, r0, .addDamage
+    ADDIU s0, s0, .normalHammerExtraDamage
+    ORI t2, r0, 1
+    BEQL t1, t2, .addDamage
+    ADDIU s0, s0, .superHammerExtraDamage
+    ORI t2, r0, 2
+    BEQL t1, t2, .addDamage
+    ADDIU s0, s0, .ultraHammerExtraDamage
+    .addDamage
+    .exit
+    .notEquipped
+    LBU v0, 01B8 (s3)
+    SUBU v0, v0, s0
+    J 80277B48
+    SB v0, 01B8 (s3)
+}

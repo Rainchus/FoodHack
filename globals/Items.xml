@@ -294,7 +294,7 @@
 	<Item index="123" nameMsg="26-059" desc1Msg="23-059" desc2Msg="25-059" typeFlags="1040" targetFlags="0000" sortValue="03" name="MegaJump" move="MegaJump" sellValue="200"/>
 	<Item index="124" nameMsg="26-062" desc1Msg="23-062" desc2Msg="25-062" typeFlags="1040" targetFlags="0000" sortValue="11" name="PowerSmash1" itemEntity="PowerSmash" move="PowerSmash" sellValue="50"/>
 	<Item index="125" nameMsg="00-000" desc1Msg="00-000" desc2Msg="00-000" typeFlags="1040" targetFlags="0000" sortValue="12" name="SuperSmash" move="SuperSmash" sellValue="100"/>
-	<Item index="126" nameMsg="26-063" desc1Msg="23-063" desc2Msg="25-063" typeFlags="1040" targetFlags="0000" sortValue="13" name="MegaSmash" move="MegaSmash" sellValue="200"/>
+	<Item index="126" nameMsg="26-063" desc1Msg="23-063" desc2Msg="25-063" typeFlags="1040" targetFlags="0000" sortValue="13" name="MegaSmash" hudElement="MegaSmash" itemEntity="MegaSmash" move="MegaSmash" sellValue="200"/>
 	<Item index="127" nameMsg="26-062" desc1Msg="23-062" desc2Msg="25-062" typeFlags="1040" targetFlags="0000" sortValue="11" name="PowerSmash2" hudElement="Present" itemEntity="Placeholder" move="MegaSmash" sellValue="50"/>
 	<Item index="128" nameMsg="26-062" desc1Msg="23-062" desc2Msg="25-062" typeFlags="1040" targetFlags="0000" sortValue="11" name="PowerSmash3" hudElement="Present" itemEntity="Placeholder" move="MegaSmash" sellValue="50"/>
 	<Item index="129" nameMsg="26-07E" desc1Msg="23-07E" desc2Msg="25-07E" typeFlags="1040" targetFlags="0000" sortValue="31" name="DeepFocus1" hudElement="DeepFocus3" itemEntity="DeepFocus" move="DeepFocus" sellValue="50"/>

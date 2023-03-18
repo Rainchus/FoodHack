@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="jam_02" author="unnamed" background="kmr_bg" textures="jam_tex">
 	<Editor>
-		<Camera pos="-299.528198,338.036804,-480.395782" pitch="9.999999" yaw="148.056335"/>
-		<Camera pos="-3.143633,65536.000000,352.713745"/>
+		<Camera pos="-58.990196,633.028076,-195.257507" pitch="26.880013" yaw="149.336533"/>
+		<Camera pos="-11.181192,65536.000000,24.675179"/>
 		<Camera pos="65536.000000,488.322937,-10.477618"/>
 		<Camera pos="-54.816845,9.861406,65536.000000"/>
 	</Editor>
@@ -8080,10 +8080,10 @@
 		<Marker ver="4" type="Position" pos="-135,214,-106" yaw="0.000000">
 			<MapObject name="AntiJumpTo" id="A"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="-41,532,14" yaw="0.000000">
+		<Marker ver="4" type="NPC" pos="17,532,11" yaw="90.000000">
 			<MapObject name="AntiGuy" id="9"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
-			<Sprite sprite="3B" palette="5" animations="1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="3D" palette="0" animations="33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-43,243,-107" yaw="0.000000">
 			<MapObject name="CutsceneFront" id="8"/>

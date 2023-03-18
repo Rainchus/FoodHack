@@ -599,3 +599,28 @@
    BC:  Return
    C4:  End
 }
+
+@ $Script_UseMove0 {
+    Call  802694A4  ( 00000001 )
+    Call  80269EAC  ( 00000002 )
+    Call  GetMenuSelection  ( *Var0 *Var1 *Var2 )
+    Switch  *Var1
+        Case  ==  .Item:Nothing % 0
+            Set   *VarD  0000003C
+            Set   *VarE  00000002
+            Set   *VarF  00000003
+            ExecWait  $Script_802A3258
+        Case  ==  .Item:Jump % 1
+            Set   *VarD  0000003C
+            Set   *VarE  00000002
+            Set   *VarF  00000004
+            ExecWait  $Script_802A3920
+        Case  ==  .Item:SpinJump % 2
+            Set   *VarD  0000003C
+            Set   *VarE  00000003
+            Set   *VarF  00000006
+            ExecWait  $Script_802A3FC4
+    EndSwitch
+    Return
+    End
+}
